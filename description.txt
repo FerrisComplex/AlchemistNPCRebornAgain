@@ -1,0 +1,11 @@
+Updates the Alchemist NPC PreRelease from 1.4 to 1.4.4 (Latest)
+This mod does not function when combined with Alchemist NPC Lite! They are not intended to function together
+
+The author of the mod is not responsible for any damage to your saves - due to the fact that the mod is still in pre-release!
+
+Original mod by @AlchemistNPC Team, used open source code. Ported by @Secretik (aka SecretYT), continued by @FerrisCG
+
+AlchemistNPC Discord: https://discord.gg/WGKyKun
+For other information, support you can join Secretiks discord server: https://discord.gg/ssPQfAVXkD
+
+[quote=tModLoader]Developed By FerrisCG, Secretik, AlchemistNPC Team[/quote]
