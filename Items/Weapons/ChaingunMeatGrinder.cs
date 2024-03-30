@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -26,7 +27,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			Item.rare = -12;
 			Item.autoReuse = true;
 			Item.shoot = 638;
-			Item.useAmmo = Mod.Find<ModItem>("MGB").Type;
+			Item.useAmmo = Mod.FindItem("MGB").Type;
 		}
 
 		public override void UseStyle(Player player, Rectangle heldItemFrame)

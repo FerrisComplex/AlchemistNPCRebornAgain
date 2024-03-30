@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 
 namespace AlchemistNPCRebornAgain.Items.Equippable
 {
@@ -32,7 +33,7 @@ namespace AlchemistNPCRebornAgain.Items.Equippable
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddRecipeGroup("AlchemistNPCRebornAgain:Tier3Bar", 15);
-			recipe.AddIngredient(Mod.Find<ModItem>("DivineLava").Type, 99);
+			recipe.AddIngredient(Mod.FindItem("DivineLava").Type, 99);
 			recipe.AddIngredient(2882);
 			recipe.AddIngredient(ItemID.Nanites, 99);
 			recipe.AddTile(Mod.Find<ModTile>("MateriaTransmutator").Type);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -36,7 +37,7 @@ namespace AlchemistNPCRebornAgain.Items.Summoning
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(Mod.Find<ModItem>("StrangeTopHat").Type);
+			recipe.AddIngredient(Mod.FindItem("StrangeTopHat").Type);
 			recipe.AddIngredient(170, 10);
 			recipe.AddIngredient(ItemID.FragmentNebula, 15);
             recipe.AddIngredient(ItemID.FragmentSolar, 15);

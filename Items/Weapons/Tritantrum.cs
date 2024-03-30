@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -29,7 +30,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			Item.autoReuse = true;
 			Item.shoot = 10; //idk why but all the guns in the vanilla source have this
 			Item.shootSpeed = 64f;
-			Item.useAmmo = Mod.Find<ModItem>("PlasmaRound").Type;
+			Item.useAmmo = Mod.FindItem("PlasmaRound").Type;
 		}
 
 		public override Vector2? HoldoutOffset()

@@ -1,0 +1,7 @@
+﻿Fixed Many items throwing exceptions about missing keys
+Fixed many calamity item ids that were outdated
+Handled Exceptions thrown from missing keys in ModItems preventing mod changes from breaking things again
+Fixed some NPC lang issues
+Fixed shops not opening correctly
+Fixed some items having lang keys as tooltips
+Fixed Bag opening causing exceptions

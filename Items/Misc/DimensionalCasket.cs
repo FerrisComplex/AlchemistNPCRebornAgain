@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Chat;
@@ -59,8 +60,8 @@ namespace AlchemistNPCRebornAgain.Items.Misc
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(Mod.Find<ModItem>("BrokenDimensionalCasket").Type);
-			recipe.AddIngredient(Mod.Find<ModItem>("DivineLava").Type, 15);
+			recipe.AddIngredient(Mod.FindItem("BrokenDimensionalCasket").Type);
+			recipe.AddIngredient(Mod.FindItem("DivineLava").Type, 15);
 			recipe.AddRecipeGroup("AlchemistNPCRebornAgain:Tier3Bar", 10);
 			recipe.AddIngredient(ItemID.MechanicalBatteryPiece);
 			recipe.AddTile(TileID.MythrilAnvil);

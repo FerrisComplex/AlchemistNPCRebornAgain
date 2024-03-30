@@ -71,6 +71,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Audio;
@@ -403,7 +404,6 @@ namespace AlchemistNPCRebornAgain
                     ShopChangeUIA.visible = false;
                     ShopChangeUIO.visible = false;
                     ShopChangeUIM.visible = false;
-                    ShopChangeUIT.visible = false;
                 }
             }
 
@@ -455,7 +455,7 @@ namespace AlchemistNPCRebornAgain
             bool Casket = false;
             for (int j = 0; j < Player.inventory.Length; j++)
             {
-                if (Player.inventory[j].type == Mod.Find<ModItem>("DimensionalCasket").Type)
+                if (Player.inventory[j].type == Mod.FindItem("DimensionalCasket").Type)
                 {
                     Casket = true;
                     break;
@@ -466,37 +466,37 @@ namespace AlchemistNPCRebornAgain
             {
                 for (int index1 = 0; index1 < 40; ++index1)
                 {
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier1").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier1").Type)
                     {
                         RCT1 = Player.bank3.item[index1].stack;
                         continue;
                     }
 
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier2").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier2").Type)
                     {
                         RCT2 = Player.bank3.item[index1].stack;
                         continue;
                     }
 
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier3").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier3").Type)
                     {
                         RCT3 = Player.bank3.item[index1].stack;
                         continue;
                     }
 
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier4").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier4").Type)
                     {
                         RCT4 = Player.bank3.item[index1].stack;
                         continue;
                     }
 
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier5").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier5").Type)
                     {
                         RCT5 = Player.bank3.item[index1].stack;
                         continue;
                     }
 
-                    if (Player.bank3.item[index1].type == Mod.Find<ModItem>("ReversivityCoinTier6").Type)
+                    if (Player.bank3.item[index1].type == Mod.FindItem("ReversivityCoinTier6").Type)
                     {
                         RCT6 = Player.bank3.item[index1].stack;
                         break;

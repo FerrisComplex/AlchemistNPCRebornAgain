@@ -12,16 +12,18 @@ using Terraria.Audio;
 using System;
 using Terraria.ID;
 using System.Linq;
+using AlchemistNPCRebornAgain.ExternalHelpers;
 using AlchemistNPCRebornAgain.NPCs;
 using ReLogic.Content;
 
 namespace AlchemistNPCRebornAgain.Interface
 {
-    class ShopChangeUIM : UIState
+   class ShopChangeUIM : UIState
     {
         public UIPanel MusicianShopsPanel;
         public static bool visible = false;
         public static uint timeStart;
+		public static string Shop = Musician.Sh1;
 
         public override void OnInitialize()
         {
@@ -29,8 +31,8 @@ namespace AlchemistNPCRebornAgain.Interface
             MusicianShopsPanel.SetPadding(0);
             MusicianShopsPanel.Left.Set(575f, 0f);
             MusicianShopsPanel.Top.Set(275f, 0f);
-            MusicianShopsPanel.Width.Set(260f, 0f);
-            MusicianShopsPanel.Height.Set(105f, 0f);
+            MusicianShopsPanel.Width.Set(300f, 0f);
+            MusicianShopsPanel.Height.Set(165f, 0f);
             MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             MusicianShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
@@ -43,19 +45,33 @@ namespace AlchemistNPCRebornAgain.Interface
             text.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text);
 
-            UIText text2 = new UIText("Calamity Music Boxes");
+            UIText text2 = new UIText("Vanilla Music Boxes #2");
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(90, 0f);
             text2.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text2);
 
-            UIText text3 = new UIText("Thorium Music Boxes");
+            UIText text3 = new UIText("Otherworld Music Boxes");
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(90, 0f);
             text3.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text3);
+			
+			UIText text4 = new UIText("Modded MB (Calamity)");
+            text4.Left.Set(35, 0f);
+            text4.Top.Set(100, 0f);
+            text4.Width.Set(90, 0f);
+            text4.Height.Set(22, 0f);
+            MusicianShopsPanel.Append(text4);
+			
+			UIText text5 = new UIText("Modded MB (Calamity/Thorium)");
+            text5.Left.Set(35, 0f);
+            text5.Top.Set(130, 0f);
+            text5.Width.Set(90, 0f);
+            text5.Height.Set(22, 0f);
+            MusicianShopsPanel.Append(text5);
 
             Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
             UIImageButton playButton = new UIImageButton(buttonPlayTexture);
@@ -79,6 +95,20 @@ namespace AlchemistNPCRebornAgain.Interface
             playButton3.Height.Set(22, 0f);
             playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked3);
             MusicianShopsPanel.Append(playButton3);
+			UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
+            playButton4.Left.Set(10, 0f);
+            playButton4.Top.Set(100, 0f);
+            playButton4.Width.Set(22, 0f);
+            playButton4.Height.Set(22, 0f);
+            playButton4.OnLeftClick += new MouseEvent(PlayButtonClicked4);
+            MusicianShopsPanel.Append(playButton4);
+			UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
+            playButton5.Left.Set(10, 0f);
+            playButton5.Top.Set(130, 0f);
+            playButton5.Width.Set(22, 0f);
+            playButton5.Height.Set(22, 0f);
+            playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked5);
+            MusicianShopsPanel.Append(playButton5);
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
             UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
@@ -98,12 +128,9 @@ namespace AlchemistNPCRebornAgain.Interface
                 Musician.S1 = true;
                 Musician.S2 = false;
                 Musician.S3 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+				Musician.S4 = false;
+				Musician.S5 = false;
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh1, ref visible);
             }
         }
 
@@ -114,12 +141,9 @@ namespace AlchemistNPCRebornAgain.Interface
                 Musician.S1 = false;
                 Musician.S2 = true;
                 Musician.S3 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+				Musician.S4 = false;
+				Musician.S5 = false;
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh2, ref visible);
             }
         }
 
@@ -130,12 +154,35 @@ namespace AlchemistNPCRebornAgain.Interface
                 Musician.S1 = false;
                 Musician.S2 = false;
                 Musician.S3 = true;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+				Musician.S4 = false;
+				Musician.S5 = false;
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh3, ref visible);
+            }
+        }
+		
+		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
+            {
+                Musician.S1 = false;
+                Musician.S2 = false;
+                Musician.S3 = false;
+				Musician.S4 = true;
+				Musician.S5 = false;
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh4, ref visible);
+            }
+        }
+		
+		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
+            {
+                Musician.S1 = false;
+                Musician.S2 = false;
+                Musician.S3 = false;
+				Musician.S4 = false;
+				Musician.S5 = true;
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh5, ref visible);
             }
         }
 

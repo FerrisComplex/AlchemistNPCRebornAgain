@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -65,7 +66,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			if (player.altFunctionUse == 2 && (player.GetModPlayer<AlchemistNPCRebornPlayer>()).DisasterGauge >= 500)
 			{
 				(player.GetModPlayer<AlchemistNPCRebornPlayer>()).DisasterGauge = 0;		
-				Item.SetDefaults(Mod.Find<ModItem>("PandoraPF013").Type);
+				Item.SetDefaults(Mod.FindItem("PandoraPF013").Type);
 			}
 			return false;
 		}

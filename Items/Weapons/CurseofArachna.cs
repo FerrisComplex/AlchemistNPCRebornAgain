@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -76,7 +77,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
         {
             Recipe recipe = CreateRecipe(1);
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient(Mod.Find<ModItem>("SwordofArachna").Type);
+            recipe.AddIngredient(Mod.FindItem("SwordofArachna").Type);
 			recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

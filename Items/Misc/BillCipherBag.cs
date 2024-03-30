@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Microsoft.Xna.Framework;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -33,14 +34,14 @@ namespace AlchemistNPCRebornAgain.Items.Misc
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("GoldenKnuckles").Type));
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("WrathOfTheCelestial").Type));
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("LaserCannon").Type));
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("GrapplingHookGunItem").Type));
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("IlluminatiGift").Type));
-            itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BillSoul").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("GoldenKnuckles").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("WrathOfTheCelestial").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("LaserCannon").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("GrapplingHookGunItem").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("IlluminatiGift").Type));
+            itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BillSoul").Type));
             if (Main.rand.NextBool(5))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("MysticAmulet").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("MysticAmulet").Type));
             itemLoot.Add(ItemDropRule.Common(ItemID.PlatinumCoin, 10));
         }
     }

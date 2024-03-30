@@ -12,16 +12,18 @@ using Terraria.Audio;
 using System;
 using Terraria.ID;
 using System.Linq;
+using AlchemistNPCRebornAgain.ExternalHelpers;
 using AlchemistNPCRebornAgain.NPCs;
 using ReLogic.Content;
 
 namespace AlchemistNPCRebornAgain.Interface
 {
-    class ShopChangeUIA : UIState
+     class ShopChangeUIA : UIState
     {
         public UIPanel ArchitectShopsPanel;
         public static bool visible = false;
         public static uint timeStart;
+        public static string Shop = Architect.Filler;
 
         public override void OnInitialize()
         {
@@ -33,73 +35,73 @@ namespace AlchemistNPCRebornAgain.Interface
             ArchitectShopsPanel.Height.Set(310f, 0f);
             ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
-            ArchitectShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
-            ArchitectShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
+            ArchitectShopsPanel.OnLeftMouseDown += new(DragStart);
+            ArchitectShopsPanel.OnLeftMouseUp += new(DragEnd);
 
-            UIText text = new UIText("Filler Blocks");
+            UIText text = new("Filler Blocks");
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(70, 0f);
             text.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text);
 
-            UIText text2 = new UIText("Building Blocks");
+            UIText text2 = new("Building Blocks");
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text2);
 
-            UIText text3 = new UIText("Basic Furniture");
+            UIText text3 = new("Basic Furniture");
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(70, 0f);
             text3.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text3);
 
-            UIText text4 = new UIText("Advanced Furniture");
+            UIText text4 = new("Advanced Furniture");
             text4.Left.Set(35, 0f);
             text4.Top.Set(100, 0f);
             text4.Width.Set(70, 0f);
             text4.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text4);
 
-            UIText text5 = new UIText("Torches");
+            UIText text5 = new("Torches");
             text5.Left.Set(35, 0f);
             text5.Top.Set(130, 0f);
             text5.Width.Set(50, 0f);
             text5.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text5);
 
-            UIText text6 = new UIText("Candles");
+            UIText text6 = new("Candles");
             text6.Left.Set(35, 0f);
             text6.Top.Set(160, 0f);
             text6.Width.Set(50, 0f);
             text6.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text6);
 
-            UIText text7 = new UIText("Lamps");
+            UIText text7 = new("Lamps");
             text7.Left.Set(35, 0f);
             text7.Top.Set(190, 0f);
             text7.Width.Set(50, 0f);
             text7.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text7);
 
-            UIText text8 = new UIText("Lanterns");
+            UIText text8 = new("Lanterns");
             text8.Left.Set(35, 0f);
             text8.Top.Set(220, 0f);
             text8.Width.Set(60, 0f);
             text8.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text8);
 
-            UIText text9 = new UIText("Chandeliers");
+            UIText text9 = new("Chandeliers");
             text9.Left.Set(35, 0f);
             text9.Top.Set(250, 0f);
             text9.Width.Set(70, 0f);
             text9.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text9);
 
-            UIText text10 = new UIText("Candelabras");
+            UIText text10 = new("Candelabras");
             text10.Left.Set(35, 0f);
             text10.Top.Set(280, 0f);
             text10.Width.Set(70, 0f);
@@ -107,86 +109,86 @@ namespace AlchemistNPCRebornAgain.Interface
             ArchitectShopsPanel.Append(text10);
 
             Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
-            UIImageButton playButton = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
             playButton.Width.Set(22, 0f);
             playButton.Height.Set(22, 0f);
-            playButton.OnLeftClick += new MouseEvent(PlayButtonClicked1);
+            playButton.OnLeftClick += new(PlayButtonClicked1);
             ArchitectShopsPanel.Append(playButton);
-            UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton2 = new(buttonPlayTexture);
             playButton2.Left.Set(10, 0f);
             playButton2.Top.Set(40, 0f);
             playButton2.Width.Set(22, 0f);
             playButton2.Height.Set(22, 0f);
-            playButton2.OnLeftClick += new MouseEvent(PlayButtonClicked2);
+            playButton2.OnLeftClick += new(PlayButtonClicked2);
             ArchitectShopsPanel.Append(playButton2);
-            UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton3 = new(buttonPlayTexture);
             playButton3.Left.Set(10, 0f);
             playButton3.Top.Set(70, 0f);
             playButton3.Width.Set(22, 0f);
             playButton3.Height.Set(22, 0f);
-            playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked3);
+            playButton3.OnLeftClick += new(PlayButtonClicked3);
             ArchitectShopsPanel.Append(playButton3);
-            UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton4 = new(buttonPlayTexture);
             playButton4.Left.Set(10, 0f);
             playButton4.Top.Set(100, 0f);
             playButton4.Width.Set(22, 0f);
             playButton4.Height.Set(22, 0f);
-            playButton4.OnLeftClick += new MouseEvent(PlayButtonClicked4);
+            playButton4.OnLeftClick += new(PlayButtonClicked4);
             ArchitectShopsPanel.Append(playButton4);
-            UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton5 = new(buttonPlayTexture);
             playButton5.Left.Set(10, 0f);
             playButton5.Top.Set(130, 0f);
             playButton5.Width.Set(22, 0f);
             playButton5.Height.Set(22, 0f);
-            playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked5);
+            playButton5.OnLeftClick += new(PlayButtonClicked5);
             ArchitectShopsPanel.Append(playButton5);
-            UIImageButton playButton6 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton6 = new(buttonPlayTexture);
             playButton6.Left.Set(10, 0f);
             playButton6.Top.Set(160, 0f);
             playButton6.Width.Set(22, 0f);
             playButton6.Height.Set(22, 0f);
-            playButton6.OnLeftClick += new MouseEvent(PlayButtonClicked6);
+            playButton6.OnLeftClick += new(PlayButtonClicked6);
             ArchitectShopsPanel.Append(playButton6);
-            UIImageButton playButton7 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton7 = new(buttonPlayTexture);
             playButton7.Left.Set(10, 0f);
             playButton7.Top.Set(190, 0f);
             playButton7.Width.Set(22, 0f);
             playButton7.Height.Set(22, 0f);
-            playButton7.OnLeftClick += new MouseEvent(PlayButtonClicked7);
+            playButton7.OnLeftClick += new(PlayButtonClicked7);
             ArchitectShopsPanel.Append(playButton7);
-            UIImageButton playButton8 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton8 = new(buttonPlayTexture);
             playButton8.Left.Set(10, 0f);
             playButton8.Top.Set(220, 0f);
             playButton8.Width.Set(22, 0f);
             playButton8.Height.Set(22, 0f);
-            playButton8.OnLeftClick += new MouseEvent(PlayButtonClicked8);
+            playButton8.OnLeftClick += new(PlayButtonClicked8);
             ArchitectShopsPanel.Append(playButton8);
-            UIImageButton playButton9 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton9 = new(buttonPlayTexture);
             playButton9.Left.Set(10, 0f);
             playButton9.Top.Set(250, 0f);
             playButton9.Width.Set(22, 0f);
             playButton9.Height.Set(22, 0f);
-            playButton9.OnLeftClick += new MouseEvent(PlayButtonClicked9);
+            playButton9.OnLeftClick += new(PlayButtonClicked9);
             ArchitectShopsPanel.Append(playButton9);
-            UIImageButton playButton10 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton10 = new(buttonPlayTexture);
             playButton10.Left.Set(10, 0f);
             playButton10.Top.Set(280, 0f);
             playButton10.Width.Set(22, 0f);
             playButton10.Height.Set(22, 0f);
-            playButton10.OnLeftClick += new MouseEvent(PlayButtonClicked10);
+            playButton10.OnLeftClick += new(PlayButtonClicked10);
             ArchitectShopsPanel.Append(playButton10);
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
-            UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
+            UIImageButton closeButton = new(buttonDeleteTexture);
             closeButton.Left.Set(200, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
-            closeButton.OnLeftClick += new MouseEvent(CloseButtonClicked);
+            closeButton.OnLeftClick += new(CloseButtonClicked);
             ArchitectShopsPanel.Append(closeButton);
-            base.Append(ArchitectShopsPanel);
+            Append(ArchitectShopsPanel);
         }
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
@@ -203,12 +205,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Filler, ref visible);
             }
         }
 
@@ -226,12 +223,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Building, ref visible);
             }
         }
 
@@ -249,12 +241,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.BasicFurn, ref visible);
             }
         }
 
@@ -272,12 +259,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.AdvFurn, ref visible);
             }
         }
 
@@ -295,12 +277,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Torch, ref visible);
             }
         }
 
@@ -318,12 +295,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Candle, ref visible);
             }
         }
 
@@ -341,12 +313,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Lamp, ref visible);
             }
         }
 
@@ -364,12 +331,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = true;
                 Architect.Shop9 = false;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Lantern, ref visible);
             }
         }
 
@@ -387,12 +349,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = true;
                 Architect.Shop10 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Chandelier, ref visible);
             }
         }
 
@@ -410,12 +367,7 @@ namespace AlchemistNPCRebornAgain.Interface
                 Architect.Shop8 = false;
                 Architect.Shop9 = false;
                 Architect.Shop10 = true;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIA.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Architect.Candelabra, ref visible);
             }
         }
 

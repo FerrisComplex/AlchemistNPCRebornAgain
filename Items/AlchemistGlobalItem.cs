@@ -28,6 +28,7 @@ using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using AlchemistNPCRebornAgain.Interface;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.UI;
 using Terraria.GameInput;
@@ -52,13 +53,14 @@ namespace AlchemistNPCRebornAgain.Items
             {
                 item.damage = 1;
             }
+
             for (int j = 0; j < player.inventory.Length; j++)
             {
-                if (player.inventory[j].type == Mod.Find<ModItem>("DimensionalCasket").Type)
+                if (player.inventory[j].type == Mod.FindItem("DimensionalCasket").Type)
                 {
                     var keybinds = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard].KeyStatus["Inventory"];
                     string keybind = "Escape";
-                    if(keybinds.Count > 0)
+                    if (keybinds.Count > 0)
                     {
                         keybind = keybinds[0];
                     }
@@ -78,7 +80,7 @@ namespace AlchemistNPCRebornAgain.Items
                     //}
                 }
             }
-		}
+        }
 
         public override void UpdateInventory(Item item, Player player)
         {
@@ -95,36 +97,44 @@ namespace AlchemistNPCRebornAgain.Items
             {
                 Luck = true;
             }
+
             if (item.type == ItemType<Items.Misc.LuckCharmT2>())
             {
                 Luck = true;
                 Luck2 = true;
             }
+
             if (item.type == ItemType<Items.Misc.PerfectionToken>())
             {
                 PerfectionToken = true;
             }
+
             if (item.type == ItemType<Items.Misc.MenacingToken>())
             {
                 Menacing = true;
             }
+
             if (item.type == ItemType<Items.Misc.LuckyToken>())
             {
                 Lucky = true;
             }
+
             if (item.type == ItemType<Items.Misc.ViolentToken>())
             {
                 Violent = true;
             }
+
             if (item.type == ItemType<Items.Misc.WardingToken>())
             {
                 Warding = true;
             }
         }
 
+
+
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
         {
-            if (Luck == true && PerfectionToken == false)
+           if (Luck == true && PerfectionToken == false)
             {
                 if (item.CountsAsClass(DamageClass.Melee))
                 {
@@ -134,6 +144,7 @@ namespace AlchemistNPCRebornAgain.Items
                     if (Main.rand.Next(20) == 0)
                         return 81;
                 }
+
                 if (item.CountsAsClass(DamageClass.Ranged) && !item.consumable)
                 {
                     if (Main.rand.Next(10) == 0)
@@ -142,6 +153,7 @@ namespace AlchemistNPCRebornAgain.Items
                     if (Main.rand.Next(20) == 0)
                         return 82;
                 }
+
                 if (item.CountsAsClass(DamageClass.Magic))
                 {
                     if (Main.rand.Next(10) == 0)
@@ -150,6 +162,7 @@ namespace AlchemistNPCRebornAgain.Items
                     if (Main.rand.Next(20) == 0)
                         return 83;
                 }
+
                 if (item.CountsAsClass(DamageClass.Summon))
                 {
                     if (Main.rand.Next(10) == 0)
@@ -158,6 +171,7 @@ namespace AlchemistNPCRebornAgain.Items
                     if (Main.rand.Next(20) == 0)
                         return 83;
                 }
+
                 if (item.CountsAsClass(DamageClass.Throwing) && !item.consumable)
                 {
                     if (Main.rand.Next(10) == 0)
@@ -167,6 +181,7 @@ namespace AlchemistNPCRebornAgain.Items
                         return 82;
                 }
             }
+
             if (Luck2 == true && !Menacing && !Lucky && !Violent && !Warding)
             {
                 if (item.accessory)
@@ -181,180 +196,216 @@ namespace AlchemistNPCRebornAgain.Items
                         return 65;
                 }
             }
+
             if (PerfectionToken == true)
             {
-                if (item.type == Mod.Find<ModItem>("LastTantrum").Type)
+                if (item.type == Mod.FindItem("LastTantrum").Type)
                 {
                     return 59;
                 }
+
                 if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity) != null)
                 {
-                    if (item.type == ModLoader.GetMod("CalamityMod").Find<ModItem>("P90").Type)
+                    try
                     {
-                        return 57;
+                        if (item.type == Calamity.FindItem("P90").Type)
+                        {
+                            return 57;
+                        }
+
+                        if (item.type == Calamity.FindItem("ColdheartIcicle").Type)
+                        {
+                            return 15;
+                        }
+
+                        if (item.type == ModLoader.GetMod("CalamityMod").FindItem("HalibutCannon").Type)
+                        {
+                            return 17;
+                        }
                     }
-                    if (item.type == ModLoader.GetMod("CalamityMod").Find<ModItem>("ColdheartIcicle").Type)
+                    catch (Exception)
                     {
-                        return 15;
-                    }
-                    if (item.type == ModLoader.GetMod("CalamityMod").Find<ModItem>("HalibutCannon").Type)
-                    {
-                        return 17;
                     }
                 }
+
                 if (item.damage > 3 && item.useTime <= 4 && item.useAnimation <= 4 && item.maxStack == 1)
                 {
-                    return Mod.Find<ModPrefix>("Ancient").Type;
+                    return Mod.FindPrefixId("Ancient");
                 }
+
                 if (item.damage > 3 && item.CountsAsClass(DamageClass.Melee) && item.maxStack == 1)
                 {
-                    return Mod.Find<ModPrefix>("Primal").Type;
+                    return Mod.FindPrefixId("Primal");
                 }
+
                 if (item.damage > 3 && item.CountsAsClass(DamageClass.Magic) && item.maxStack == 1)
                 {
-                    return Mod.Find<ModPrefix>("Arcana").Type;
+                    return Mod.FindPrefixId("Arcana");
                 }
+
                 if (item.damage > 3 && item.CountsAsClass(DamageClass.Summon) && item.maxStack == 1)
                 {
-                    return Mod.Find<ModPrefix>("Demiurgic").Type;
+                    return Mod.FindPrefixId("Demiurgic");
                 }
+
                 if (item.damage > 3 && (item.CountsAsClass(DamageClass.Ranged) || item.CountsAsClass(DamageClass.Throwing)) && item.maxStack == 1)
                 {
-                    return Mod.Find<ModPrefix>("Immortal").Type;
+                    return Mod.FindPrefixId("Immortal");
                 }
+
                 if (item.damage > 3)
                 {
                     if (item.CountsAsClass(DamageClass.Melee))
                     {
                         return 81;
                     }
+
                     if (item.CountsAsClass(DamageClass.Ranged) && !item.consumable && item.useTime <= 3)
                     {
                         return 59;
                     }
+
                     if (item.CountsAsClass(DamageClass.Ranged) && !item.consumable && item.knockBack <= 0)
                     {
                         return 60;
                     }
+
                     if (item.CountsAsClass(DamageClass.Ranged) && !item.consumable && item.knockBack > 0)
                     {
                         return 82;
                     }
+
                     if (item.CountsAsClass(DamageClass.Magic) && item.knockBack <= 0)
                     {
                         return 60;
                     }
+
                     if (item.CountsAsClass(DamageClass.Magic) && item.useTime <= 2)
                     {
                         return 59;
                     }
+
                     if (item.CountsAsClass(DamageClass.Magic) && item.mana <= 4)
                     {
                         return 59;
                     }
+
                     if (item.CountsAsClass(DamageClass.Magic) && item.knockBack > 0)
                     {
                         return 83;
                     }
+
                     if (item.CountsAsClass(DamageClass.Summon))
                     {
                         return 83;
                     }
+
                     if (item.CountsAsClass(DamageClass.Throwing) && !item.consumable && item.useTime <= 3)
                     {
                         return 59;
                     }
+
                     if (item.CountsAsClass(DamageClass.Throwing) && !item.consumable)
                     {
                         return 82;
                     }
                 }
             }
+
             if (item.accessory)
             {
                 if (Menacing)
                 {
                     return 72;
                 }
+
                 if (Lucky)
                 {
                     return 68;
                 }
+
                 if (Violent)
                 {
                     return 80;
                 }
+
                 if (Warding)
                 {
                     return 65;
                 }
             }
+
             return -1;
         }
 
         public override void PreReforge(Item item)
         {
             Player player = Main.player[Main.myPlayer];
-            if (Main.player[Main.myPlayer].HasItem(Mod.Find<ModItem>("PerfectionToken").Type) && item.damage > 3)
+            if (Main.player[Main.myPlayer].HasItem(Mod.FindItem("PerfectionToken").Type) && item.damage > 3)
             {
                 Item[] inventory = Main.player[Main.myPlayer].inventory;
                 for (int k = 0; k < inventory.Length; k++)
                 {
-                    if (inventory[k].type == Mod.Find<ModItem>("PerfectionToken").Type)
+                    if (inventory[k].type == Mod.FindItem("PerfectionToken").Type)
                     {
                         inventory[k].stack--;
                         return;
                     }
                 }
             }
-            if (Main.player[Main.myPlayer].HasItem(Mod.Find<ModItem>("MenacingToken").Type))
+
+            if (Main.player[Main.myPlayer].HasItem(Mod.FindItem("MenacingToken").Type))
             {
                 Item[] inventory = Main.player[Main.myPlayer].inventory;
                 for (int k = 0; k < inventory.Length; k++)
                 {
-                    if (inventory[k].type == Mod.Find<ModItem>("MenacingToken").Type)
+                    if (inventory[k].type == Mod.FindItem("MenacingToken").Type)
                     {
                         inventory[k].stack--;
                         return;
                     }
                 }
             }
-            if (Main.player[Main.myPlayer].HasItem(Mod.Find<ModItem>("LuckyToken").Type))
+
+            if (Main.player[Main.myPlayer].HasItem(Mod.FindItem("LuckyToken").Type))
             {
                 Item[] inventory = Main.player[Main.myPlayer].inventory;
                 for (int k = 0; k < inventory.Length; k++)
                 {
-                    if (inventory[k].type == Mod.Find<ModItem>("LuckyToken").Type)
+                    if (inventory[k].type == Mod.FindItem("LuckyToken").Type)
                     {
                         inventory[k].stack--;
                         return;
                     }
                 }
             }
-            if (Main.player[Main.myPlayer].HasItem(Mod.Find<ModItem>("ViolentToken").Type))
+
+            if (Main.player[Main.myPlayer].HasItem(Mod.FindItem("ViolentToken").Type))
             {
                 Item[] inventory = Main.player[Main.myPlayer].inventory;
                 for (int k = 0; k < inventory.Length; k++)
                 {
-                    if (inventory[k].type == Mod.Find<ModItem>("ViolentToken").Type)
+                    if (inventory[k].type == Mod.FindItem("ViolentToken").Type)
                     {
                         inventory[k].stack--;
                         return;
                     }
                 }
             }
-            if (Main.player[Main.myPlayer].HasItem(Mod.Find<ModItem>("WardingToken").Type))
+
+            if (Main.player[Main.myPlayer].HasItem(Mod.FindItem("WardingToken").Type))
             {
                 Item[] inventory = Main.player[Main.myPlayer].inventory;
                 for (int k = 0; k < inventory.Length; k++)
                 {
-                    if (inventory[k].type == Mod.Find<ModItem>("WardingToken").Type)
+                    if (inventory[k].type == Mod.FindItem("WardingToken").Type)
                     {
                         inventory[k].stack--;
                         return;
                     }
                 }
             }
+
             return;
         }
 
@@ -370,6 +421,7 @@ namespace AlchemistNPCRebornAgain.Items
                         return false;
                     }
                 }
+
                 if (Main.rand.NextFloat() >= .25f)
                 {
                     return false;
@@ -393,6 +445,7 @@ namespace AlchemistNPCRebornAgain.Items
                 if (Main.rand.Next(10) == 0)
                     return false;
             }
+
             return true;
         }
 
@@ -402,6 +455,7 @@ namespace AlchemistNPCRebornAgain.Items
             {
                 return Main.rand.NextFloat() >= .25f;
             }
+
             return true;
         }
 
@@ -411,21 +465,25 @@ namespace AlchemistNPCRebornAgain.Items
             {
                 return 1.1f;
             }
+
             if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).Symbiote == true && item.useTime > 3)
             {
                 if (!Main.hardMode)
                 {
                     return 1.1f;
                 }
+
                 if (Main.hardMode && !NPC.downedMoonlord)
                 {
                     return 1.15f;
                 }
+
                 if (NPC.downedMoonlord)
                 {
                     return 1.2f;
                 }
             }
+
             return base.UseTimeMultiplier(item, player);
         }
 
@@ -434,20 +492,24 @@ namespace AlchemistNPCRebornAgain.Items
             AlchemistNPCRebornPlayer modPlayer = player.GetModPlayer<AlchemistNPCRebornPlayer>();
             if (player.HasBuff(Mod.Find<ModBuff>("DemonSlayer").Type) && item.CountsAsClass(DamageClass.Throwing) && Main.rand.Next(3) == 0)
             {
-                Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),position.X, position.Y - 12, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), position.X, position.Y - 12, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI);
             }
+
             if (modPlayer.Rampage == true && type == 14)
             {
                 type = Mod.Find<ModProjectile>("Chloroshard").Type;
             }
+
             if (modPlayer.Rampage == true && type == 1)
             {
                 type = Mod.Find<ModProjectile>("ChloroshardArrow").Type;
             }
+
             if (modPlayer.DeltaRune && item.CountsAsClass(DamageClass.Melee) && Main.rand.NextBool(20))
             {
-                Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),position.X, position.Y, velocity.X, velocity.Y, Mod.Find<ModProjectile>("RedWave").Type, 1111, 1f, player.whoAmI);
+                Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), position.X, position.Y, velocity.X, velocity.Y, Mod.Find<ModProjectile>("RedWave").Type, 1111, 1f, player.whoAmI);
             }
+
             if (modPlayer.DeltaRune && item.CountsAsClass(DamageClass.Magic) && Main.rand.NextBool(30))
             {
                 float numberProjectiles = 9;
@@ -456,22 +518,24 @@ namespace AlchemistNPCRebornAgain.Items
                 for (int i = 0; i < numberProjectiles; i++)
                 {
                     Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .5f;
-                    Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),vector.X, vector.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("MM").Type, 1337, knockback, player.whoAmI);
+                    Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), vector.X, vector.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("MM").Type, 1337, knockback, player.whoAmI);
                 }
             }
+
             if (modPlayer.Barrage)
             {
                 SoundEngine.PlaySound(SoundID.Item91, player.position);
                 Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(5));
-                int p = Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 5, 1f, player.whoAmI);
+                int p = Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 5, 1f, player.whoAmI);
                 if (item.useTime > 10)
                 {
                     Vector2 perturbedSpeed2 = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(4));
                     Vector2 perturbedSpeed3 = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(4));
-                    Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 4, 1f, player.whoAmI);
-                    Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 4, 1f, player.whoAmI);
+                    Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 4, 1f, player.whoAmI);
+                    Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 4, 1f, player.whoAmI);
                 }
             }
+
             return base.Shoot(item, player, source, position, velocity, type, damage, knockback);
         }
 
@@ -497,11 +561,13 @@ namespace AlchemistNPCRebornAgain.Items
                 }
                 else
                     num5 = num1 / num4;
+
                 float SpeedX = f1 * num5;
                 float SpeedY = f2 * num5;
                 Vector2 perturbedSpeed = new Vector2(SpeedX, SpeedY).RotatedByRandom(MathHelper.ToRadians(5));
-                Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),vector2.X, vector2.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 5, 1f, player.whoAmI);
+                Projectile.NewProjectile(((Entity)player).GetSource_FromThis((string)null), vector2.X, vector2.Y, perturbedSpeed.X, perturbedSpeed.Y, Mod.Find<ModProjectile>("EnergyBall").Type, item.damage / 5, 1f, player.whoAmI);
             }
+
             if (item.type == 1991 || item.type == 3183)
             {
                 for (int v = 0; v < 200; ++v)
@@ -516,47 +582,56 @@ namespace AlchemistNPCRebornAgain.Items
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.AlchemistHorcrux>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Brewer>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.BrewerHorcrux>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Architect>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.ArchitectHorcrux>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Jeweler>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.JewelerHorcrux>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Explorer>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.RealityPiercer>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.OtherworldlyPortal>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.NotesBook>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Operator>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.APMC>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Musician>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.MusicianHorcrux>();
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Tinkerer>())
                             {
                                 Main.npcCatchable[npc.type] = true;
                                 npc.catchItem = (short)ModContent.ItemType<Items.Summoning.TinkererHorcrux>();
                             }
                         }
+
                         if (!AlchemistNPCRebornAgain.modConfiguration.CatchNPC)
                         {
                             if (npc.type == ModContent.NPCType<NPCs.Alchemist>())
@@ -564,41 +639,49 @@ namespace AlchemistNPCRebornAgain.Items
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Brewer>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Architect>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Jeweler>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Explorer>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.OtherworldlyPortal>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Operator>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Musician>())
                             {
                                 Main.npcCatchable[npc.type] = false;
                                 npc.catchItem = -1;
                             }
+
                             if (npc.type == ModContent.NPCType<NPCs.Tinkerer>())
                             {
                                 Main.npcCatchable[npc.type] = false;
@@ -608,6 +691,7 @@ namespace AlchemistNPCRebornAgain.Items
                     }
                 }
             }
+
             if (modPlayer.KeepBuffs == 1 && (item.buffTime > 0))
             {
                 if (modPlayer.AlchemistCharmTier4)
@@ -628,6 +712,7 @@ namespace AlchemistNPCRebornAgain.Items
                 }
                 else player.AddBuff(item.buffType, item.buffTime * 2, true);
             }
+
             if (modPlayer.KeepBuffs == 0 && (item.buffTime > 0))
             {
                 if (modPlayer.AlchemistCharmTier4)
@@ -647,6 +732,7 @@ namespace AlchemistNPCRebornAgain.Items
                     player.AddBuff(item.buffType, item.buffTime + (item.buffTime / 10), true);
                 }
             }
+
             return base.UseItem(item, player);
         }
 
@@ -656,6 +742,7 @@ namespace AlchemistNPCRebornAgain.Items
             {
                 type = Mod.Find<ModProjectile>("Chloroshard").Type;
             }
+
             if (type == 1 && player.GetModPlayer<AlchemistNPCRebornPlayer>().Rampage)
             {
                 type = Mod.Find<ModProjectile>("ChloroshardArrow").Type;
@@ -822,108 +909,126 @@ namespace AlchemistNPCRebornAgain.Items
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.EyeOfCthulhuBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "EyeofCthulhu", EyeofCthulhu);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.EaterOfWorldsBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "EaterOfWorlds", EaterOfWorlds);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.BrainOfCthulhuBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "BrainOfCthulhu", BrainOfCthulhu);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.QueenBeeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "QueenBeeBossBag", QueenBee);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.SkeletronBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Skeletron", Skeletron);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.DeerclopsBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Deerclops", Deerclops);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.WallOfFleshBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "WallOfFleshBoss", WallOfFlesh);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.QueenSlimeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "QueenSlime", QueenSlime);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.DestroyerBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Destroyer", Destroyer);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.TwinsBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Twins", Twins);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.SkeletronPrimeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "SkeletronPrime", SkeletronPrime);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.PlanteraBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Plantera", Plantera);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.FairyQueenBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Empress of Light", EmpressOfLight);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.GolemBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Golem", Golem);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.BossBagBetsy)
             {
                 TooltipLine line = new TooltipLine(Mod, "Betsy", Betsy);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.FishronBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "DukeFishron", DukeFishron);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             if (item.type == ItemID.MoonLordBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "MoonLord", MoonLord);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             if (Calamity != null)
             {
@@ -933,24 +1038,28 @@ namespace AlchemistNPCRebornAgain.Items
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("CrabulonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Crabulon", Crabulon);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("HiveMindBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "HiveMind", HiveMind);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("PerforatorBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Perforator", Perforator);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("SlimeGodBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "SlimeGod", SlimeGod);
@@ -958,120 +1067,140 @@ namespace AlchemistNPCRebornAgain.Items
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("CryogenBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Cryogen", Cryogen);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("BrimstoneWaifuBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "BrimstoneElemental", BrimstoneElemental);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("AquaticScourgeBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AquaticScourge", AquaticScourge);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("CalamitasBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Calamitas", Calamitas);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("AstrageldonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrageldonSlime", AstrageldonSlime);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("AstrumDeusBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrumDeus", AstrumDeus);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("LeviathanBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Leviathan", Leviathan);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("PlaguebringerGoliathBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "PlaguebringerGoliath", PlaguebringerGoliath);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("RavagerBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ravager", Ravager);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("ProvidenceBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Providence", Providence);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("StormWeaverBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "StormWeaver", StormWeaver);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("CeaselessVoidBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "CeaselessVoid", CeaselessVoid);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("SignusBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Signus", Signus);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("PolterghastBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Polterghast", Polterghast);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("OldDukeBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "OldDuke", OldDuke);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("DevourerofGodsBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "DevourerofGods", DevourerofGods);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("BumblebirbBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Bumblebirb", Bumblebirb);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("YharonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Yharon", Yharon);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("DraedonTreasureBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "ExoMechs", ExoMechs);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+
                 if (Calamity.TryFind<ModItem>("SCalBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "SupremeCalamitas", SupremeCalamitas);
@@ -1639,60 +1768,65 @@ namespace AlchemistNPCRebornAgain.Items
                     tooltips.Insert(1, line);
                 }
             }
-			*/
+            */
         }
 
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {
             if (!ItemID.Sets.BossBag[item.type]) return;
-                
-            
+
+
             if (Main.rand.NextBool(150))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("TimeTwistBraclet").Type));
-            
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("TimeTwistBraclet").Type));
+
             if (Main.hardMode && Main.rand.NextBool(150))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("SuspiciousLookingScythe").Type));
-                
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("SuspiciousLookingScythe").Type));
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(150))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("HeartofYuiS").Type));
-                
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("HeartofYuiS").Type));
+
             if (Main.hardMode && Main.rand.NextBool(150))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("StatsChecker").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("StatsChecker").Type));
 
             if (NPC.downedPlantBoss && Main.rand.NextBool(200))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BanHammer").Type));
-                
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BanHammer").Type));
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(150))
             {
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PinkGuyHead").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PinkGuyBody").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PinkGuyLegs").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("PinkGuyHead").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("PinkGuyBody").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("PinkGuyLegs").Type));
             }
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(150))
             {
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BlackCatHead").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BlackCatBody").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BlackCatLegs").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BlackCatHead").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BlackCatBody").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BlackCatLegs").Type));
             }
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(150))
             {
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("Skyline222Hair").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("Skyline222Body").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("Skyline222Legs").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("Skyline222Hair").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("Skyline222Body").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("Skyline222Legs").Type));
             }
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(150))
             {
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("somebody0214Hood").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("somebody0214Robe").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("somebody0214Hood").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("somebody0214Robe").Type));
             }
+
             if (NPC.downedPlantBoss && Main.rand.NextBool(250))
             {
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BloodMoonCirclet").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BloodMoonDress").Type));
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("BloodMoonStockings").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BloodMoonCirclet").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BloodMoonDress").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("BloodMoonStockings").Type));
             }
+
             if (NPC.downedMoonlord && Main.rand.NextBool(300))
-                itemLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("StrangeTopHat").Type));
+                itemLoot.Add(ItemDropRule.Common(Mod.FindItem("StrangeTopHat").Type));
         }
 
         public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
@@ -1713,11 +1847,13 @@ namespace AlchemistNPCRebornAgain.Items
                 speed += 0.1f;
                 acceleration += 0.1f;
             }
+
             if (player.HasBuff(Mod.Find<ModBuff>("Exhausted").Type))
             {
                 speed *= 0.8f;
                 acceleration *= 0.8f;
             }
+
             if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).chargetime >= 390)
             {
                 speed *= 0.75f;
@@ -1732,18 +1868,12 @@ namespace AlchemistNPCRebornAgain.Items
 
         protected override bool CloneNewInstances
         {
-            get
-            {
-                return true;
-            }
+            get { return true; }
         }
 
         public override bool InstancePerEntity
         {
-            get
-            {
-                return true;
-            }
+            get { return true; }
         }
     }
 }

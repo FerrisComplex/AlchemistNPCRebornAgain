@@ -20,5 +20,11 @@
     <Reference Include="ThoriumMod">
       <HintPath>..\libs\ThoriumMod.dll</HintPath>
     </Reference>
+    <Reference Include="SpiritMod">
+      <HintPath>..\libs\SpiritMod.dll</HintPath>
+    </Reference>
+    <Reference Include="Redemption">
+      <HintPath>..\libs\Redemption.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

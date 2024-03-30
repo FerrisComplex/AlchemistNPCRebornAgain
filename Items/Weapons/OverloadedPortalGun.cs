@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 
 namespace AlchemistNPCRebornAgain.Items.Weapons
 {
@@ -28,7 +29,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			Item.autoReuse = true;
 			Item.shoot = Mod.Find<ModProjectile>("PortalGunProj").Type;
 			Item.shootSpeed = 16f;
-			Item.useAmmo = Mod.Find<ModItem>("EnergyCapsule").Type;
+			Item.useAmmo = Mod.FindItem("EnergyCapsule").Type;
 		}
 		
 		public override void AddRecipes()

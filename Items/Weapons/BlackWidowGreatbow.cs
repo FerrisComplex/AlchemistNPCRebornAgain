@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -71,7 +72,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
         {
             Recipe recipe = CreateRecipe(1);
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient(Mod.Find<ModItem>("FangBallista").Type);
+            recipe.AddIngredient(Mod.FindItem("FangBallista").Type);
 			recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

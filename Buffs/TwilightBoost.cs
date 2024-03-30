@@ -37,6 +37,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
@@ -54,7 +55,7 @@ namespace AlchemistNPCRebornAgain.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-            if (player.HeldItem.type != Mod.Find<ModItem>("Twilight").Type)
+            if (player.HeldItem.type != Mod.FindItem("Twilight").Type)
             {
                 player.DelBuff(buffIndex);
                 buffIndex--;

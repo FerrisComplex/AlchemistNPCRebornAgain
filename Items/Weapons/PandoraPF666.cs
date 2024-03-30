@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -46,7 +47,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			vel1 *= 0f;
 			Projectile.NewProjectile(((Entity) player).GetSource_FromThis((string) null),player.position.X, player.position.Y, vel1.X, vel1.Y, Mod.Find<ModProjectile>("PF666").Type, Item.damage, 0, Main.myPlayer);
 			(player.GetModPlayer<AlchemistNPCRebornPlayer>()).DisasterGauge = 0;
-			Item.SetDefaults(Mod.Find<ModItem>("Pandora").Type);
+			Item.SetDefaults(Mod.FindItem("Pandora").Type);
 			}
 			if (player.altFunctionUse == 2)
 			{
@@ -68,7 +69,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 			}
 			if (player.altFunctionUse == 2)
 			{
-				Item.SetDefaults(Mod.Find<ModItem>("PandoraPF594").Type);
+				Item.SetDefaults(Mod.FindItem("PandoraPF594").Type);
 				return true;
 			}
 			return false;

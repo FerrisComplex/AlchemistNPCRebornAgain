@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -36,7 +37,7 @@ namespace AlchemistNPCRebornAgain.Items.Armor
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return body.type == Mod.Find<ModItem>("ReverberationBody").Type && legs.type == Mod.Find<ModItem>("ReverberationLegs").Type;
+            return body.type == Mod.FindItem("ReverberationBody").Type && legs.type == Mod.FindItem("ReverberationLegs").Type;
         }
 
         public override void UpdateArmorSet(Player player)

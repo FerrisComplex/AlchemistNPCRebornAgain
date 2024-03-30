@@ -12,16 +12,18 @@ using Terraria.Audio;
 using System;
 using Terraria.ID;
 using System.Linq;
+using AlchemistNPCRebornAgain.ExternalHelpers;
 using AlchemistNPCRebornAgain.NPCs;
 using ReLogic.Content;
 
 namespace AlchemistNPCRebornAgain.Interface
 {
-    class ShopChangeUIO : UIState
+      class ShopChangeUIO : UIState
     {
         public UIPanel OperatorShopsPanel;
         public static bool visible = false;
         public static uint timeStart;
+        public static string Shop = Operator.MaterialShop;
 
         public override void OnInitialize()
         {
@@ -30,119 +32,105 @@ namespace AlchemistNPCRebornAgain.Interface
             OperatorShopsPanel.Left.Set(575f, 0f);
             OperatorShopsPanel.Top.Set(275f, 0f);
             OperatorShopsPanel.Width.Set(300f, 0f);
-            OperatorShopsPanel.Height.Set(250f, 0f);
+            OperatorShopsPanel.Height.Set(190f, 0f);
             OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
-            OperatorShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
-            OperatorShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
+            OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
+            OperatorShopsPanel.OnLeftMouseUp += new MouseEvent(DragEnd);
 
-            UIText text = new UIText("Vanilla Materials/Boss Drops");
+            UIText text = new("Vanilla Materials/Boss Drops");
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(90, 0f);
             text.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text);
 
-            UIText text1 = new UIText("Modded Materials/Boss Drops");
+            UIText text1 = new("Modded Materials/Boss Drops");
             text1.Left.Set(35, 0f);
             text1.Top.Set(40, 0f);
             text1.Width.Set(90, 0f);
             text1.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text1);
 
-            UIText text2 = new UIText("EGO Shop");
+            UIText text2 = new("Vanilla Treasure Bags");
             text2.Left.Set(35, 0f);
             text2.Top.Set(70, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text2);
 
-            UIText text3 = new UIText("Vanilla Treasure Bags");
+            UIText text3 = new("Modded Treasure Bags #1");
             text3.Left.Set(35, 0f);
             text3.Top.Set(100, 0f);
-            text3.Width.Set(70, 0f);
+            text3.Width.Set(120, 0f);
             text3.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text3);
 
-            UIText text4 = new UIText("Modded Treasure Bags #1");
+            UIText text4 = new("Modded Treasure Bags #2");
             text4.Left.Set(35, 0f);
             text4.Top.Set(130, 0f);
             text4.Width.Set(120, 0f);
             text4.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text4);
 
-            UIText text5 = new UIText("Modded Treasure Bags #2");
+            UIText text5 = new("Modded Treasure Bags #3");
             text5.Left.Set(35, 0f);
             text5.Top.Set(160, 0f);
             text5.Width.Set(120, 0f);
             text5.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text5);
 
-            UIText text6 = new UIText("Modded Treasure Bags #3");
-            text6.Left.Set(35, 0f);
-            text6.Top.Set(190, 0f);
-            text6.Width.Set(120, 0f);
-            text6.Height.Set(22, 0f);
-            OperatorShopsPanel.Append(text6);
-
             Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
-            UIImageButton playButton = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
             playButton.Width.Set(22, 0f);
             playButton.Height.Set(22, 0f);
-            playButton.OnLeftClick += new MouseEvent(PlayButtonClicked1);
+            playButton.OnLeftClick += new(PlayButtonClicked1);
             OperatorShopsPanel.Append(playButton);
-            UIImageButton playButton1 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton1 = new(buttonPlayTexture);
             playButton1.Left.Set(10, 0f);
             playButton1.Top.Set(40, 0f);
             playButton1.Width.Set(22, 0f);
             playButton1.Height.Set(22, 0f);
-            playButton1.OnLeftClick += new MouseEvent(PlayButtonClicked11);
+            playButton1.OnLeftClick += new(PlayButtonClicked2);
             OperatorShopsPanel.Append(playButton1);
-            UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton2 = new(buttonPlayTexture);
             playButton2.Left.Set(10, 0f);
             playButton2.Top.Set(70, 0f);
             playButton2.Width.Set(22, 0f);
             playButton2.Height.Set(22, 0f);
-            playButton2.OnLeftClick += new MouseEvent(PlayButtonClicked9);
+            playButton2.OnLeftClick += new(PlayButtonClicked3);
             OperatorShopsPanel.Append(playButton2);
-            UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton3 = new(buttonPlayTexture);
             playButton3.Left.Set(10, 0f);
             playButton3.Top.Set(100, 0f);
             playButton3.Width.Set(22, 0f);
             playButton3.Height.Set(22, 0f);
-            playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked2);
+            playButton3.OnLeftClick += new(PlayButtonClicked4);
             OperatorShopsPanel.Append(playButton3);
-            UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton4 = new(buttonPlayTexture);
             playButton4.Left.Set(10, 0f);
             playButton4.Top.Set(130, 0f);
             playButton4.Width.Set(22, 0f);
             playButton4.Height.Set(22, 0f);
-            playButton4.OnLeftClick += new MouseEvent(PlayButtonClicked3);
+            playButton4.OnLeftClick += new(PlayButtonClicked5);
             OperatorShopsPanel.Append(playButton4);
-            UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
+            UIImageButton playButton5 = new(buttonPlayTexture);
             playButton5.Left.Set(10, 0f);
             playButton5.Top.Set(160, 0f);
             playButton5.Width.Set(22, 0f);
             playButton5.Height.Set(22, 0f);
-            playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked4);
+            playButton5.OnLeftClick += new(PlayButtonClicked6);
             OperatorShopsPanel.Append(playButton5);
-            UIImageButton playButton6 = new UIImageButton(buttonPlayTexture);
-            playButton6.Left.Set(10, 0f);
-            playButton6.Top.Set(190, 0f);
-            playButton6.Width.Set(22, 0f);
-            playButton6.Height.Set(22, 0f);
-            playButton6.OnLeftClick += new MouseEvent(PlayButtonClicked5);
-            OperatorShopsPanel.Append(playButton6);
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
-            UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
+            UIImageButton closeButton = new(buttonDeleteTexture);
             closeButton.Left.Set(270, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
-            closeButton.OnLeftClick += new MouseEvent(CloseButtonClicked);
+            closeButton.OnLeftClick += new(CloseButtonClicked);
             OperatorShopsPanel.Append(closeButton);
             base.Append(OperatorShopsPanel);
         }
@@ -153,57 +141,11 @@ namespace AlchemistNPCRebornAgain.Interface
             {
                 Operator.Shop1 = true;
                 Operator.Shop2 = false;
-                Operator.egoShop = false;
                 Operator.Shop3 = false;
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-            }
-        }
-
-        private void PlayButtonClicked11(UIMouseEvent evt, UIElement listeningElement)
-        {
-            if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
-            {
-                Operator.Shop1 = false;
-                Operator.Shop2 = true;
-                Operator.egoShop = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-            }
-        }
-
-        private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
-        {
-            if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
-            {
-                Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.egoShop = true;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Operator.MaterialShop, ref visible);
             }
         }
 
@@ -212,18 +154,12 @@ namespace AlchemistNPCRebornAgain.Interface
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
             {
                 Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.egoShop = false;
-                Operator.Shop3 = true;
+                Operator.Shop2 = true;
+                Operator.Shop3 = false;
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Operator.ModMaterialShop, ref visible);
             }
         }
 
@@ -233,17 +169,11 @@ namespace AlchemistNPCRebornAgain.Interface
             {
                 Operator.Shop1 = false;
                 Operator.Shop2 = false;
-                Operator.egoShop = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = true;
+                Operator.Shop3 = true;
+                Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Operator.VanillaBagsShop, ref visible);
             }
         }
 
@@ -253,17 +183,11 @@ namespace AlchemistNPCRebornAgain.Interface
             {
                 Operator.Shop1 = false;
                 Operator.Shop2 = false;
-                Operator.egoShop = false;
                 Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = true;
+                Operator.Shop4 = true;
+                Operator.Shop5 = false;
                 Operator.Shop6 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Operator.Bags1Shop, ref visible);
             }
         }
 
@@ -273,17 +197,25 @@ namespace AlchemistNPCRebornAgain.Interface
             {
                 Operator.Shop1 = false;
                 Operator.Shop2 = false;
-                Operator.egoShop = false;
+                Operator.Shop3 = false;
+                Operator.Shop4 = false;
+                Operator.Shop5 = true;
+                Operator.Shop6 = false;
+                AlchemistHelper.OpenShop(ref Shop, Operator.Bags2Shop, ref visible);
+            }
+        }
+
+        private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCRebornAgain.modConfiguration.ShopChangeDelay)
+            {
+                Operator.Shop1 = false;
+                Operator.Shop2 = false;
                 Operator.Shop3 = false;
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = true;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIO.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Operator.Bags3Shop, ref visible);
             }
         }
 

@@ -41,10 +41,12 @@ namespace AlchemistNPCRebornAgain.Extensions
         class ModCacheContents
         {
             public Dictionary<string, int> ModItemIdList = new Dictionary<string, int>();
+            public Dictionary<string, int> ModPrefixIdList = new Dictionary<string, int>();
             public Dictionary<string, int> ModBuffIdList = new Dictionary<string, int>();
             public Dictionary<string, int> ModNPCIdList = new Dictionary<string, int>();
 
             public Dictionary<string, ModItem> ModItemList = new Dictionary<string, ModItem>();
+            public Dictionary<string, ModPrefix> ModPrefixList = new Dictionary<string, ModPrefix>();
             public Dictionary<string, ModBuff> ModBuffList = new Dictionary<string, ModBuff>();
             public Dictionary<string, ModNPC> ModNPCList = new Dictionary<string, ModNPC>();
         }
@@ -55,6 +57,68 @@ namespace AlchemistNPCRebornAgain.Extensions
             return (ModLoader.TryGetMod(modName, out output));
         }
 
+        private static List<string> InvalidItemIds = new List<string>();
+        private static List<string> InvalidPrefixIds = new List<string>();
+
+        public static ModItem FindItem(this Mod mod, string name)
+        {
+            try
+            {
+                if (GetOrCreateModItem(mod, name, out var result))
+                    return result;
+                return AlchemistNPCRebornAgain.InvalidItemInstance;
+            }
+            catch (KeyNotFoundException)
+            {
+                if (!InvalidItemIds.Contains(name))
+                {
+                    InvalidItemIds.Add(name);
+                    Console.WriteLine("[AlchemistNPCReborn] Failed to find an item named \"" + name + "\" from mod \"" + mod.Name + "\"");
+                }
+
+                return AlchemistNPCRebornAgain.InvalidItemInstance;
+            }
+        }
+        
+        public static ModPrefix FindPrefix(this Mod mod, string name)
+        {
+            try
+            {
+                if (GetOrCreateModPrefix(mod, name, out var result))
+                    return result;
+                return AlchemistNPCRebornAgain.InvalidPrefixInstance;
+            }
+            catch (KeyNotFoundException)
+            {
+                if (!InvalidItemIds.Contains(name))
+                {
+                    InvalidItemIds.Add(name);
+                    Console.WriteLine("[AlchemistNPCReborn] Failed to find an prefix named \"" + name + "\" from mod \"" + mod.Name + "\"");
+                }
+
+                return AlchemistNPCRebornAgain.InvalidPrefixInstance;
+            }
+        }
+        
+        public static int FindPrefixId(this Mod mod, string name, int invalidId = -1)
+        {
+            try
+            {
+                if (GetOrCreateModPrefix(mod, name, out var result))
+                    return result.Type;
+                return invalidId;
+            }
+            catch (KeyNotFoundException)
+            {
+                if (!InvalidItemIds.Contains(name))
+                {
+                    InvalidItemIds.Add(name);
+                    Console.WriteLine("[AlchemistNPCReborn] Failed to find an prefix named \"" + name + "\" from mod \"" + mod.Name + "\"");
+                }
+
+                return invalidId;
+            }
+        }
 
         private static ModCacheContents getOrCreateModCache(Mod sourceMod)
         {
@@ -105,6 +169,18 @@ namespace AlchemistNPCRebornAgain.Extensions
                 return false;
             cache.ModItemList.Add(key, itemOutput);
             cache.ModItemIdList.Add(key, itemOutput.Type);
+            return true;
+        }
+        
+        public static bool GetOrCreateModPrefix(Mod sourceMod, string key, out ModPrefix output)
+        {
+            var cache = getOrCreateModCache(sourceMod);
+            if (cache.ModPrefixList.TryGetValue(key, out output))
+                return true;
+            if (!sourceMod.TryFind<ModPrefix>(key, out output) || output == null)
+                return false;
+            cache.ModPrefixList.Add(key, output);
+            cache.ModPrefixIdList.Add(key, output.Type);
             return true;
         }
 

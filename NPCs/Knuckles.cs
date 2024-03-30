@@ -35,6 +35,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 using AlchemistNPCRebornAgain.NPCs;
  
 namespace AlchemistNPCRebornAgain.NPCs
@@ -400,10 +401,10 @@ namespace AlchemistNPCRebornAgain.NPCs
 			}
 			else
 			{
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("EdgeOfChaos").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("LastTantrum").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("BreathOfTheVoid").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("ChaosBomb").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("EdgeOfChaos").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("LastTantrum").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("BreathOfTheVoid").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("ChaosBomb").Type);
 				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Items.Weapons.UgandanTotem>());
 				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.PlatinumCoin, 20);
 			}
@@ -420,10 +421,10 @@ namespace AlchemistNPCRebornAgain.NPCs
 			}
 			else
 			{
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("EdgeOfChaos").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("LastTantrum").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("BreathOfTheVoid").Type);
-				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.Find<ModItem>("ChaosBomb").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("EdgeOfChaos").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("LastTantrum").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("BreathOfTheVoid").Type);
+				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, Mod.FindItem("ChaosBomb").Type);
 				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Items.Weapons.UgandanTotem>());
 				Item.NewItem(source,(int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.PlatinumCoin, 20);
 			}

@@ -32,6 +32,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.WorldBuilding;
 
 namespace AlchemistNPCRebornAgain.Items.Weapons
@@ -90,7 +91,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
         public override void RightClick(Player player)
         {
 			Item.consumable = true;
-            Item.NewItem(((Entity) player).GetSource_FromThis((string) null),(int)player.position.X, (int)player.position.Y, player.width, player.height, Mod.Find<ModItem>("Stormbreaker").Type, 1, false, 81);
+            Item.NewItem(((Entity) player).GetSource_FromThis((string) null),(int)player.position.X, (int)player.position.Y, player.width, player.height, Mod.FindItem("Stormbreaker").Type, 1, false, 81);
         }
 		
 		public override int ChoosePrefix (UnifiedRandom rand)

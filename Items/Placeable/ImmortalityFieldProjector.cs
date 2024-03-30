@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -34,9 +35,9 @@ namespace AlchemistNPCRebornAgain.Items.Placeable
             recipe.AddIngredient(ItemID.MechanicalBatteryPiece);
             recipe.AddIngredient(ItemID.LunarBar, 16);
 			recipe.AddIngredient(ItemID.Wire, 200);
-			recipe.AddIngredient(Mod.Find<ModItem>("ChromaticCrystal").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("SunkroveraCrystal").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("NyctosythiaCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("ChromaticCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("SunkroveraCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("NyctosythiaCrystal").Type, 5);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
         }

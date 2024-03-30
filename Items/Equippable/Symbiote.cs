@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria;
 using Terraria.UI;
 using Terraria.ID;
@@ -33,7 +34,7 @@ namespace AlchemistNPCRebornAgain.Items.Equippable
 
         public override int ChoosePrefix(UnifiedRandom rand)
         {
-            return Mod.Find<ModPrefix>("Xenomorphic").Type;
+            return Mod.FindPrefixId("Xenomorphic");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

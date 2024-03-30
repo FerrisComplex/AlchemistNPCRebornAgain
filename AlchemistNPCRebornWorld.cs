@@ -114,7 +114,6 @@ namespace AlchemistNPCRebornAgain
         private UserInterface alchemistUserInterfaceM;
         internal ShopChangeUIM alchemistUIM;
 		private UserInterface alchemistUserInterfaceT;
-        internal ShopChangeUIT alchemistUIT;
         private UserInterface alchemistUserInterfaceH;
         internal HealingUI alchemistUIH;
         private UserInterface alchemistUserInterfaceDC;
@@ -225,12 +224,7 @@ namespace AlchemistNPCRebornAgain
                 alchemistUIM.Activate();
                 alchemistUserInterfaceM = new UserInterface();
                 alchemistUserInterfaceM.SetState(alchemistUIM);
-
-				alchemistUIT = new ShopChangeUIT();
-                alchemistUIT.Activate();
-                alchemistUserInterfaceT = new UserInterface();
-                alchemistUserInterfaceT.SetState(alchemistUIT);
-
+                
                 alchemistUIH = new HealingUI();
                 alchemistUIH.Activate();
                 alchemistUserInterfaceH = new UserInterface();
@@ -692,22 +686,6 @@ namespace AlchemistNPCRebornAgain
                     InterfaceScaleType.UI)
                 );
             }
-			int MouseTextIndexT = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-            if (MouseTextIndexT != -1)
-            {
-                layers.Insert(MouseTextIndexT, new LegacyGameInterfaceLayer(
-                    "AlchemistNPCRebornAgain: Shop Selector T",
-                    delegate
-                    {
-                        if (ShopChangeUIT.visible)
-                        {
-                            alchemistUIT.Draw(Main.spriteBatch);
-                        }
-                        return true;
-                    },
-                    InterfaceScaleType.UI)
-                );
-            }
             int MouseTextIndexM = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
             if (MouseTextIndexM != -1)
             {
@@ -724,6 +702,7 @@ namespace AlchemistNPCRebornAgain
                     InterfaceScaleType.UI)
                 );
             }
+            
             int MouseTextIndexH = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
             if (MouseTextIndexH != -1)
             {
@@ -757,40 +736,39 @@ namespace AlchemistNPCRebornAgain
             //        InterfaceScaleType.UI)
             //    );
             //}
-            int LocatorArrowIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			int LocatorArrowIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
             if (LocatorArrowIndex != -1)
             {
-               layers.Insert(LocatorArrowIndex, new LegacyGameInterfaceLayer(
-                   "AlchemistNPC: Locator Arrow",
-                   delegate
-                   {
-                       Player player = Main.LocalPlayer;
-                       if (player.accCritterGuide && AlchemistNPCRebornAgain.modConfiguration.LifeformAnalyzer)
-                       {
-                           for (int v = 0; v < 200; ++v)
-                           {
-                               NPC npc = Main.npc[v];
-                               if (npc.active && npc.rarity >= 1 && !AlchemistNPCRebornAgain.modConfiguration.DisabledLocatorNpcs.Contains(new NPCDefinition(npc.type)))
-                               {
-                                   // Adapted from Census mod
-                                   Vector2 playerCenter = Main.LocalPlayer.Center + new Vector2(0, Main.LocalPlayer.gfxOffY);
-                                   var vector = npc.Center - playerCenter;
-                                   var distance = vector.Length();
-                                   if (distance > 40 && distance <= AlchemistNPCRebornAgain.modConfiguration.LocatorRange)
-                                   {
-                                       var offset = Vector2.Normalize(vector) * Math.Min(70, distance - 20);
-                                       float rotation = vector.ToRotation() + (float)(Math.PI / 2);
-                                       var drawPosition = playerCenter - Main.screenPosition + offset;
-                                       float fade = Math.Min(1f, (distance - 20) / 70);
-                                       Main.spriteBatch.Draw(ModContent.Request<Texture2D>("AlchemistNPCRebornAgain/Projectiles/LocatorProjectile").Value, drawPosition,
-                                                               null, Color.White * fade, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
-                                   }
-                               }
-                           }
-                       }
-                       return true;
-                   }, InterfaceScaleType.Game)
-               );
+                layers.Insert(LocatorArrowIndex, new LegacyGameInterfaceLayer(
+                    "AlchemistNPCRebornAgain: Locator Arrow",
+                    delegate
+                    {
+                        Player player = Main.LocalPlayer;
+                        if (player.accCritterGuide && AlchemistNPCRebornAgain.modConfiguration.LifeformAnalyzer)
+                        {
+                            for (int v = 0; v < 200; ++v)
+                            {
+                                NPC npc = Main.npc[v];
+                                if (npc.active && npc.rarity >= 1 && !AlchemistNPCRebornAgain.modConfiguration.DisabledLocatorNpcs.Contains(new NPCDefinition(npc.type)))
+                                {
+                                    // Adapted from Census mod
+                                    Vector2 playerCenter = Main.LocalPlayer.Center + new Vector2(0, Main.LocalPlayer.gfxOffY);
+                                    var vector = npc.Center - playerCenter;
+                                    var distance = vector.Length();
+                                    if (distance > 40 && distance <= AlchemistNPCRebornAgain.modConfiguration.LocatorRange)
+                                    {
+                                        var offset = Vector2.Normalize(vector) * Math.Min(70, distance - 20);
+                                        float rotation = vector.ToRotation() + (float)(Math.PI / 2);
+                                        var drawPosition = playerCenter - Main.screenPosition + offset;
+                                        float fade = Math.Min(1f, (distance - 20) / 70);
+											Main.spriteBatch.Draw(ModContent.Request<Texture2D>("AlchemistNPCRebornAgain/Projectiles/LocatorProjectile").Value, drawPosition, null, Color.White * fade, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
+                                    }
+                                }
+                            }
+                        }
+                        return true;
+                    }, InterfaceScaleType.Game)
+                );
             }
         }
         public override void UpdateUI(GameTime gameTime)
@@ -808,11 +786,6 @@ namespace AlchemistNPCRebornAgain
             if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
             {
                 alchemistUserInterfaceO.Update(gameTime);
-            }
-
-			if (alchemistUserInterfaceT != null && ShopChangeUIT.visible)
-            {
-                alchemistUserInterfaceT.Update(gameTime);
             }
 
             if (alchemistUserInterfaceM != null && ShopChangeUIM.visible)

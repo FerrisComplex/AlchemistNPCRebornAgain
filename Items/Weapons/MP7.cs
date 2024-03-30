@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -41,7 +42,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 		
 		public override int ChoosePrefix (UnifiedRandom rand)
 		{
-			return Mod.Find<ModPrefix>("Shining").Type;
+			return Mod.FindPrefixId("Shining");
 		}
 
 		public override bool CanConsumeAmmo(Item ammo, Player player)

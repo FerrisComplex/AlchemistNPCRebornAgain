@@ -196,93 +196,82 @@ namespace AlchemistNPCRebornAgain.NPCs
 			}
 		}
 
-        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
+         public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
-            for (int k = 0; k < 255; k++)
+            Player player = Main.LocalPlayer;
+            if (player.active && player == Main.player[Main.myPlayer])
             {
-                Player player = Main.player[k];
-                if (player.active && player == Main.player[Main.myPlayer])
+                if (npc.type == ModContent.NPCType<Tinkerer>())
                 {
-                    if (npc.type == ModContent.NPCType<Tinkerer>())
-                    {
-                        for (int nextSlot = 0; nextSlot < items.Length; ++nextSlot)
-                        {
-                            items[nextSlot].shopCustomPrice *= 2;
-                        }
+                    foreach (Item item in items) 
+					{
+						if (item == null || item.type == ItemID.None) continue;
+                        item.shopCustomPrice *= 2;
                     }
-                    if (npc.type == ModContent.NPCType<Brewer>() || npc.type == ModContent.NPCType<Alchemist>() || npc.type == ModContent.NPCType<YoungBrewer>())
+                }
+                if (npc.type == ModContent.NPCType<Brewer>() ||
+                    npc.type == ModContent.NPCType<Alchemist>() ||
+                    npc.type == ModContent.NPCType<YoungBrewer>())
+                {
+                    foreach (Item item in items)
                     {
-                        for (int nextSlot = 0; nextSlot < items.Length; ++nextSlot)
+						if (item == null || item.type == ItemID.None) continue;
+                        item.shopCustomPrice *= AlchemistNPCRebornAgain.modConfiguration.PotsPriceMulti;
+                        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                         {
-                            items[nextSlot].shopCustomPrice *= AlchemistNPCRebornAgain.modConfiguration.PotsPriceMulti;
-							if (CalamityHelper.isCalamityMod())
+                            if (AlchemistNPCRebornAgain.modConfiguration.RevPrices && CalamityModRevengeance)
                             {
-                                if (AlchemistNPCRebornAgain.modConfiguration.RevPrices && CalamityModRevengeance)
-                                    items[nextSlot].shopCustomPrice += items[nextSlot].shopCustomPrice;
-                                
+                                item.shopCustomPrice += item.shopCustomPrice;
                             }
-                            if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier4)
-                            {
-                                items[nextSlot].shopCustomPrice -= items[nextSlot].shopCustomPrice / 2;
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier3)
-                            {
-                                items[nextSlot].shopCustomPrice -= ((items[nextSlot].shopCustomPrice / 20) * 7);
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier2)
-                            {
-                                items[nextSlot].shopCustomPrice -= items[nextSlot].shopCustomPrice / 4;
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier1)
-                            {
-                                items[nextSlot].shopCustomPrice -= items[nextSlot].shopCustomPrice / 10;
-                            }
+                        }
+                        if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier4)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 2;
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier3)
+                        {
+                            item.shopCustomPrice -= ((item.shopCustomPrice / 20) * 7);
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier2)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 4;
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).AlchemistCharmTier1)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 10;
                         }
                     }
                 }
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			
-            if (ExternalModCache.findMod("Tremor", out var tremorMod) && tremorMod != null && ExternalModCache.GetOrCreateModNPCId(tremorMod, "Lady Moon", out var ladyMoonNpc) && ladyMoonNpc > 0 && npc.type == ladyMoonNpc)
+            /*
+            if (ModLoader.GetMod("Tremor") != null)
             {
-                addModItemToShopInNextSpace(tremorMod, "DarkMass", 7500, ref items);
-                addModItemToShopInNextSpace(tremorMod, "CarbonSteel", 10000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "Doomstone", 25000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "NightmareBar", 25000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "VoidBar", 50000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "AngryShard", 50000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "Phantaplasm", 50000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "ClusterShard", 50000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "DragonCapsule", 50000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "HuskofDusk", 100000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "NightCore", 100000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "GoldenClaw", 100000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "StoneDice", 100000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "ConcentratedEther", 100000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "Squorb", 250000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "ToothofAbraxas", 250000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "CosmicFuel", 1000000, ref items);
-                addModItemToShopInNextSpace(tremorMod, "EyeofOblivion", 3000000, ref items);
+                if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
+                {
+                    addModItemToShop(Tremor, "DarkMass", 7500, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "CarbonSteel", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Doomstone", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "NightmareBar", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "VoidBar", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "AngryShard", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Phantaplasm", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ClusterShard", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "DragonCapsule", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "HuskofDusk", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "NightCore", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "GoldenClaw", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "StoneDice", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ConcentratedEther", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Squorb", 250000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ToothofAbraxas", 250000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "CosmicFuel", 1000000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "EyeofOblivion", 3000000, ref shop, ref nextSlot);
+                }
             }
-			
+			*/
         }
-        
-        private static void addModItemToShopInNextSpace(Mod sourceMod, string id, int cost, ref Item[] items)
-        {
-	        if (ExternalModCache.GetOrCreateModItem(sourceMod, id, out var item) && item != null)
-	        {
-		        for (int i = 0; i < items.Length; i++)
-		        {
-			        if (items[i].type == ItemID.None)
-			        {
-				        items[i].type = (item.Type);
-				        items[i].shopCustomPrice = cost;
-				        return;
-			        }
-		        }
-	        }
-        }
-
+         
         public override void SetDefaults(NPC npc)
         {
 
@@ -461,19 +450,19 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if (npc.life <= npc.lifeMax*0.6f && !i1)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPCRebornAgain.BillCipherChat6"), 10, 255, 10);
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("VoodooDoll").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("VoodooDoll").Type);
 					i1 = true;
 				}
 				if (npc.life <= npc.lifeMax*0.4f && !i2)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPCRebornAgain.BillCipherChat6"), 10, 255, 10);
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("ScreamingHead").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("ScreamingHead").Type);
 					i2 = true;
 				}
 				if (npc.life <= npc.lifeMax*0.2f && !i3)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPCRebornAgain.BillCipherChat6"), 10, 255, 10);
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("CursedMirror").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("CursedMirror").Type);
 					i3 = true;
 				}
 				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermission1 && !stop1)
@@ -626,42 +615,24 @@ namespace AlchemistNPCRebornAgain.NPCs
         }
         
         
-        public override void DrawTownAttackGun(NPC npc, ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)
+        public override void DrawTownAttackGun(NPC npc, ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)/* tModPorter Note: closeness is now horizontalHoldoutOffset, use 'horizontalHoldoutOffset = Main.DrawPlayerItemPos(1f, itemtype) - originalClosenessValue' to adjust to the change. See docs for how to use hook with an item type. */
         {
-            if (npc.type == NPCID.ArmsDealer)
-            {
-                if (NPC.downedMoonlord)
-                {
-	                Main.GetItemDrawFrame(ItemID.Megashark, out Texture2D itemTexture2, out Rectangle itemRectangle2);
-	                item = itemTexture2;
-	                itemFrame = itemRectangle2;
-	                scale = 1;
-	                horizontalHoldoutOffset = 0;
-	                return;
-                }
-            }
-            if (npc.type == ModContent.NPCType<NPCs.Explorer>())
-            {
-	            
-	            Main.GetItemDrawFrame(ModContent.ItemType<Items.Weapons.Nyx>(), out Texture2D itemTexture2, out Rectangle itemRectangle2);
-	            item = itemTexture2;
-	            itemFrame = itemRectangle2;
-	            scale = 1;
-	            horizontalHoldoutOffset = 0;
-	            return;
-            }
-            if (npc.type == NPCID.Steampunker)
-            {
-                if (NPC.downedMoonlord)
-                {
-	                Main.GetItemDrawFrame(ItemID.SDMG, out Texture2D itemTexture2, out Rectangle itemRectangle2);
-	                item = itemTexture2;
-	                itemFrame = itemRectangle2;
-	                scale = 1;
-	                horizontalHoldoutOffset = 0;
-	                return;
-                }
-            }
+	        if (npc.type == NPCID.ArmsDealer)
+	        {
+		        if (NPC.downedMoonlord)
+		        {
+			        item = TextureAssets.Item[ItemID.Megashark].Value;
+		        }
+	        }
+	        if (npc.type == NPCID.Steampunker)
+	        {
+		        if (NPC.downedMoonlord)
+		        {
+			        scale = 1f;
+			        horizontalHoldoutOffset = 4;
+			        item = TextureAssets.Item[ItemID.SDMG].Value;
+		        }
+	        }
         }
 
         public override void BuffTownNPC(ref float damageMult, ref int defense)
@@ -846,7 +817,7 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if (Main.rand.Next(20) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("Hive").Type, 1, false, 83);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("Hive").Type, 1, false, 83);
 				}
 			}
 			if (npc.type == NPCID.Golem)
@@ -854,12 +825,12 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if (Main.rand.Next(10) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("Fuaran").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("Fuaran").Type);
 				}
 			}
 
 			
-			if (player.HeldItem.type == Mod.Find<ModItem>("ChristmasW").Type && Main.rand.NextBool(33))
+			if (player.HeldItem.type == Mod.FindItem("ChristmasW").Type && Main.rand.NextBool(33))
 			{
 				source = npc.GetSource_FromAI();
 				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
@@ -885,11 +856,11 @@ namespace AlchemistNPCRebornAgain.NPCs
 
 			if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 			{
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("SoulEssence").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("SoulEssence").Type);
 			}
 			if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
 			{
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("HateVial").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("HateVial").Type);
 			}
 			if ((player.GetModPlayer<AlchemistNPCRebornPlayer>()).TimeTwist && npc.boss == false && Main.rand.NextBool(4))
 			{
@@ -901,7 +872,7 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if ((npc.type == 239 || npc.type == 240) && Main.rand.NextBool(10))
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("SpiderFangarang").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("SpiderFangarang").Type);
 				}
 			}
 			if (!WorldGen.crimson)
@@ -909,60 +880,60 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(10))
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("SpiderFangarang").Type);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("SpiderFangarang").Type);
 				}
 			}
 			if ((npc.type == 236 || npc.type == 237) && Main.rand.NextBool(20))
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("FangBallista").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("FangBallista").Type);
 			}
 			if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(20))
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("SwordofArachna").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("SwordofArachna").Type);
 			}
 			if (npc.lifeMax >= 25000 && npc.boss && Main.rand.Next(20) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("PerfectionToken").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("PerfectionToken").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(200) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("Devilsknife").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("Devilsknife").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("WailOfBanshee").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("WailOfBanshee").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("ExecutionersEyes").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("ExecutionersEyes").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("SymbolOfPain").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("SymbolOfPain").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("MeteorSwarm").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("MeteorSwarm").Type);
 			}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("CloakOfFear").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("CloakOfFear").Type);
 			}
 			if (npc.type == NPCID.WallofFlesh)
 			{
 				source = npc.GetSource_FromAI();
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("LuckCharm").Type);
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("PHD").Type);
-				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("BrokenDimensionalCasket").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("LuckCharm").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("PHD").Type);
+				Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("BrokenDimensionalCasket").Type);
 				if (NPC.downedDeerclops)
                 {
                     Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<References.CodexUmbra>());
@@ -973,32 +944,32 @@ namespace AlchemistNPCRebornAgain.NPCs
 				if (Main.rand.Next(25000) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("HolyAvenger").Type, 1, false, 81);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("HolyAvenger").Type, 1, false, 81);
 				}
 				if (Main.rand.Next(25000) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("Penetrator").Type, 1, false, 82);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("Penetrator").Type, 1, false, 82);
 				}
 				if (Main.rand.Next(25000) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("TomeOfOrder").Type, 1, false, 83);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("TomeOfOrder").Type, 1, false, 83);
 				}
 				if (Main.rand.Next(25000) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("FlaskoftheAlchemist").Type, 1, false, 82);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("FlaskoftheAlchemist").Type, 1, false, 82);
 				}
 				if (Main.rand.Next(25000) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("CounterMatter").Type, 1, false);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("CounterMatter").Type, 1, false);
 				}
 				if (Main.rand.Next(33333) == 0)
 				{
 					source = npc.GetSource_FromAI();
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("CrackedCrown").Type, 1, false);
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("CrackedCrown").Type, 1, false);
 				}
 			}
 			
@@ -1007,18 +978,18 @@ namespace AlchemistNPCRebornAgain.NPCs
 				source = npc.GetSource_FromAI();
 				if (!Main.expertMode)
 				{
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("EmagledFragmentation").Type, Main.rand.Next(20, 30));
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("EmagledFragmentation").Type, Main.rand.Next(20, 30));
 					if (Main.rand.Next(10) == 0)
 					{
-						Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("OtherworldlyAmulet").Type);
+						Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("OtherworldlyAmulet").Type);
 					}
 				}
 				else
 				{
-					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("EmagledFragmentation").Type, Main.rand.Next(40, 50));
+					Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("EmagledFragmentation").Type, Main.rand.Next(40, 50));
 					if (Main.rand.Next(5) == 0)
 					{
-						Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("OtherworldlyAmulet").Type);
+						Item.NewItem(source, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("OtherworldlyAmulet").Type);
 					}
 				}
 			}
@@ -1055,11 +1026,11 @@ namespace AlchemistNPCRebornAgain.NPCs
 			{
 				if (NPC.downedMoonlord && Main.bloodMoon)
 				{
-					Item.NewItem(source,(int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("TheSecretVR").Type, 1);
+					Item.NewItem(source,(int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("TheSecretVR").Type, 1);
 				}
 				if (AlchemistNPCRebornAgain.modConfiguration.TinkererSpawn)
 				{
-					Item.NewItem(source,(int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.Find<ModItem>("PaperTube3").Type, 3);
+					Item.NewItem(source,(int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, Mod.FindItem("PaperTube3").Type, 3);
 				}
 			}
 
@@ -1096,92 +1067,92 @@ namespace AlchemistNPCRebornAgain.NPCs
 			{
 				if (npc.type == NPCID.KingSlime)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type));
 				}
 				if (npc.type == NPCID.EyeofCthulhu)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
 				}
 				if (npc.type == NPCID.BrainofCthulhu)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
 				}
 				if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail))
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
 				}
 				if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead))
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
 				}
 				if (npc.type == NPCID.QueenBee)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
 				}
 				if (npc.type == NPCID.SkeletronHead)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
 				}
 				if (npc.type == NPCID.WallofFlesh)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 2));
 				}
 				if (npc.type == NPCID.SkeletronPrime)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
 				}
 				if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer))
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
 				}
 				if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism))
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
 				}
 				if (npc.type == NPCID.TheDestroyer)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
 				}
 				if (npc.type == NPCID.Plantera)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 1));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 1));
 				}
 				if (npc.type == NPCID.Golem)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
 				}
 				if (npc.type == NPCID.DukeFishron)
 				{
-					npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
+					npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
 				}
 				if (Calamity != null)
 				{
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("DesertScourgeHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Crabulon").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("HiveMind").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("PerforatorHive").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("SlimeGodCore").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Cryogen").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("BrimstoneElemental").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("AquaticScourgeHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("SoulSeeker").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Leviathan").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("AstrumAureus").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
-					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("PlaguebringerGoliath").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("DesertScourgeHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Crabulon").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("HiveMind").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("PerforatorHive").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("SlimeGodCore").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Cryogen").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("BrimstoneElemental").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("AquaticScourgeHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("SoulSeeker").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("Leviathan").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("AstrumAureus").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").Find<ModNPC>("PlaguebringerGoliath").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
 				}
 				
 				if (Thorium != null)
 				{
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("TheGrandThunderBirdv2").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("QueenJelly").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("Viscount").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("GraniteEnergyStorm").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("TheBuriedWarrior").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("ThePrimeScouter").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("BoreanStriderPopped").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 2));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("FallenDeathBeholder2").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 2));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("LichHeadless").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("AbyssionReleased").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("TheGrandThunderBirdv2").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("QueenJelly").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("Viscount").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("GraniteEnergyStorm").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("TheBuriedWarrior").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("ThePrimeScouter").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("BoreanStriderPopped").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 2));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("FallenDeathBeholder2").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 2));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("LichHeadless").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").Find<ModNPC>("AbyssionReleased").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
 				}
 				//if (ModLoader.GetMod("Redemption") != null)
 				//{
@@ -1196,14 +1167,14 @@ namespace AlchemistNPCRebornAgain.NPCs
 				//}
 				if (Spirit != null)
 				{
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Scarabeus").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type));
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("ReachBoss").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 2));
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("AncientFlyer").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("SteamRaiderHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube").Type, 3));
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Dusking").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					//if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("SpiritCore").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					//if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("IlluminantMaster").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube2").Type, 3));
-					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Atlas").Type)) npcLoot.Add(ItemDropRule.Common(Mod.Find<ModItem>("PaperTube3").Type, 2));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Scarabeus").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("ReachBoss").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 2));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("AncientFlyer").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("SteamRaiderHead").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube").Type, 3));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Dusking").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					//if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("SpiritCore").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					//if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("IlluminantMaster").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube2").Type, 3));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").Find<ModNPC>("Atlas").Type)) npcLoot.Add(ItemDropRule.Common(Mod.FindItem("PaperTube3").Type, 2));
 				}
 			}
 			

@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 
 namespace AlchemistNPCRebornAgain.Items.Misc
 {
@@ -58,17 +59,17 @@ namespace AlchemistNPCRebornAgain.Items.Misc
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.CrimsonHeart);
 			recipe.AddIngredient(ItemID.GoldRing);
-			recipe.AddIngredient(Mod.Find<ModItem>("BrokenDimensionalCasket").Type);
+			recipe.AddIngredient(Mod.FindItem("BrokenDimensionalCasket").Type);
 			recipe.AddIngredient(ItemID.HallowedBar, 10);
-			recipe.AddIngredient(Mod.Find<ModItem>("DivineLava").Type, 15);
+			recipe.AddIngredient(Mod.FindItem("DivineLava").Type, 15);
 			recipe.Register();
 			
 			recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.ShadowOrb);
 			recipe.AddIngredient(ItemID.GoldRing);
-			recipe.AddIngredient(Mod.Find<ModItem>("BrokenDimensionalCasket").Type);
+			recipe.AddIngredient(Mod.FindItem("BrokenDimensionalCasket").Type);
 			recipe.AddIngredient(ItemID.HallowedBar, 10);
-			recipe.AddIngredient(Mod.Find<ModItem>("DivineLava").Type, 15);
+			recipe.AddIngredient(Mod.FindItem("DivineLava").Type, 15);
 			recipe.Register();
         }
 	}

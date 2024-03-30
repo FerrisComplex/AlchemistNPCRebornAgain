@@ -1,6 +1,6 @@
 displayName = Alchemist NPC Reborn Again...
 author = FerrisCG, Secretik, AlchemistNPC Team
-version = 0.81
+version = 0.83
 weakReferences = Census, CalamityMod, CalamityModMusic, ThoriumMod, FargowiltasSouls, Fargowiltas
 includeSource = true
 sortAfter = Census, CalamityMod, CalamityModMusic, ThoriumMod, FargowiltasSouls, Fargowiltas

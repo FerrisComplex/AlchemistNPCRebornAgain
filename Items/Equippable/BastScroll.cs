@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPCRebornAgain;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria.DataStructures;
 
 namespace AlchemistNPCRebornAgain.Items.Equippable
@@ -66,7 +67,7 @@ namespace AlchemistNPCRebornAgain.Items.Equippable
 			recipe.AddIngredient(ItemID.Nanites, 10);
 			recipe.AddIngredient(ItemID.FragmentSolar, 30);
 			recipe.AddIngredient(ItemID.LunarBar, 25);
-			recipe.AddIngredient(Mod.Find<ModItem>("EmagledFragmentation").Type, 250);
+			recipe.AddIngredient(Mod.FindItem("EmagledFragmentation").Type, 250);
 			recipe.AddTile(Mod.Find<ModTile>("MateriaTransmutator").Type);
 			recipe.Register();
 		}

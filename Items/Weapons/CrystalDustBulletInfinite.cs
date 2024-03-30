@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -27,7 +28,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(Mod.Find<ModItem>("CrystalDustBullet").Type, 3996);
+			recipe.AddIngredient(Mod.FindItem("CrystalDustBullet").Type, 3996);
 			recipe.AddTile(TileID.CrystalBall);
 			recipe.Register();
 		}

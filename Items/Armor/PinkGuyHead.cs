@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
@@ -28,7 +29,7 @@ namespace AlchemistNPCRebornAgain.Items.Armor
 		
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == Mod.Find<ModItem>("PinkGuyBody").Type && legs.type == Mod.Find<ModItem>("PinkGuyLegs").Type;
+			return body.type == Mod.FindItem("PinkGuyBody").Type && legs.type == Mod.FindItem("PinkGuyLegs").Type;
 		}
 
 		public override void UpdateArmorSet(Player player)

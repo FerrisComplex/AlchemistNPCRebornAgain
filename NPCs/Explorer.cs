@@ -903,25 +903,25 @@ namespace AlchemistNPCRebornAgain.NPCs
             {
                 for (int j = 0; j < player.inventory.Length; j++)
                 {
-                    if (player.inventory[j].type == Mod.Find<ModItem>("QuantumDestabilizer").Type)
+                    if (player.inventory[j].type == Mod.FindItem("QuantumDestabilizer").Type)
                     {
                         items[nextSlot].type = (ModContent.ItemType<Items.Weapons.EnergyCell>());
                         nextSlot++;
                     }
 
-                    if (player.inventory[j].type == Mod.Find<ModItem>("Tritantrum").Type)
+                    if (player.inventory[j].type == Mod.FindItem("Tritantrum").Type)
                     {
                         items[nextSlot].type = (ModContent.ItemType<Items.Weapons.PlasmaRound>());
                         nextSlot++;
                     }
 
-                    if (player.inventory[j].type == Mod.Find<ModItem>("ChaingunMeatGrinder").Type)
+                    if (player.inventory[j].type == Mod.FindItem("ChaingunMeatGrinder").Type)
                     {
                         items[nextSlot].type = (ModContent.ItemType<Items.Weapons.MGB>());
                         nextSlot++;
                     }
 
-                    if (player.inventory[j].type == Mod.Find<ModItem>("PortalGun").Type || player.inventory[j].type == Mod.Find<ModItem>("OverloadedPortalGun").Type)
+                    if (player.inventory[j].type == Mod.FindItem("PortalGun").Type || player.inventory[j].type == Mod.FindItem("OverloadedPortalGun").Type)
                     {
                         items[nextSlot].type = (ModContent.ItemType<Items.Weapons.EnergyCapsule>());
                         nextSlot++;

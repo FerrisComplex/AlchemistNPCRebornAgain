@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria;
 using Terraria.UI;
 using Terraria.ID;
@@ -53,11 +54,11 @@ namespace AlchemistNPCRebornAgain.Items.Equippable
 			recipe.AddIngredient(ItemID.WarriorEmblem);
 			recipe.AddIngredient(ItemID.EyeoftheGolem);
 			recipe.AddIngredient(ItemID.ShinyStone);
-			recipe.AddIngredient(Mod.Find<ModItem>("SoulEssence").Type, 3);
-			recipe.AddIngredient(Mod.Find<ModItem>("ChromaticCrystal").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("SunkroveraCrystal").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("NyctosythiaCrystal").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("EmagledFragmentation").Type, 150);
+			recipe.AddIngredient(Mod.FindItem("SoulEssence").Type, 3);
+			recipe.AddIngredient(Mod.FindItem("ChromaticCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("SunkroveraCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("NyctosythiaCrystal").Type, 5);
+			recipe.AddIngredient(Mod.FindItem("EmagledFragmentation").Type, 150);
 			ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 			if (Calamity == null)
 			{

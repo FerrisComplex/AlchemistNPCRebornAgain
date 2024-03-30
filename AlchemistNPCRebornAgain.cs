@@ -5,6 +5,7 @@ using ReLogic.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -50,6 +51,8 @@ namespace AlchemistNPCRebornAgain
         private UserInterface alchemistUserInterfaceDC;
         internal DimensionalCasketUI alchemistUIDC;
 
+        public static ModItem InvalidItemInstance;
+        public static ModPrefix InvalidPrefixInstance;
         public static int ReversivityCoinTier1ID;
         public static int ReversivityCoinTier2ID;
         public static int ReversivityCoinTier3ID;
@@ -96,6 +99,8 @@ namespace AlchemistNPCRebornAgain
             {
                 EquipLoader.AddEquipTexture(this, "AlchemistNPCRebornAgain/Items/Armor/somebody0214Robe_Legs", EquipType.Legs, name: "somebody0214Robe_Legs");
             }
+
+            
             ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(this, ModContent.ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
             ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(this, ModContent.ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
             ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(this, ModContent.ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
@@ -106,6 +111,9 @@ namespace AlchemistNPCRebornAgain
 
 		public override void PostSetupContent()
 		{
+            InvalidItemInstance = this.FindItem("InvalidItem");
+            InvalidPrefixInstance = this.FindPrefix("InvalidPrefix");
+            
             ModLoader.TryGetMod("Census", out Mod censusMod);
 			if(censusMod != null)
 			{

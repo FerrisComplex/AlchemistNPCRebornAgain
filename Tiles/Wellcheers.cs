@@ -1,4 +1,5 @@
 ﻿using System;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -57,19 +58,19 @@ namespace AlchemistNPCRebornAgain.Tiles
 					switch (Main.rand.Next(4))
 						{
 							case 0:						
-							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.Find<ModItem>("CrimsonCherrySoda").Type);
+							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.FindItem("CrimsonCherrySoda").Type);
 							counter++;
 							break;
 							case 1:
-							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.Find<ModItem>("SapphireBlueberrySoda").Type);
+							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.FindItem("SapphireBlueberrySoda").Type);
 							counter++;
 							break;
 							case 2:
-							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.Find<ModItem>("PinkGoldStrawberrySoda").Type);
+							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.FindItem("PinkGoldStrawberrySoda").Type);
 							counter++;
 							break;
 							case 3:
-							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.Find<ModItem>("OnyxGrapeSoda").Type);
+							player.QuickSpawnItem(((Entity) player).GetSource_FromThis((string) null), Mod.FindItem("OnyxGrapeSoda").Type);
 							counter++;
 							break;
 						}
@@ -108,7 +109,7 @@ namespace AlchemistNPCRebornAgain.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Mod.Find<ModItem>("Wellcheers").Type);
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Mod.FindItem("Wellcheers").Type);
 		}
 		
 		public override void MouseOver(int i, int j)
@@ -117,7 +118,7 @@ namespace AlchemistNPCRebornAgain.Tiles
 			Player player = Main.player[whoAmI];
 			player.noThrow = 2;
 			player.cursorItemIconEnabled = true;
-			player.cursorItemIconID = Mod.Find<ModItem>("Wellcheers").Type;
+			player.cursorItemIconID = Mod.FindItem("Wellcheers").Type;
 		}
 	}
 }

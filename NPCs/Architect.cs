@@ -13,6 +13,7 @@ using AlchemistNPCRebornAgain.NPCs;
 using ReLogic.Content;
 using System.Collections.Generic;
 using AlchemistNPCRebornAgain.Extensions;
+using AlchemistNPCRebornAgain.ExternalHelpers;
 using AlchemistNPCRebornAgain.Interface;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
@@ -32,6 +33,16 @@ namespace AlchemistNPCRebornAgain.NPCs
         public static bool Shop8 = false;
         public static bool Shop9 = false;
         public static bool Shop10 = false;
+        public static string Filler = "Filler";
+        public static string Building = "Building";
+        public static string BasicFurn = "BasicFurn";
+        public static string AdvFurn = "AdvFurn";
+        public static string Torch = "Torch";
+        public static string Candle = "Candle";
+        public static string Lamp = "Lamp";
+        public static string Lantern = "Lantern";
+        public static string Chandelier = "Chandelier";
+        public static string Candelabra = "Candelabra";
 
         public override string Texture
         {
@@ -54,49 +65,11 @@ namespace AlchemistNPCRebornAgain.NPCs
             NPCID.Sets.AttackAverageChance[NPC.type] = 50;
             NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
-
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Joe"), () => "Joe");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Mark"), () => "Mark");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Walter"), () => "Walter");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Archer"), () => "Archer");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Frido"), () => "Frido");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.Li"), () => "Li");
-
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A1"), () => "If this dastardly ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A2"), () => " isn't going to shut up, I'm letting ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A3"), () => " bite her.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A4"), () => "KILL THE ZOMBIES! KILL THE BUNNIES! IN THE NAME OF THE BLOO- oh sorry I didn't notice you here.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A5"), () => "Why hello there I'm just getting some blood buckets for a lake I'm making please dont ask any more questions");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A6"), () => "I like it when there is a gigantic horde of zombies behind our doors. But I HATE WHEN THEY BREAK MY DOORS!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A7"), () => "Ah, the feeling that I'm not safe, the paranoia is embraced the moment the bloodmoon rises up in the sky.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A8"), () => "Are you interested in my religion? It invloves sacrifices to the bloody moon.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A9"), () => "Do you know why I hate these goblins? They are mildly annoying.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A10"), () => "Hooray to pirates! They supply me with my golden furniture!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A11"), () => "Ah! Finally some proper plating to have my roof done!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A12"), () => "No explosives please, ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A13"), () => " is already annoying me enough.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A13"), () => "BUILDER POTIONS FREE FOR EVERYONE but you.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A14"), () => "What? Where I got my architect degree? There's an architect degree?");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A15"), () => "Did'ja know that wood somehow doesn't burn? Though under certain circumstances it does. Weird...");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A16"), () => "No, I am not the guy. I'm the dude.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A17"), () => "Well, the one you recently made was ALMOST impressive. (not really)");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A18"), () => "So, you say that chests are furniture too. I reply: Screw you.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A19"), () => "I saw your buildings but I am still not impressed");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A20"), () => "Have you heard 'bout that FuryForged guy? I taught him all he knows!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.A21"), () => "I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS1"), () => "1st shop (Filler Blocks)       ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS2"), () => "2nd shop (Building Blocks)     ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS3"), () => "3rd shop (Basic Furniture)     ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS4"), () => "4th shop (Advanced Furniture)  ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS5"), () => "5th shop (Torches)             ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS6"), () => "6th shop (Candles)             ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS7"), () => "7th shop (Lamps)               ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS8"), () => "8th shop (Lanterns)            ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS9"), () => "9th shop (Chandeliers)         ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.AS10"), () => "10th shop (Candelabras)        ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Architect.ShopsChanger"), () => "Shops Changer");
-
-            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers { Velocity = -1f, Direction = -1 };
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
             NPC.Happiness.SetBiomeAffection<OceanBiome>(AffectionLevel.Like);
@@ -112,7 +85,7 @@ namespace AlchemistNPCRebornAgain.NPCs
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
             {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Jungle,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCRebornAgain.Bestiary.Architect")
             });
         }
@@ -133,26 +106,37 @@ namespace AlchemistNPCRebornAgain.NPCs
             AnimationType = NPCID.Guide;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs)
+        public override bool CanTownNPCSpawn(int numTownNPCs) /* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             if (numTownNPCs >= 3 && AlchemistNPCRebornAgain.modConfiguration.ArchitectSpawn)
+            {
                 return true;
+            }
 
             return false;
         }
 
 
-        public override List<string> SetNPCNameList() =>
-            new List<string>()
-            {
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Joe")),
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Mark")),
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Walter")),
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Archer")),
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Frido")),
-                Language.GetTextValue(Mod.GetLocalizationKey("NPC.Architect.Li"))
-            };
+        public override List<string> SetNPCNameList()
+        {
+            //NPC names
+            string Joe = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Joe");
+            string Mark = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Mark");
+            string Walter = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Walter");
+            string Archer = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Archer");
+            string Frido = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Frido");
+            string Li = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Li");
 
+            return new List<string>()
+            {
+                Joe,
+                Mark,
+                Walter,
+                Archer,
+                Frido,
+                Li
+            };
+        }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
@@ -166,7 +150,7 @@ namespace AlchemistNPCRebornAgain.NPCs
             randExtraCooldown = 10;
         }
 
-        public override void DrawTownAttackSwing(  ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset) //Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.PopupTexture[id of item]), itemSize is the width and height of the item's hitbox
+        public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset) //Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.PopupTexture[id of item]), itemSize is the width and height of the item's hitbox
         {
             scale = 1f;
             item = TextureAssets.Item[ItemID.IronHammer].Value; //this defines the item that this npc will use
@@ -181,13 +165,37 @@ namespace AlchemistNPCRebornAgain.NPCs
 
         public override string GetChat()
         {
+            //npc chat
+            string A1 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A1");
+            string A2 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A2");
+            string A3 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A3");
+            string A4 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A4");
+            string A5 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A5");
+            string A6 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A6");
+            string A7 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A7");
+            string A8 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A8");
+            string A9 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A9");
+            string A10 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A10");
+            string A11 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A11");
+            string A12 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A12");
+            string A13 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A13");
+            string A14 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A14");
+            string A15 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A15");
+            string A16 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A16");
+            string A17 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A17");
+            string A18 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A18");
+            string A19 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A19");
+            string A20 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A20");
+            string A21 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A21");
+            string A22 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.A22");
+
             int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
             int Operator = NPC.FindFirstNPC(ModContent.NPCType<Operator>());
-            if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >= 0 && Main.rand.NextBool(4))
+            if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >= 0 && Main.rand.Next(4) == 0)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A1")) + Main.npc[partyGirl].GivenName + Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A2")) + Main.npc[goblinTinkerer].GivenName + Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A3"));
+                return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
             }
 
             if (Main.bloodMoon)
@@ -195,115 +203,135 @@ namespace AlchemistNPCRebornAgain.NPCs
                 switch (Main.rand.Next(4))
                 {
                     case 0:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A4"));
+                        return A4;
                     case 1:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A5"));
+                        return A5;
                     case 2:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A6"));
+                        return A6;
                     case 3:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A7"));
+                        return A7;
                     case 4:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A8"));
+                        return A8;
                 }
             }
 
             if (Main.invasionType == 1)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A9"));
+                return A9;
             }
 
             if (Main.invasionType == 3)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A10"));
+                return A10;
             }
 
             if (Main.invasionType == 4)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A11"));
+                return A11;
             }
 
             if (demolitionist >= 0 && Main.rand.Next(5) == 0)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A12")) + Main.npc[demolitionist].GivenName + Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A13"));
+                return A12 + Main.npc[demolitionist].GivenName + A13;
             }
 
             if (Operator >= 0 && Main.rand.Next(7) == 0)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A21"));
+                return A21;
             }
 
             switch (Main.rand.Next(8))
             {
                 case 0:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A14"));
+                    return A14;
                 case 1:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A15"));
+                    return A15;
                 case 2:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A16"));
+                    return A16;
                 case 3:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A17"));
+                    return A17;
                 case 4:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A18"));
+                    return A18;
                 case 5:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A19"));
+                    return A19;
                 case 6:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A21"));
+                    return A21;
                 default:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.A20"));
+                    return A20;
             }
         }
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
+            string AS1 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS1");
+            string AS2 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS2");
+            string AS3 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS3");
+            string AS4 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS4");
+            string AS5 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS5");
+            string AS6 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS6");
+            string AS7 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS7");
+            string AS8 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS8");
+            string AS9 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS9");
+            string AS10 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.AS10");
+            string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopsChanger");
             if (Shop1)
             {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS1"));
-            }
-            else if (Shop2)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS2"));
-            }
-            else if (Shop3)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS3"));
-            }
-            else if (Shop4)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS4"));
-            }
-            else if (Shop5)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS5"));
-            }
-            else if (Shop6)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS6"));
-            }
-            else if (Shop7)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS7"));
-            }
-            else if (Shop8)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS8"));
-            }
-            else if (Shop9)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS9"));
-            }
-            else if (Shop10)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.AS10"));
+                button = AS1;
             }
 
-            button2 = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Alchemist.ShopsChanger"));
+            if (Shop2)
+            {
+                button = AS2;
+            }
+
+            if (Shop3)
+            {
+                button = AS3;
+            }
+
+            if (Shop4)
+            {
+                button = AS4;
+            }
+
+            if (Shop5)
+            {
+                button = AS5;
+            }
+
+            if (Shop6)
+            {
+                button = AS6;
+            }
+
+            if (Shop7)
+            {
+                button = AS7;
+            }
+
+            if (Shop8)
+            {
+                button = AS8;
+            }
+
+            if (Shop9)
+            {
+                button = AS9;
+            }
+
+            if (Shop10)
+            {
+                button = AS10;
+            }
+
+            button2 = ShopsChanger;
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref string shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shop = "Shop";
+                shopName = ShopChangeUIA.Shop;
                 ShopChangeUIA.visible = false;
             }
             else
@@ -313,1043 +341,366 @@ namespace AlchemistNPCRebornAgain.NPCs
             }
         }
 
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
+        Mod chadsfurniture = ModLoader.GetMod("chadsfurni");
+        */
+
         public override void AddShops()
         {
-            new NPCShop(Type, "Shop").Register(); // empty shop we will fill this with the modifyactiveshop!
-        }
-        
-        private static void addModItemToShop(Mod sourceMod, string id, int cost, ref Item[] items, ref int nextSlot)
-        {
-            if (ExternalModCache.GetOrCreateModItem(sourceMod, id, out var item) && item != null)
+            ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
+
+            var shop = new NPCShop(Type, Filler)
+                .Add(new Item(ItemID.Wood) { shopCustomPrice = 5 })
+                .Add(new Item(ItemID.Ebonwood) { shopCustomPrice = 10 })
+                .Add(new Item(ItemID.Shadewood) { shopCustomPrice = 10 })
+                .Add(new Item(ItemID.BorealWood) { shopCustomPrice = 10 })
+                .Add(new Item(ItemID.PalmWood) { shopCustomPrice = 15 })
+                .Add(new Item(ItemID.RichMahogany) { shopCustomPrice = 15 })
+                .Add(new Item(ItemID.BambooBlock) { shopCustomPrice = 15 })
+                .Add(new Item(ItemID.AshWood) { shopCustomPrice = 15 })
+                .AddModItemToShop(ThoriumMod, "YewWood", 500, Condition.DownedGoblinArmy)
+                .Add(new Item(ItemID.SpookyWood) { shopCustomPrice = 10000 }, Condition.DownedPumpking)
+                .Add(new Item(ItemID.DynastyWood) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.DirtBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.ClayBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.StoneBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.EbonstoneBlock) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.CrimstoneBlock) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.CrimstoneBlock) { shopCustomPrice = 2 },
+                    Condition.DownedQueenBee)
+                .Add(new Item(ItemID.Hive) { shopCustomPrice = 10 },
+                    Condition.DownedQueenBee)
+                .Add(new Item(ItemID.SandBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.EbonsandBlock) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.CrimsandBlock) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.Sandstone) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.HardenedSand) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.MudBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.DesertFossil),
+                    Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.Obsidian) { shopCustomPrice = 2500 },
+                    Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.AshBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.SiltBlock))
+                .Add(new Item(ItemID.SlushBlock))
+                .Add(new Item(ItemID.SnowBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.IceBlock) { shopCustomPrice = 1 })
+                .Add(new Item(ItemID.Marble) { shopCustomPrice = 50 })
+                .Add(new Item(ItemID.Granite) { shopCustomPrice = 50 })
+                .Add(new Item(ItemID.Cloud) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.RainCloud) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.PearlstoneBlock) { shopCustomPrice = 25 },
+                    Condition.Hardmode)
+                .Add(new Item(ItemID.PearlsandBlock) { shopCustomPrice = 25 },
+                    Condition.Hardmode);
+            shop.Register();
+
+            shop = new NPCShop(Type, Building)
+                .Add(new Item(ItemID.RedBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.RedDynastyShingles) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.BlueDynastyShingles) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.Pearlwood) { shopCustomPrice = 25 }, Condition.Hardmode)
+                .Add(new Item(ItemID.GrayBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.Glass) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.Pumpkin) { shopCustomPrice = 125 })
+                .Add(new Item(ItemID.MeteoriteBrick) { shopCustomPrice = 4 })
+                .Add(new Item(ItemID.ObsidianBrick) { shopCustomPrice = 5 })
+                .Add(new Item(ItemID.IridescentBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.SnowBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.SandstoneBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.EbonstoneBrick) { shopCustomPrice = 10 })
+                .Add(new Item(ItemID.CrimstoneBrick) { shopCustomPrice = 10 })
+                .Add(new Item(ItemID.IceBrick) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.StoneSlab) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.AccentSlab) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.SandstoneSlab) { shopCustomPrice = 2 })
+                .Add(new Item(ItemID.MarbleBlock) { shopCustomPrice = 75 })
+                .Add(new Item(ItemID.GraniteBlock) { shopCustomPrice = 75 })
+                .Add(new Item(ItemID.HoneyBlock) { shopCustomPrice = 5 }, Condition.DownedQueenBee)
+                .Add(new Item(ItemID.CrystalBlock) { shopCustomPrice = 100 }, Condition.Hardmode)
+                .Add(new Item(ItemID.SunplateBlock) { shopCustomPrice = 25 })
+                .Add(new Item(ItemID.PinkBrick) { shopCustomPrice = 50 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.GreenBrick) { shopCustomPrice = 50 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.BlueBrick) { shopCustomPrice = 50 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.AsphaltBlock) { shopCustomPrice = 2 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.FleshBlock) { shopCustomPrice = 10 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.PearlstoneBrick) { shopCustomPrice = 10 }, Condition.Hardmode)
+                .Add(new Item(ItemID.RainbowBrick) { shopCustomPrice = 100 }, Condition.Hardmode)
+                .Add(new Item(ItemID.LihzahrdBrick) { shopCustomPrice = 100 }, Condition.DownedGolem)
+                .Add(new Item(ItemID.MartianConduitPlating) { shopCustomPrice = 25 }, Condition.DownedMartians);
+            shop.Register();
+
+            shop = new NPCShop(Type, BasicFurn)
+                .Add(new Item(ItemID.Candle) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.GoldChandelier) { shopCustomPrice = 25000 })
+                .Add(new Item(ItemID.ChainLantern) { shopCustomPrice = 200 })
+                .Add(new Item(ItemID.Mannequin) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.Womannquin) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.Cobweb) { shopCustomPrice = 30 })
+                .Add(new Item(ItemID.WorkBench) { shopCustomPrice = 2000 })
+                .Add(new Item(ItemID.WoodenTable) { shopCustomPrice = 2000 })
+                .Add(new Item(ItemID.WoodenChair) { shopCustomPrice = 2000 })
+                .Add(new Item(ItemID.WoodenDoor) { shopCustomPrice = 2000 })
+                .Add(new Item(ItemID.WoodenBeam) { shopCustomPrice = 100 })
+                .Add(new Item(ItemID.Book) { shopCustomPrice = 250 })
+                .Add(new Item(ItemID.Fireplace) { shopCustomPrice = 3000 })
+                .Add(new Item(ItemID.Chimney) { shopCustomPrice = 3000 })
+                .Add(new Item(ItemID.Furnace) { shopCustomPrice = 3000 })
+                .Add(new Item(ItemID.BanquetTable) { shopCustomPrice = 3000 })
+                .Add(new Item(ItemID.HeavyWorkBench) { shopCustomPrice = 3000 })
+                .Add(new Item(ItemID.BrickLayer) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.PortableCementMixer) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.PaintSprayer) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.ExtendoGrip) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.PortableStool) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.TreasureMagnet) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.AncientChisel) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.ActuationAccessory) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.Ruler) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.EngineeringHelmet) { shopCustomPrice = 150000 }, Condition.DownedSkeletron);
+            shop.Register();
+
+            shop = new NPCShop(Type, AdvFurn)
+                .Add(new Item(ItemID.LivingLoom) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.AlchemyTable) { shopCustomPrice = 33000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.BoneWelder) { shopCustomPrice = 20000 }, Condition.DownedSkeletron);
+            if (ModLoader.TryGetMod("chadsfurni", out Mod chadsfurniture))
             {
-                items[nextSlot].type = (item.Type);
-                items[nextSlot].shopCustomPrice = cost;
-                nextSlot += 1;
-            }
-        }
-
-        public override void ModifyActiveShop(string shopName, Item[] items)
-        {
-            int nextSlot = 0;
-            if (Shop1)
-            {
-                items[nextSlot].type = (ItemID.DirtBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ClayBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.StoneBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.EbonstoneBlock);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.CrimstoneBlock);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                if (NPC.downedQueenBee)
-                {
-                    items[nextSlot].type = (ItemID.Hive);
-                    items[nextSlot].shopCustomPrice = 10;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (ItemID.SandBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.EbonsandBlock);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.CrimsandBlock);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Sandstone);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.HardenedSand);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.MudBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                if (NPC.downedBoss2)
-                {
-                    items[nextSlot].type = (ItemID.DesertFossil);
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.Obsidian);
-                    items[nextSlot].shopCustomPrice = 2500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (ItemID.AshBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SiltBlock);
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SlushBlock);
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SnowBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.IceBlock);
-                items[nextSlot].shopCustomPrice = 1;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Marble);
-                items[nextSlot].shopCustomPrice = 50;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Granite);
-                items[nextSlot].shopCustomPrice = 50;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Cloud);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.RainCloud);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.PearlstoneBlock);
-                    items[nextSlot].shopCustomPrice = 25;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.PearlsandBlock);
-                    items[nextSlot].shopCustomPrice = 25;
-                    nextSlot++;
-                }
-            }
-
-            if (Shop2)
-            {
-                items[nextSlot].type = (ItemID.RedBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Wood);
-                items[nextSlot].shopCustomPrice = 5;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Ebonwood);
-                items[nextSlot].shopCustomPrice = 10;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Shadewood);
-                items[nextSlot].shopCustomPrice = 10;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.BorealWood);
-                items[nextSlot].shopCustomPrice = 10;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.PalmWood);
-                items[nextSlot].shopCustomPrice = 15;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.RichMahogany);
-                items[nextSlot].shopCustomPrice = 15;
-                nextSlot++;
-                if (NPC.downedGoblins && ExternalModCache.findMod("ThoriumMod", out var thoriumMod) && thoriumMod != null)
-                    addModItemToShop(thoriumMod, "YewWood", 500, ref items, ref nextSlot);
-                    
-                
-                
-                items[nextSlot].type = (ItemID.DynastyWood);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.RedDynastyShingles);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.BlueDynastyShingles);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.Pearlwood);
-                    items[nextSlot].shopCustomPrice = 25;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (ItemID.GrayBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Glass);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.MeteoriteBrick);
-                items[nextSlot].shopCustomPrice = 4;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ObsidianBrick);
-                items[nextSlot].shopCustomPrice = 5;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.IridescentBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SnowBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SandstoneBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.EbonstoneBrick);
-                items[nextSlot].shopCustomPrice = 10;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.IceBrick);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.FleshBlock);
-                items[nextSlot].shopCustomPrice = 10;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.StoneSlab);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SandstoneSlab);
-                items[nextSlot].shopCustomPrice = 2;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.MarbleBlock);
-                items[nextSlot].shopCustomPrice = 75;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.GraniteBlock);
-                items[nextSlot].shopCustomPrice = 75;
-                nextSlot++;
-                if (NPC.downedQueenBee)
-                {
-                    items[nextSlot].type = (ItemID.HoneyBlock);
-                    items[nextSlot].shopCustomPrice = 5;
-                    nextSlot++;
-                }
-
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.CrystalBlock);
-                    items[nextSlot].shopCustomPrice = 100;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (ItemID.SunplateBlock);
-                items[nextSlot].shopCustomPrice = 25;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Pumpkin);
-                items[nextSlot].shopCustomPrice = 125;
-                nextSlot++;
-                if (NPC.downedBoss3)
-                {
-                    items[nextSlot].type = (ItemID.PinkBrick);
-                    items[nextSlot].shopCustomPrice = 50;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.GreenBrick);
-                    items[nextSlot].shopCustomPrice = 50;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.BlueBrick);
-                    items[nextSlot].shopCustomPrice = 50;
-                    nextSlot++;
-                }
-
-                if (NPC.downedMechBossAny)
-                {
-                    items[nextSlot].type = (ItemID.AsphaltBlock);
-                    items[nextSlot].shopCustomPrice = 2;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.FleshBlock);
-                    items[nextSlot].shopCustomPrice = 10;
-                    nextSlot++;
-                }
-
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.PearlstoneBrick);
-                    items[nextSlot].shopCustomPrice = 10;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.RainbowBrick);
-                    items[nextSlot].shopCustomPrice = 100;
-                    nextSlot++;
-                }
-
-                if (NPC.downedGolemBoss)
-                {
-                    items[nextSlot].type = (ItemID.LihzahrdBrick);
-                    items[nextSlot].shopCustomPrice = 100;
-                    nextSlot++;
-                }
-
-                if (NPC.downedMartians)
-                {
-                    items[nextSlot].type = (ItemID.MartianConduitPlating);
-                    items[nextSlot].shopCustomPrice = 25;
-                    nextSlot++;
-                }
+                shop.AddModItemToShop(chadsfurniture, "printer", 20000, Condition.DownedSkeletron);
+                shop.AddModItemToShop(chadsfurniture, "printer3", 20000, Condition.DownedSkeletron);
+                shop.AddModItemToShop(chadsfurniture, "wallomatic", 20000, Condition.DownedSkeletron);
             }
 
-            if (Shop3)
+            shop.Add(new Item(ItemID.GlassKiln) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.SkyMill) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.IceMachine) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.HoneyDispenser) { shopCustomPrice = 20000 }, Condition.DownedQueenBee)
+                .Add(new Item(ItemID.Sawmill) { shopCustomPrice = 2000 })
+                .Add(new Item(ItemID.Loom) { shopCustomPrice = 2000 });
+            if (chadsfurniture != null)
             {
-                items[nextSlot].type = (ItemID.Candle);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.GoldChandelier);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ChainLantern);
-                items[nextSlot].shopCustomPrice = 200;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Mannequin);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Womannquin);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Cobweb);
-                items[nextSlot].shopCustomPrice = 20;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WorkBench);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WoodenTable);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WoodenChair);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WoodenDoor);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WoodenBeam);
-                items[nextSlot].shopCustomPrice = 100;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Book);
-                items[nextSlot].shopCustomPrice = 250;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Fireplace);
-                items[nextSlot].shopCustomPrice = 3000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Chimney);
-                items[nextSlot].shopCustomPrice = 3000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Furnace);
-                items[nextSlot].shopCustomPrice = 3000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.BanquetTable);
-                items[nextSlot].shopCustomPrice = 3000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.HeavyWorkBench);
-                items[nextSlot].shopCustomPrice = 3000;
-                nextSlot++;
-
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.BrickLayer);
-                    items[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.PortableCementMixer);
-                    items[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.PaintSprayer);
-                    items[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.ExtendoGrip);
-                    items[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    items[nextSlot].type = (3624);
-                    items[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                }
-
-                if (NPC.downedBoss3)
-                {
-                    items[nextSlot].type = (ItemID.Ruler);
-                    items[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.EngineeringHelmet);
-                    items[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                }
+                shop.AddModItemToShop(chadsfurniture, "RimpelstiltskinsLoom", 200000, Condition.Hardmode);
             }
 
-            if (Shop4)
-            {
-                items[nextSlot].type = (ItemID.LivingLoom);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                if (NPC.downedBoss3)
-                {
-                    items[nextSlot].type = (ItemID.AlchemyTable);
-                    items[nextSlot].shopCustomPrice = 33000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.BoneWelder);
-                    items[nextSlot].shopCustomPrice = 20000;
-                    nextSlot++;
-                }
+            shop.Add(new Item(ItemID.MeatGrinder) { shopCustomPrice = 15000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.FleshCloningVaat) { shopCustomPrice = 20000 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.LesionStation) { shopCustomPrice = 20000 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.LihzahrdFurnace) { shopCustomPrice = 20000 }, Condition.DownedPlantera);
+            shop.Register();
 
-                items[nextSlot].type = (ItemID.GlassKiln);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SkyMill);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.IceMachine);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                if (NPC.downedQueenBee)
-                {
-                    items[nextSlot].type = (ItemID.HoneyDispenser);
-                    items[nextSlot].shopCustomPrice = 20000;
-                    nextSlot++;
-                }
+            shop = new NPCShop(Type, Torch)
+                .Add(new Item(ItemID.Torch) { shopCustomPrice = 50 })
+                .Add(new Item(ItemID.TikiTorch) { shopCustomPrice = 250 })
+                .Add(new Item(974) { shopCustomPrice = 300 })
+                .Add(new Item(427) { shopCustomPrice = 300 })
+                .Add(new Item(428) { shopCustomPrice = 300 })
+                .Add(new Item(1245) { shopCustomPrice = 300 })
+                .Add(new Item(429) { shopCustomPrice = 300 })
+                .Add(new Item(430) { shopCustomPrice = 300 })
+                .Add(new Item(431) { shopCustomPrice = 300 })
+                .Add(new Item(432) { shopCustomPrice = 300 })
+                .Add(new Item(433) { shopCustomPrice = 300 })
+                .Add(new Item(523) { shopCustomPrice = 300 })
+                .Add(new Item(1333) { shopCustomPrice = 300 })
+                .Add(new Item(2274) { shopCustomPrice = 300 })
+                .Add(new Item(3004) { shopCustomPrice = 300 })
+                .Add(new Item(3045) { shopCustomPrice = 300 })
+                .Add(new Item(3114) { shopCustomPrice = 300 })
+                .Add(new Item(4383) { shopCustomPrice = 300 })
+                .Add(new Item(4384) { shopCustomPrice = 300 })
+                .Add(new Item(4385) { shopCustomPrice = 300 })
+                .Add(new Item(4386) { shopCustomPrice = 300 })
+                .Add(new Item(4387) { shopCustomPrice = 300 })
+                .Add(new Item(4388) { shopCustomPrice = 300 })
+                .Add(new Item(5293) { shopCustomPrice = 300 })
+                .Add(new Item(5353) { shopCustomPrice = 300 });
+            shop.Register();
 
-                items[nextSlot].type = (ItemID.Sawmill);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.Loom);
-                items[nextSlot].shopCustomPrice = 2000;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.MeatGrinder);
-                    items[nextSlot].shopCustomPrice = 15000;
-                    nextSlot++;
-                }
+            shop = new NPCShop(Type, Candle)
+                .Add(new Item(105) { shopCustomPrice = 500 })
+                .Add(new Item(713) { shopCustomPrice = 500 })
+                .Add(new Item(1405) { shopCustomPrice = 500 })
+                .Add(new Item(1406) { shopCustomPrice = 500 })
+                .Add(new Item(1407) { shopCustomPrice = 500 })
+                .Add(new Item(2045) { shopCustomPrice = 500 })
+                .Add(new Item(2046) { shopCustomPrice = 500 })
+                .Add(new Item(2047) { shopCustomPrice = 500 })
+                .Add(new Item(2048) { shopCustomPrice = 500 })
+                .Add(new Item(2049) { shopCustomPrice = 500 })
+                .Add(new Item(2050) { shopCustomPrice = 500 })
+                .Add(new Item(2051) { shopCustomPrice = 500 }, Condition.Hardmode)
+                .Add(new Item(2052) { shopCustomPrice = 500 })
+                .Add(new Item(2153) { shopCustomPrice = 500 })
+                .Add(new Item(2154) { shopCustomPrice = 500 })
+                .Add(new Item(2155) { shopCustomPrice = 30000 })
+                .Add(new Item(2236) { shopCustomPrice = 500 })
+                .Add(new Item(2523) { shopCustomPrice = 500 })
+                .Add(new Item(2542) { shopCustomPrice = 500 })
+                .Add(new Item(2556) { shopCustomPrice = 500 })
+                .Add(new Item(2571) { shopCustomPrice = 500 })
+                .Add(new Item(2648) { shopCustomPrice = 500 })
+                .Add(new Item(2649) { shopCustomPrice = 500 })
+                .Add(new Item(2650) { shopCustomPrice = 500 }, Condition.DownedPumpking)
+                .Add(new Item(2651) { shopCustomPrice = 500 })
+                .Add(new Item(2818) { shopCustomPrice = 500 }, Condition.DownedMartians)
+                .Add(new Item(3171) { shopCustomPrice = 500 })
+                .Add(new Item(3172) { shopCustomPrice = 500 })
+                .Add(new Item(3173) { shopCustomPrice = 500 })
+                .Add(new Item(3890) { shopCustomPrice = 500 }, Condition.Hardmode);
+            shop.Register();
 
-                if (NPC.downedMechBossAny)
-                {
-                    items[nextSlot].type = (ItemID.FleshCloningVaat);
-                    items[nextSlot].shopCustomPrice = 20000;
-                    nextSlot++;
-                }
+            shop = new NPCShop(Type, Lamp)
+                .Add(new Item(341) { shopCustomPrice = 500 })
+                .Add(new Item(2082) { shopCustomPrice = 500 })
+                .Add(new Item(2083) { shopCustomPrice = 500 })
+                .Add(new Item(2084) { shopCustomPrice = 500 })
+                .Add(new Item(2085) { shopCustomPrice = 500 })
+                .Add(new Item(2086) { shopCustomPrice = 500 })
+                .Add(new Item(2087) { shopCustomPrice = 500 })
+                .Add(new Item(2088) { shopCustomPrice = 500 }, Condition.Hardmode)
+                .Add(new Item(2089) { shopCustomPrice = 500 })
+                .Add(new Item(2090) { shopCustomPrice = 500 })
+                .Add(new Item(2091) { shopCustomPrice = 500 }, Condition.DownedPumpking)
+                .Add(new Item(2129) { shopCustomPrice = 500 })
+                .Add(new Item(2130) { shopCustomPrice = 500 })
+                .Add(new Item(2131) { shopCustomPrice = 500 })
+                .Add(new Item(2132) { shopCustomPrice = 500 })
+                .Add(new Item(2133) { shopCustomPrice = 30000 })
+                .Add(new Item(2134) { shopCustomPrice = 500 })
+                .Add(new Item(2225) { shopCustomPrice = 500 })
+                .Add(new Item(2533) { shopCustomPrice = 500 })
+                .Add(new Item(2547) { shopCustomPrice = 500 })
+                .Add(new Item(2563) { shopCustomPrice = 500 })
+                .Add(new Item(2578) { shopCustomPrice = 500 })
+                .Add(new Item(2643) { shopCustomPrice = 500 })
+                .Add(new Item(2644) { shopCustomPrice = 500 })
+                .Add(new Item(2645) { shopCustomPrice = 500 })
+                .Add(new Item(2646) { shopCustomPrice = 500 })
+                .Add(new Item(2647) { shopCustomPrice = 500 })
+                .Add(new Item(2819) { shopCustomPrice = 500 }, Condition.DownedMartians)
+                .Add(new Item(2820) { shopCustomPrice = 500 }, Condition.DownedMartians)
+                .Add(new Item(3135) { shopCustomPrice = 500 })
+                .Add(new Item(3136) { shopCustomPrice = 500 })
+                .Add(new Item(3137) { shopCustomPrice = 500 })
+                .Add(new Item(3892) { shopCustomPrice = 500 }, Condition.Hardmode);
+            shop.Register();
 
-                if (NPC.downedPlantBoss)
-                {
-                    items[nextSlot].type = (ItemID.LihzahrdFurnace);
-                    items[nextSlot].shopCustomPrice = 20000;
-                    nextSlot++;
-                }
-            }
+            shop = new NPCShop(Type, Lantern)
+                .Add(new Item(136) { shopCustomPrice = 500 })
+                .Add(new Item(344) { shopCustomPrice = 500 })
+                .Add(new Item(347) { shopCustomPrice = 500 })
+                .Add(new Item(1390) { shopCustomPrice = 500 })
+                .Add(new Item(1391) { shopCustomPrice = 500 })
+                .Add(new Item(1392) { shopCustomPrice = 500 })
+                .Add(new Item(1393) { shopCustomPrice = 500 })
+                .Add(new Item(1394) { shopCustomPrice = 500 })
+                .Add(new Item(1808) { shopCustomPrice = 500 })
+                .Add(new Item(2032) { shopCustomPrice = 500 })
+                .Add(new Item(2033) { shopCustomPrice = 500 })
+                .Add(new Item(2034) { shopCustomPrice = 500 })
+                .Add(new Item(2035) { shopCustomPrice = 500 })
+                .Add(new Item(2036) { shopCustomPrice = 500 })
+                .Add(new Item(2037) { shopCustomPrice = 500 })
+                .Add(new Item(2038) { shopCustomPrice = 500 })
+                .Add(new Item(2039) { shopCustomPrice = 500 }, Condition.Hardmode)
+                .Add(new Item(2040) { shopCustomPrice = 500 })
+                .Add(new Item(2041) { shopCustomPrice = 500 })
+                .Add(new Item(2042) { shopCustomPrice = 500 })
+                .Add(new Item(2043) { shopCustomPrice = 500 }, Condition.DownedPumpking)
+                .Add(new Item(2145) { shopCustomPrice = 500 })
+                .Add(new Item(2146) { shopCustomPrice = 500 })
+                .Add(new Item(2147) { shopCustomPrice = 30000 })
+                .Add(new Item(2148) { shopCustomPrice = 500 })
+                .Add(new Item(2226) { shopCustomPrice = 500 })
+                .Add(new Item(2530) { shopCustomPrice = 500 })
+                .Add(new Item(2546) { shopCustomPrice = 500 })
+                .Add(new Item(2564) { shopCustomPrice = 500 })
+                .Add(new Item(2579) { shopCustomPrice = 500 })
+                .Add(new Item(2641) { shopCustomPrice = 500 })
+                .Add(new Item(2642) { shopCustomPrice = 500 })
+                .Add(new Item(2820) { shopCustomPrice = 500 })
+                .Add(new Item(3138) { shopCustomPrice = 500 })
+                .Add(new Item(3139) { shopCustomPrice = 500 })
+                .Add(new Item(3140) { shopCustomPrice = 500 })
+                .Add(new Item(3891) { shopCustomPrice = 500 }, Condition.Hardmode);
+            shop.Register();
 
-            if (Shop5)
-            {
-                items[nextSlot].type = (ItemID.Torch);
-                items[nextSlot].shopCustomPrice = 50;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.TikiTorch);
-                items[nextSlot].shopCustomPrice = 250;
-                nextSlot++;
-                items[nextSlot].type = (974);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (427);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (428);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (1245);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (429);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (430);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (431);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (432);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (433);
-                items[nextSlot].shopCustomPrice = 300;
-                nextSlot++;
-                items[nextSlot].type = (523);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1333);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2274);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3004);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3045);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3114);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-            }
+            shop = new NPCShop(Type, Chandelier)
+                .Add(new Item(106) { shopCustomPrice = 25000 })
+                .Add(new Item(107) { shopCustomPrice = 25000 })
+                .Add(new Item(108) { shopCustomPrice = 25000 })
+                .Add(new Item(710) { shopCustomPrice = 25000 })
+                .Add(new Item(711) { shopCustomPrice = 25000 })
+                .Add(new Item(712) { shopCustomPrice = 25000 })
+                .Add(new Item(2055) { shopCustomPrice = 1200 })
+                .Add(new Item(2056) { shopCustomPrice = 1200 })
+                .Add(new Item(2057) { shopCustomPrice = 1200 })
+                .Add(new Item(2058) { shopCustomPrice = 1200 })
+                .Add(new Item(2059) { shopCustomPrice = 1200 })
+                .Add(new Item(2060) { shopCustomPrice = 1200 })
+                .Add(new Item(2061) { shopCustomPrice = 1200 }, Condition.Hardmode)
+                .Add(new Item(2062) { shopCustomPrice = 1200 })
+                .Add(new Item(2063) { shopCustomPrice = 1200 })
+                .Add(new Item(2064) { shopCustomPrice = 1200 }, Condition.DownedPumpking)
+                .Add(new Item(2065) { shopCustomPrice = 1200 })
+                .Add(new Item(2141) { shopCustomPrice = 1200 })
+                .Add(new Item(2142) { shopCustomPrice = 1200 })
+                .Add(new Item(2143) { shopCustomPrice = 30000 })
+                .Add(new Item(2144) { shopCustomPrice = 1200 })
+                .Add(new Item(2224) { shopCustomPrice = 1200 })
+                .Add(new Item(2525) { shopCustomPrice = 1200 })
+                .Add(new Item(2543) { shopCustomPrice = 1200 })
+                .Add(new Item(2558) { shopCustomPrice = 1200 })
+                .Add(new Item(2573) { shopCustomPrice = 1200 })
+                .Add(new Item(2652) { shopCustomPrice = 1200 })
+                .Add(new Item(2653) { shopCustomPrice = 1200 })
+                .Add(new Item(2654) { shopCustomPrice = 1200 })
+                .Add(new Item(2655) { shopCustomPrice = 1200 })
+                .Add(new Item(2656) { shopCustomPrice = 1200 })
+                .Add(new Item(2657) { shopCustomPrice = 1200 })
+                .Add(new Item(2813) { shopCustomPrice = 1200 }, Condition.DownedMartians)
+                .Add(new Item(3177) { shopCustomPrice = 1200 })
+                .Add(new Item(3178) { shopCustomPrice = 1200 })
+                .Add(new Item(3179) { shopCustomPrice = 1200 })
+                .Add(new Item(3894) { shopCustomPrice = 1200 }, Condition.Hardmode);
+            shop.Register();
 
-            if (Shop6)
-            {
-                items[nextSlot].type = (105);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (713);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1405);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1406);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1407);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2045);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2046);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2047);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2048);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2049);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2050);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (2051);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (2052);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2153);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2154);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2155);
-                items[nextSlot].shopCustomPrice = 30000;
-                nextSlot++;
-                items[nextSlot].type = (2236);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2523);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2542);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2556);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2571);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2648);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2649);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2650);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2651);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (NPC.downedMartians)
-                {
-                    items[nextSlot].type = (2818);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (3171);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3172);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3173);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (3890);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-            }
-
-            if (Shop7)
-            {
-                items[nextSlot].type = (341);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2082);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2083);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2084);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2085);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2086);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2087);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (2088);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (2089);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2090);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2091);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2129);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2130);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2131);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2132);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2133);
-                items[nextSlot].shopCustomPrice = 30000;
-                nextSlot++;
-                items[nextSlot].type = (2134);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2225);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2533);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2547);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2563);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2578);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2643);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2644);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2645);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2646);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2647);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (NPC.downedMartians)
-                {
-                    items[nextSlot].type = (2819);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                    items[nextSlot].type = (2820);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (3135);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3136);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3137);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (3892);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-            }
-
-            if (Shop8)
-            {
-                items[nextSlot].type = (136);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (344);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (347);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1390);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1391);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1392);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1393);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1394);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (1808);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2032);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2033);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2034);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2035);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2036);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2037);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2038);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (2039);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (2040);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2041);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2042);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2043);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2145);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2146);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2147);
-                items[nextSlot].shopCustomPrice = 30000;
-                nextSlot++;
-                items[nextSlot].type = (2148);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2226);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2530);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2546);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2564);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2579);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2641);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2642);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2820);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3138);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3139);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3140);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (3891);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-            }
-
-            if (Shop9)
-            {
-                items[nextSlot].type = (106);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (107);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (108);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (710);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (711);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (712);
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (2055);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2056);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2057);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2058);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2059);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2060);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (2061);
-                    items[nextSlot].shopCustomPrice = 1200;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (2062);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2063);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2064);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2065);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2141);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2142);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2143);
-                items[nextSlot].shopCustomPrice = 30000;
-                nextSlot++;
-                items[nextSlot].type = (2144);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2224);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2525);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2543);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2558);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2573);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2652);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2653);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2654);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2655);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2656);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (2657);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                if (NPC.downedMartians)
-                {
-                    items[nextSlot].type = (2813);
-                    items[nextSlot].shopCustomPrice = 1200;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (3177);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (3178);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                items[nextSlot].type = (3179);
-                items[nextSlot].shopCustomPrice = 1200;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (3894);
-                    items[nextSlot].shopCustomPrice = 1200;
-                    nextSlot++;
-                }
-            }
-
-            if (Shop10)
-            {
-                items[nextSlot].type = (349);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (714);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2092);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2093);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2094);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2095);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2096);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2097);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2098);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (2099);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (2100);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2101);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2102);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2103);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2149);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2150);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2151);
-                items[nextSlot].shopCustomPrice = 30000;
-                nextSlot++;
-                items[nextSlot].type = (2152);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2227);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2522);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2541);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2555);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2570);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2664);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2665);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2666);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2667);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (2668);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (NPC.downedMartians)
-                {
-                    items[nextSlot].type = (2825);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-
-                items[nextSlot].type = (3168);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3169);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                items[nextSlot].type = (3170);
-                items[nextSlot].shopCustomPrice = 500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (3893);
-                    items[nextSlot].shopCustomPrice = 500;
-                    nextSlot++;
-                }
-            }
+            shop = new NPCShop(Type, Candelabra)
+                .Add(new Item(349) { shopCustomPrice = 500 })
+                .Add(new Item(714) { shopCustomPrice = 500 })
+                .Add(new Item(2092) { shopCustomPrice = 500 })
+                .Add(new Item(2093) { shopCustomPrice = 500 })
+                .Add(new Item(2094) { shopCustomPrice = 500 })
+                .Add(new Item(2095) { shopCustomPrice = 500 })
+                .Add(new Item(2096) { shopCustomPrice = 500 })
+                .Add(new Item(2097) { shopCustomPrice = 500 })
+                .Add(new Item(2098) { shopCustomPrice = 500 })
+                .Add(new Item(2099) { shopCustomPrice = 500 }, Condition.Hardmode)
+                .Add(new Item(2100) { shopCustomPrice = 500 })
+                .Add(new Item(2101) { shopCustomPrice = 500 })
+                .Add(new Item(2102) { shopCustomPrice = 500 })
+                .Add(new Item(2103) { shopCustomPrice = 500 }, Condition.DownedPumpking)
+                .Add(new Item(2149) { shopCustomPrice = 500 })
+                .Add(new Item(2150) { shopCustomPrice = 500 })
+                .Add(new Item(2151) { shopCustomPrice = 30000 })
+                .Add(new Item(2152) { shopCustomPrice = 500 })
+                .Add(new Item(2227) { shopCustomPrice = 500 })
+                .Add(new Item(2522) { shopCustomPrice = 500 })
+                .Add(new Item(2541) { shopCustomPrice = 500 })
+                .Add(new Item(2555) { shopCustomPrice = 500 })
+                .Add(new Item(2570) { shopCustomPrice = 500 })
+                .Add(new Item(2664) { shopCustomPrice = 500 })
+                .Add(new Item(2665) { shopCustomPrice = 500 })
+                .Add(new Item(2666) { shopCustomPrice = 500 })
+                .Add(new Item(2667) { shopCustomPrice = 500 })
+                .Add(new Item(2668) { shopCustomPrice = 500 })
+                .Add(new Item(2825) { shopCustomPrice = 500 }, Condition.DownedMartians)
+                .Add(new Item(3168) { shopCustomPrice = 500 })
+                .Add(new Item(3169) { shopCustomPrice = 500 })
+                .Add(new Item(3170) { shopCustomPrice = 500 })
+                .Add(new Item(3893) { shopCustomPrice = 500 }, Condition.Hardmode);
+            shop.Register();
         }
     }
 }

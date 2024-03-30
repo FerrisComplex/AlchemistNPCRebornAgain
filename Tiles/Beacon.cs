@@ -1,4 +1,5 @@
 ﻿using System;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -65,7 +66,7 @@ namespace AlchemistNPCRebornAgain.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Mod.Find<ModItem>("Beacon").Type);
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Mod.FindItem("Beacon").Type);
 		}
 	}
 }

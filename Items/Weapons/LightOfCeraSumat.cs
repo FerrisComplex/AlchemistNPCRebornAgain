@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -85,8 +86,8 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(Mod.Find<ModItem>("HolyAvenger").Type);
-			//recipe.AddIngredient(Mod.Find<ModItem>("Pommel").Type);
+			recipe.AddIngredient(Mod.FindItem("HolyAvenger").Type);
+			//recipe.AddIngredient(Mod.FindItem("Pommel").Type);
 			recipe.AddTile(Mod.Find<ModTile>("MateriaTransmutator").Type);
 			recipe.Register();
 		}

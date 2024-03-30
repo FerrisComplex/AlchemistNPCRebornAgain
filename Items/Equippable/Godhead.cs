@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
+using AlchemistNPCRebornAgain.Extensions;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -35,16 +36,16 @@ namespace AlchemistNPCRebornAgain.Items.Equippable
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(Mod.Find<ModItem>("SoulOfVision").Type);
-			recipe.AddIngredient(Mod.Find<ModItem>("SoulOfFear").Type);
-			recipe.AddIngredient(Mod.Find<ModItem>("SoulOfPower").Type);
+			recipe.AddIngredient(Mod.FindItem("SoulOfVision").Type);
+			recipe.AddIngredient(Mod.FindItem("SoulOfFear").Type);
+			recipe.AddIngredient(Mod.FindItem("SoulOfPower").Type);
 			recipe.AddIngredient(ItemID.SoulofFright, 15);
 			recipe.AddIngredient(ItemID.SoulofSight, 15);
 			recipe.AddIngredient(ItemID.SoulofMight, 15);
 			recipe.AddIngredient(ItemID.SoulofLight, 30);
 			recipe.AddIngredient(ItemID.SoulofNight, 30);
 			recipe.AddIngredient(ItemID.HallowedBar, 99);
-			//recipe.AddIngredient(Mod.Find<ModItem>("MannaFromHeaven").Type);
+			//recipe.AddIngredient(Mod.FindItem("MannaFromHeaven").Type);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}

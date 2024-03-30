@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using AlchemistNPCRebornAgain.Extensions;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -29,7 +30,7 @@ namespace AlchemistNPCRebornAgain.Items.Weapons
         {
             Recipe recipe = CreateRecipe(1);
             recipe.AddIngredient(ItemID.SpiderFang, 12);
-            recipe.AddIngredient(Mod.Find<ModItem>("SpiderFangarang").Type, 3);
+            recipe.AddIngredient(Mod.FindItem("SpiderFangarang").Type, 3);
 			recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

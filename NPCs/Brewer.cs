@@ -11,27 +11,31 @@ using AlchemistNPCRebornAgain;
 using Terraria.Localization;
 using System.Collections.Generic;
 using AlchemistNPCRebornAgain.Extensions;
+using AlchemistNPCRebornAgain.ExternalHelpers;
 using AlchemistNPCRebornAgain.Interface;
+using AlchemistNPCRebornAgain.Items;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCRebornAgain.NPCs
 {
+   
     [AutoloadHead]
     public class Brewer : ModNPC
     {
         public static bool Shop1 = true;
         public static bool Shop2 = false;
-        public static bool Shop21 = false;
         public static bool Shop3 = false;
         public static bool Shop4 = false;
-        public override string Texture
-        {
-            get
-            {
-                return "AlchemistNPCRebornAgain/NPCs/Brewer";
-            }
-        }
+        public static bool Shop5 = false;
+        public static bool Shop6 = false;
+
+        public const string SHOP_1 = "VanillaPotions";
+        public const string SHOP_2 = "Mod/Calamity";
+        public const string SHOP_3 = "Thorium/RG/Redemption";
+        public const string SHOP_4 = "MorePotions/Atheria";
+        public const string SHOP_5 = "UnuBattleRods/Tacklebox/Tremor";
+        public const string SHOP_6 = "Wildlife/Sacred/Spirit/Cristilium/ExpSentr";
 
         public override void SetStaticDefaults()
         {
@@ -43,39 +47,11 @@ namespace AlchemistNPCRebornAgain.NPCs
             NPCID.Sets.AttackAverageChance[NPC.type] = 30;
             NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.ShopB1"), () => "1st shop Vanilla");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.ShopB2"), () => "2nd shop (AlchemistNPC Mod)");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.ShopB21"), () => "3rd shop (CalamityMod)");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.ShopB3"), () => "4th shop (ThoriumMod)");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.ShopsChanger"), () => "Shops Changer");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Lillian"), () => "Lillian");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Lucy"), () => "Lucy");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Alice"), () => "Alice");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Rocksahn"), () => "Rocksahn");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Agness"), () => "Agness");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Names.Mary"), () => "Mary");
-
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B1"), () => "Care to try this potion? It's supposed to grant wings.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B2"), () => "I don't think that was a Spelunker potion...");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B3"), () => "I got my degrees in Riddle University.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B4"), () => "There's a legendary yoyo known as the Sasscade.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B5"), () => "Aww, bread crumbs and beaver spit!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B6"), () => "Hi, *cough* that wasn't an Inferno potion!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B7"), () => "Have you seen two mechanical eyes around?");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B8"), () => "That silly goose ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B9"), () => " is too afraid of using occult powers in Alchemy. And so his potions are just some useless water.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B10"), () => "*sneezes* Eww... I always sneeze while these Goblins are around!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B11"), () => "Just don't let them in my house... There are so many needed supplies and instruments.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B12"), () => "Is this a Martians Invasion? Are they going to enslave us all? Or they want to destroy us all? No one knows the answer...");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B13"), () => "Is it Blood Moon in the sky? I love it! It is so beautiful!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B14"), () => "I was born under the light of Blood Moon. I am always so excited when IT appears!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B15"), () => "Yeah, I can understand why the other girls are annoyed, but that's not stopping me!");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B16"), () => "As happy as I am, I'm not giving discounts - I'm not dumb.");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B17"), () => "Normally I'm confused with how ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B18"), () => " is just as calm as I am, but then I remember ");
-            Language.GetOrRegister(Mod.GetLocalizationKey("NPC.Brewer.Text.B19"), () => "I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
-            
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers{ Velocity = -1f, Direction = -1 };
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
             NPC.Happiness.SetBiomeAffection<JungleBiome>(AffectionLevel.Like);
@@ -84,14 +60,14 @@ namespace AlchemistNPCRebornAgain.NPCs
 
             NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
             NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement(Mod.GetLocalizationKey("Bestiary.Brewer"))
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCRebornAgain.Bestiary.Brewer")
             });
         }
 
@@ -111,24 +87,33 @@ namespace AlchemistNPCRebornAgain.NPCs
             AnimationType = NPCID.Mechanic;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs)
+        public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             if (NPC.downedBoss1 && AlchemistNPCRebornAgain.modConfiguration.BrewerSpawn)
+            {
                 return true;
-            
+            }
             return false;
         }
-        
 
-        public override List<string> SetNPCNameList() => new List<string>()
-        {
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Lillian")),
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Lucy")),
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Alice")),
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Rocksahn")),
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Agness")),
-            Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Names.Mary"))
-        };
+        public override List<string> SetNPCNameList()
+        {                                       //NPC names
+            string Lillian = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Lillian");
+            string Lucy = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Lucy");
+            string Alice = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Alice");
+            string Agness = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Agness");
+            string Rocksahn = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Rocksahn");
+            string Mary = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.Mary");
+
+            return new List<string>() {
+                Lillian,
+                Lucy,
+                Alice,
+                Rocksahn,
+                Agness,
+                Mary
+            };
+        }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
@@ -174,85 +159,115 @@ namespace AlchemistNPCRebornAgain.NPCs
 
 
         public override string GetChat()
-        {
+        {                                           //npc chat
+            string EntryB1 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB1");
+            string EntryB2 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB2");
+            string EntryB3 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB3");
+            string EntryB4 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB4");
+            string EntryB5 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB5");
+            string EntryB6 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB6");
+            string EntryB7 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB7");
+            string EntryB8 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB8");
+            string EntryB9 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB9");
+            string EntryB10 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB10");
+            string EntryB11 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB11");
+            string EntryB12 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB12");
+            string EntryB13 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB13");
+            string EntryB14 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB14");
+            string EntryB15 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB15");
+            string EntryB16 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB16");
+            string EntryB17 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB17");
+            string EntryB18 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB18");
+            string EntryB19 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.EntryB19");
             int Alchemist = NPC.FindFirstNPC(ModContent.NPCType<Alchemist>());
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             if (Main.bloodMoon && partyGirl >= 0 && Alchemist >= 0 && Main.rand.Next(4) == 0)
             {
-                
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B17")) + Main.npc[partyGirl].GivenName + Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B18")) + Main.npc[Alchemist].GivenName + ".";
+                return EntryB17 + Main.npc[partyGirl].GivenName + EntryB18 + Main.npc[Alchemist].GivenName + ".";
             }
             if (Main.bloodMoon)
             {
                 switch (Main.rand.Next(4))
                 {
                     case 0:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B13"));
+                        return EntryB13;
                     case 1:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B14"));
+                        return EntryB14;
                     case 2:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B15"));
+                        return EntryB15;
                     case 3:
-                        return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B16"));
+                        return EntryB16;
                 }
             }
             if (Main.invasionType == 1)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B10"));
+                return EntryB10;
             }
             if (Main.invasionType == 3)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B11"));
+                return EntryB11;
             }
             if (Main.invasionType == 4)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B12"));
+                return EntryB12;
             }
             if (Alchemist >= 0 && Main.rand.Next(4) == 0)
             {
-                return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B8")) + Main.npc[Alchemist].GivenName + Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B9"));
+                return EntryB8 + Main.npc[Alchemist].GivenName + EntryB9;
             }
             switch (Main.rand.Next(8))
             {
                 case 0:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B1"));
+                    return EntryB1;
                 case 1:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B2"));
+                    return EntryB2;
                 case 2:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B3"));
+                    return EntryB3;
                 case 3:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B4"));
+                    return EntryB4;
                 case 4:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B5"));
+                    return EntryB5;
                 case 5:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B6"));
+                    return EntryB6;
                 case 6:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B19"));
+                    return EntryB19;
                 default:
-                    return Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.Text.B7"));
+                    return EntryB7;
             }
         }
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-
-            
-
+            string ShopB1 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB1");
+            string ShopB2 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB2");
+            string ShopB3 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB3");
+            string ShopB4 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB4");
+            string ShopB5 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB5");
+            string ShopB6 = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopB6");
+            string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCRebornAgain.ShopsChanger");
             if (Shop1)
             {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.ShopB1"));
+                button = ShopB1;
             }
             if (Shop2)
             {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.ShopB2"));
-            }
-            if (Shop21)
-            {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.ShopB21"));
+                button = ShopB2;
             }
             if (Shop3)
             {
-                button = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.ShopB3"));
+                button = ShopB3;
+            }
+            if (Shop4)
+            {
+                button = ShopB4;
+            }
+            if (Shop5)
+            {
+                button = ShopB5;
+            }
+            if (Shop6)
+            {
+                button = ShopB6;
             }
             if (NPC.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(ModContent.NPCType<Alchemist>()) && !NPC.AnyNPCs(ModContent.NPCType<YoungBrewer>()))
             {
@@ -260,36 +275,20 @@ namespace AlchemistNPCRebornAgain.NPCs
             }
             else
             {
-                button2 = Language.GetTextValue(Mod.GetLocalizationKey("NPC.Brewer.ShopsChanger"));
-            }
-        }
-        
-        public override void AddShops()
-        {
-            new NPCShop(Type, "Shop").Register(); // empty shop we will fill this with the modifyactiveshop!
-        }
-
-        private static void addModItemToShop(Mod sourceMod, string id, int cost, ref Item[] items, ref int nextSlot)
-        {
-            if (ExternalModCache.GetOrCreateModItem(sourceMod, id, out var item) && item != null)
-            {
-                items[nextSlot].type = (item.Type);
-                items[nextSlot].shopCustomPrice = cost;
-                nextSlot += 1;
+                button2 = ShopsChanger;
             }
         }
 
-
-        public override void OnChatButtonClicked(bool firstButton, ref string shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shop = "Shop";
+                shopName = ShopChangeUI.Shop;
                 ShopChangeUI.visible = false;
             }
             else
             {
-                if (NPC.HasBuff(119) && NPC.AnyNPCs(ModContent.NPCType<Alchemist>()) && !NPC.AnyNPCs(ModContent.NPCType<YoungBrewer>()))
+                if (NPC.HasBuff(BuffID.Lovestruck) && NPC.AnyNPCs(ModContent.NPCType<Alchemist>()) && !NPC.AnyNPCs(ModContent.NPCType<YoungBrewer>()))
                 {
                     for (int k = 0; k < 255; k++)
                     {
@@ -301,331 +300,161 @@ namespace AlchemistNPCRebornAgain.NPCs
                         }
                     }
                 }
-                if(!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
                 ShopChangeUI.visible = true;
             }
         }
 
-        // IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
-        public bool SacredToolsDownedAbaddon
-        {
-        	get { return SacredTools.ModdedWorld.OblivionSpawns; }
-        }
+        //      // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        //      /*
+        //      public bool SacredToolsDownedAbaddon
+        //      {
+        //      	get { return SacredTools.ModdedWorld.OblivionSpawns; }
+        //      }
 
-        public bool SacredToolsDownedSerpent
-        {
-        	get { return SacredTools.ModdedWorld.FlariumSpawns; }
-        }
+        //      public bool SacredToolsDownedSerpent
+        //      {
+        //      	get { return SacredTools.ModdedWorld.FlariumSpawns; }
+        //      }
 
-        public bool SacredToolsDownedLunarians
+        //      public bool SacredToolsDownedLunarians
+        //      {
+        //      	get { return SacredTools.ModdedWorld.downedLunarians; }
+        //      }
+        //*/
+        /*public bool CalamityModRevengeance
         {
-        	get { return SacredTools.ModdedWorld.downedLunarians; }
-        }
-		*/
-        private bool CalamityModRevengeance
-        {
-            get {
-                if(ModLoader.TryGetMod("CalamityMod", out Mod calamityMod)) {
-                    return (bool)calamityMod.Call("GetDifficultyActive", "revengeance");
+            get
+            {
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                {
+                    return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
                 }
                 return false;
             }
-        }
+        }*/
 
-        public override void ModifyActiveShop(string shopName, Item[] items)
+        public override void AddShops()
         {
-            int nextSlot = 0;
-            if (Shop1)
-            {
-                items[nextSlot].type = (ItemID.SwiftnessPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.IronskinPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.RegenerationPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.MiningPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.BuilderPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ArcheryPotion);
-                items[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SummoningPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.EndurancePotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.HeartreachPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.AmmoReservationPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ThornsPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ShinePotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.NightOwlPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WarmthPotion);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.SpelunkerPotion);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.HunterPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.TrapsightPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.FlipperPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.GillsPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.InvisibilityPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.WaterWalkingPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ObsidianSkinPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.FeatherfallPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.GravitationPotion);
-                items[nextSlot].shopCustomPrice = 20000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.MagicPowerPotion);
-                items[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.ManaRegenerationPotion);
-                items[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.TitanPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.BattlePotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                items[nextSlot].type = (ItemID.CalmingPotion);
-                items[nextSlot].shopCustomPrice = 10000;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.LifeforcePotion);
-                    items[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.InfernoPotion);
-                    items[nextSlot].shopCustomPrice = 15000;
-                    nextSlot++;
-                }
-                if (NPC.downedBoss3)
-                {
-                    items[nextSlot].type = (ItemID.WrathPotion);
-                    items[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.RagePotion);
-                    items[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                }
-                items[nextSlot].type = (ItemID.StinkPotion);
-                items[nextSlot].shopCustomPrice = 7500;
-                nextSlot++;
-                if (Main.hardMode)
-                {
-                    items[nextSlot].type = (ItemID.LovePotion);
-                    items[nextSlot].shopCustomPrice = 7500;
-                    nextSlot++;
-                }
-                if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
-                {
-                    items[nextSlot].type = (ItemID.FishingPotion);
-                    items[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.SonarPotion);
-                    items[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    items[nextSlot].type = (ItemID.CratePotion);
-                    items[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                }
-                items[nextSlot].type = (ItemID.GenderChangePotion);
-                items[nextSlot].shopCustomPrice = 100000;
-                nextSlot++;
-            }
-            if (Shop2)
-            {
-                items[nextSlot].type = (ModContent.ItemType<Items.SunshinePotion>());
-                items[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                items[nextSlot].type = (ModContent.ItemType<Items.Dopamine>());
-                items[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                items[nextSlot].type = (ModContent.ItemType<Items.GreaterDangersensePotion>());
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                items[nextSlot].type = (ModContent.ItemType<Items.NatureBlessingPotion>());
-                items[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                if (NPC.downedBoss3)
-                {
-                    items[nextSlot].type = (ModContent.ItemType<Items.BewitchingPotion>());
-                    items[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    items[nextSlot].type = (ModContent.ItemType<Items.FortitudePotion>());
-                    items[nextSlot].shopCustomPrice = 15000;
-                    nextSlot++;
-                    if (Main.hardMode)
-                    {
-                        items[nextSlot].type = (ModContent.ItemType<Items.InvincibilityPotion>());
-                        items[nextSlot].shopCustomPrice = 30000;
-                        nextSlot++;
-                        items[nextSlot].type = (ModContent.ItemType<Items.TitanSkinPotion>());
-                        items[nextSlot].shopCustomPrice = 50000;
-                        nextSlot++;
-                        if (ModLoader.GetMod("CalamityMod") != null)
-                        {
-                            if (CalamityModRevengeance)
-                            {
-                            items[nextSlot].type =  (ModContent.ItemType<Items.HeartAttackPotion>());
-                            items[nextSlot].shopCustomPrice = 250000;
-                            nextSlot++;
-                            }
-                        }
-                        if (NPC.downedMechBossAny && !NPC.downedMoonlord)
-                        {
-                            items[nextSlot].type = (ModContent.ItemType<Items.DiscordPotion>());
-                            items[nextSlot].shopCustomPrice = 200000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                        {
-                            items[nextSlot].type = (ModContent.ItemType<Items.BlurringPotion>());
-                            items[nextSlot].shopCustomPrice = 150000;
-                            nextSlot++;
-                            if (NPC.downedPlantBoss)
-                            {
-                                items[nextSlot].type = (ModContent.ItemType<Items.NinjaPotion>());
-                                items[nextSlot].shopCustomPrice = 75000;
-                                nextSlot++;
-                            }
-                            if (NPC.downedGolemBoss)
-                            {
-                                items[nextSlot].type = (ModContent.ItemType<Items.TrapsPotion>());
-                                items[nextSlot].shopCustomPrice = 50000;
-                                nextSlot++;
-                            }
-                        }
-                    }
-                }
-                
-            }
-            if (Shop21)
-            {
-                
-                if (ExternalModCache.findMod("CalamityMod", out var Calamity) && Calamity != null)
-                {
-                    
-                    addModItemToShop(Calamity, "BoundingPotion", 20000, ref items, ref nextSlot);
-                    addModItemToShop(Calamity, "CalciumPotion", 35000, ref items, ref nextSlot);
-                    addModItemToShop(Calamity, "TriumphPotion", 30000, ref items, ref nextSlot);
-                    addModItemToShop(Calamity, "TeslaPotion", 25000, ref items, ref nextSlot);
-                    addModItemToShop(Calamity, "SulphurskinPotion", 15000, ref items, ref nextSlot);
-                    if (NPC.downedBoss3)
-                    {
-                        addModItemToShop(Calamity, "PotionofOmniscience", 20000, ref items, ref nextSlot);
-                        if (NPC.downedPlantBoss)
-                        {
-                            addModItemToShop(Calamity, "ZergPotion", 30000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "ZenPotion", 30000, ref items, ref nextSlot);
-                        }
-                        addModItemToShop(Calamity, "YharimsStimulants", 100000, ref items, ref nextSlot);
-                        if (Main.hardMode)
-                        {
-                            addModItemToShop(Calamity, "CrumblingPotion", 50000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "SoaringPotion", 40000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "CadancePotion", 40000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "FabsolsVodka", 100000, ref items, ref nextSlot);
-                            addModItemToShop(Calamity, "RevivifyPotion", 50000, ref items, ref nextSlot);
-                            if ((bool)Calamity.Call("Downed", "astrum aureus"))
-                            {
-                                addModItemToShop(Calamity, "AstralInjection", 10000, ref items, ref nextSlot);
-                                addModItemToShop(Calamity, "GravityNormalizerPotion", 30000, ref items, ref nextSlot);
-                            }
-                            if (NPC.downedPlantBoss)
-                            {
-                                addModItemToShop(Calamity, "PenumbraPotion", 100000, ref items, ref nextSlot);
-                            }
-                            if (NPC.downedGolemBoss)
-                            {
-                                addModItemToShop(Calamity, "TitanScalePotion", 40000, ref items, ref nextSlot);
-                                addModItemToShop(Calamity, "ShatteringPotion", 100000, ref items, ref nextSlot);
-                            }
-                            if (NPC.downedMoonlord)
-                            {
-                                addModItemToShop(Calamity, "HolyWrathPotion", 100000, ref items, ref nextSlot);
-                                addModItemToShop(Calamity, "ProfanedRagePotion", 100000, ref items, ref nextSlot);
-                            }
-                            if ((bool)Calamity.Call("Downed", "polterghast"))
-                            {
-                                addModItemToShop(Calamity, "CeaselessHungerPotion", 25000, ref items, ref nextSlot);
-                            }
-                            if ((bool)Calamity.Call("Downed", "yharon"))
-                            {
-                                addModItemToShop(Calamity, "DraconicElixir", 250000, ref items, ref nextSlot);
-                            }
-                        }
-                    }
-                }
-            }
-            if (Shop3)
-            {
-                if (ExternalModCache.findMod("ThoriumMod", out var ThoriumMod) && ThoriumMod != null)
-                {
-                	if (NPC.downedBoss3)
-                	{
-                		addModItemToShop(ThoriumMod, "CreativityPotion", 10000, ref items, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "EarwormPotion", 10000, ref items, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "AssassinPotion", 10000, ref items, ref nextSlot);
-                	}
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, ref items, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "GlowingPotion", 20000, ref items, ref nextSlot);
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref items, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "DashPotion", 20000, ref items, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref items, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref items, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref items, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "SilverTonguePotion", 20000, ref items, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref items, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref items, ref nextSlot);
-                }
-            }
-            if (Shop4)
-            {
-				
-			}
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+            ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
+            ModLoader.TryGetMod("Redemption", out Mod Redemption);
+			//ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
+
+            var shop = new NPCShop(Type, SHOP_1)
+                .Add(new Item(ItemID.SwiftnessPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.IronskinPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.RegenerationPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.MiningPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.BuilderPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.ArcheryPotion) { shopCustomPrice = 15000 })
+                .Add(new Item(ItemID.SummoningPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.EndurancePotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.HeartreachPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.AmmoReservationPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.ThornsPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.ShinePotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.NightOwlPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.WarmthPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.SpelunkerPotion) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.HunterPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.TrapsightPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.FlipperPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.GillsPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.InvisibilityPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.WaterWalkingPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.ObsidianSkinPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.FeatherfallPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.GravitationPotion) { shopCustomPrice = 20000 })
+                .Add(new Item(ItemID.MagicPowerPotion) { shopCustomPrice = 15000 })
+                .Add(new Item(ItemID.ManaRegenerationPotion) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.TitanPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.BattlePotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.CalmingPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.BiomeSightPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.WrathPotion) { shopCustomPrice = 25000 },
+                    Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.RagePotion) { shopCustomPrice = 25000 },
+                    Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.LifeforcePotion) { shopCustomPrice = 25000 },
+                    Condition.Hardmode)
+                .Add(new Item(ItemID.InfernoPotion) { shopCustomPrice = 15000 },
+                    Condition.DownedSkeletron)
+                .Add(new Item(ItemID.StinkPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.LovePotion) { shopCustomPrice = 7500 },
+                    Condition.Hardmode)
+                .Add(new Item(ItemID.FishingPotion) { shopCustomPrice = 10000 },
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
+                .Add(new Item(ItemID.SonarPotion) { shopCustomPrice = 10000 },
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
+                .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 },
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
+                .Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 });
+            shop.Register();
+
+            shop = new NPCShop(Type, SHOP_2)
+                .AddModItemToShop<SunshinePotion>(15000)
+                .AddModItemToShop<Dopamine>(15000)
+                .AddModItemToShop<GreaterDangersensePotion>(25000)
+                .AddModItemToShop<NatureBlessingPotion>(25000)
+                //.AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc)
+                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
+                .AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
+                .AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord)
+                .AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
+                .AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+                .AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
+                .AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
+                .AddModItemToShop(Calamity, "BoundingPotion", 20000)
+                .AddModItemToShop(Calamity, "CalciumPotion", 35000)
+                .AddModItemToShop(Calamity, "TriumphPotion", 30000)
+                .AddModItemToShop(Calamity, "TeslaPotion", 25000)
+                .AddModItemToShop(Calamity, "SulphurskinPotion", 15000)
+                .AddModItemToShop(Calamity, "ShadowPotion", 15000)
+                .AddModItemToShop(Calamity, "PotionofOmniscience", 20000, () => NPC.downedBoss3)
+                .AddModItemToShop(Calamity, "ZergPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+                .AddModItemToShop(Calamity, "ZenPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+                .AddModItemToShop(Calamity, "PhotosynthesisPotion", 50000, () => Main.hardMode)
+                .AddModItemToShop(Calamity, "SoaringPotion", 40000, () => Main.hardMode)
+                .AddModItemToShop(Calamity, "AstralInjection", 10000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+                .AddModItemToShop(Calamity, "GravityNormalizerPotion", 30000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+                .AddModItemToShop(Calamity, "CeaselessHungerPotion", 50000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"));
+            shop.Register();
+
+            shop = new NPCShop(Type, SHOP_3)
+                    .AddModItemToShop(ThoriumMod, "WarmongerPotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "ArtilleryPotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "BouncingFlamePotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "CreativityPotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "EarwormPotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "AssassinPotion", 10000, Condition.DownedSkeletron)
+                    .AddModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, Condition.Hardmode)
+                    .AddModItemToShop(ThoriumMod, "GlowingPotion", 20000)
+                    .AddModItemToShop(ThoriumMod, "HolyPotion", 20000, Condition.Hardmode)
+                    .AddModItemToShop(ThoriumMod, "ArcanePotion", 20000, Condition.Hardmode)
+                    .AddModItemToShop(ThoriumMod, "KineticPotion", 20000, Condition.Hardmode)
+                    .AddModItemToShop(ThoriumMod, "HydrationPotion", 10000)
+                    .AddModItemToShop(ThoriumMod, "BloodPotion", 10000)
+                    .AddModItemToShop(ThoriumMod, "ConflagrationPotion", 10000)
+                    .AddModItemToShop(ThoriumMod, "AquaPotion", 10000)
+                    .AddModItemToShop(ThoriumMod, "FrenzyPotion", 10000)
+                    .AddModItemToShop(Redemption, "CharismaPotion", 5000)
+                    .AddModItemToShop(Redemption, "VendettaPotion", 6000)
+                //.AddModItemToShop(Redemption, "VigourousPotion", 250000, () => Operator.RedemptionDowned.Nebuleus)
+                ;
+            shop.Register();
+
+            shop = new NPCShop(Type, SHOP_4);
+				/*.AddModItemToShop(Atheria, "SoulInjection", 7500)
+				.AddModItemToShop(Atheria, "BoneMarrowInjection", 7500, Condition.DownedSkeletron)
+				.AddModItemToShop(Atheria, "ConductivityPotion", 7500, Condition.DownedEowOrBoc)
+				.AddModItemToShop(Atheria, "ChargedFlightPotion", 7500, () => Operator.ShardsConditions.DownedNova);*/
+            shop.Register();
+
+            shop = new NPCShop(Type, SHOP_5);
+            shop.Register();
         }
     }
 }
