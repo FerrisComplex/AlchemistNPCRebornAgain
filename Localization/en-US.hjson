@@ -1580,1136 +1580,1764 @@ Mods: {
 		}
 
 		Items: {
+			# Armor Start
 			BlackCatBody: {
-				DisplayName: Black Cat Body
+				DisplayName: Black Cat's dress
 				Tooltip: ""
 			}
 
 			BlackCatHead: {
-				DisplayName: Black Cat Head
+				DisplayName: Black Cat's bow and ears
 				Tooltip: ""
 			}
 
 			BlackCatLegs: {
-				DisplayName: Black Cat Legs
+				DisplayName: Black Cat's leggings & shoes
 				Tooltip: ""
 			}
 
 			BloodMoonCirclet: {
-				DisplayName: Blood Moon Circlet
-				Tooltip: ""
+				DisplayName: Horns Circlet
+				Tooltip: Changes player's hairstyle and hair color (can be changed back by Stylist)
 			}
 
 			BloodMoonDress: {
 				DisplayName: Blood Moon Dress
-				Tooltip: ""
+				Tooltip: Changes player's gender to female
 			}
 
 			BloodMoonStockings: {
-				DisplayName: Blood Moon Stockings
+				DisplayName: Blood Moon stockings and boots
 				Tooltip: ""
 			}
 
 			JustitiaCrown: {
-				DisplayName: Justitia Crown
-				Tooltip: ""
+				DisplayName: Justitia Crown (O-02-62)
+				Tooltip:
+					'''
+					Just like anything else, it had hope at first. The desire for peace now only exists in fairy tales.
+					[c/FF0000:EGO armor piece]
+					Increases melee speed by 20%
+					'''
 			}
 
 			JustitiaLeggings: {
-				DisplayName: Justitia Leggings
-				Tooltip: ""
+				DisplayName: Justitia Leggings (O-02-62)
+				Tooltip:
+					'''
+					Just like anything else, it had hope at first. The desire for peace now only exists in fairy tales.
+					[c/FF0000:EGO armor piece]
+					25% increased movement speed
+					'''
 			}
 
 			JustitiaSuit: {
-				DisplayName: Justitia Suit
-				Tooltip: ""
-			}
-
-			Justitia: {
-				DisplayName: Justitia
-				Tooltip: ""
+				DisplayName: Justitia Suit (O-02-62)
+				Tooltip:
+					'''
+					Just like anything else, it had hope at first. The desire for peace now only exists in fairy tales.
+					[c/FF0000:EGO armor piece]
+					+100 maximum HP
+					+15% damage reduction
+					'''
 			}
 
 			LaetitiaCoat: {
-				DisplayName: Laetitia Coat
-				Tooltip: ""
+				DisplayName: Laetitia Coat (O-01-67)
+				Tooltip:
+					'''
+					The ribbon on the coat represents a child’s yearn for happiness. A child who could not leave their friends.
+					[c/FF0000:EGO armor piece]
+					Increases summon damage by 20%
+					Defense grows stronger when certain bosses are killed
+					Armor's base defense is 5
+					'''
 			}
 
 			LaetitiaLeggings: {
-				DisplayName: Laetitia Leggings
-				Tooltip: ""
+				DisplayName: Laetitia Leggings (O-01-67)
+				Tooltip:
+					'''
+					The ribbon on the coat represents a child’s yearn for happiness. A child who could not leave their friends.
+					[c/FF0000:EGO armor piece]
+					Increases summon damage by 10%
+					Defense grows stronger when certain bosses are killed
+					Armor's base defense is 4
+					'''
 			}
 
 			LaetitiaRibbon: {
-				DisplayName: Laetitia Ribbon
-				Tooltip: ""
+				DisplayName: Laetitia Ribbon (O-01-67)
+				Tooltip:
+					'''
+					The ribbon on the coat represents a child’s yearn for happiness. A child who could not leave their friends.
+					[c/FF0000:EGO armor piece]
+					Increases summon damage by 5%
+					Defense grows stronger when certain bosses are killed
+					Armor's base defense is 3
+					'''
 			}
 
 			ParadiseLostBody: {
-				DisplayName: Paradise Lost Body
-				Tooltip: ""
+				DisplayName: Paradise Lost Suit (T-03-46)
+				Tooltip:
+					'''
+					''Thou shall not worry; I have heard your prayers.
+					Have thou not yet realized that pain is nothing?
+					Thou want me to prove the miracle.
+					Thou shall believe in me and granted with life. I shall show you the power.''
+					[c/FF0000:EGO armor piece]
+					+200 maximum HP
+					+25% damage reduction
+					Immune to most vanilla debuffs
+					'''
 			}
 
 			ParadiseLostHead: {
-				DisplayName: Paradise Lost Head
-				Tooltip: ""
+				DisplayName: Paradise Lost Crown of Thorns (T-03-46)
+				Tooltip:
+					'''
+					''Thou shall not worry; I have heard your prayers.
+					      Have thou not yet realized that pain is nothing?
+					      Thou want me to prove the miracle.
+					      Thou shall believe in me and granted with life. I shall show you the power.''
+					      [c/FF0000:EGO armor piece]
+					      +100 max mana
+					      Increases melee speed by 33%
+					'''
 			}
 
 			ParadiseLostLegs: {
-				DisplayName: Paradise Lost Legs
-				Tooltip: ""
+				DisplayName: Paradise Lost Leggings (T-03-46)
+				Tooltip:
+					'''
+					''Thou shall not worry; I have heard your prayers.
+					      Have thou not yet realized that pain is nothing?
+					      Thou want me to prove the miracle.
+					      Thou shall believe in me and granted with life. I shall show you the power.''
+					      [c/FF0000:EGO armor piece]
+					      66% increased movement speed
+					'''
 			}
 
 			PinkGuyBody: {
-				DisplayName: Pink Guy Body
-				Tooltip: ""
+				DisplayName: Pink Guy's Suit
+				Tooltip: Forged from the darkest of materials. Only the best of the best can wear it.
 			}
 
 			PinkGuyHead: {
-				DisplayName: Pink Guy Head
-				Tooltip: ""
+				DisplayName: Pink Guy's Hood
+				Tooltip: Could this be a legendary piece of clothing? No one knows, but once you wear it, you can't go back.
 			}
 
 			PinkGuyLegs: {
-				DisplayName: Pink Guy Legs
-				Tooltip: ""
+				DisplayName: Pink Guy's Leggings
+				Tooltip: The perfect pants for leg day. Perhaps they could even make you stronger.
 			}
 
 			ReverberationBody: {
-				DisplayName: Reverberation Body
-				Tooltip: ""
+				DisplayName: Reverberation Suit (T-04-53)
+				Tooltip:
+					'''
+					The sleek surface is tough as if it had been cured several times.
+					      [c/FF0000:EGO armor piece]
+					      Increases ranged critical strike chance by 20%
+					'''
 			}
 
 			ReverberationHead: {
-				DisplayName: Reverberation Head
-				Tooltip: ""
+				DisplayName: Reverberation Wreath (T-04-53)
+				Tooltip:
+					'''
+					The sleek surface is tough as if it had been cured several times.
+					      [c/FF0000:EGO armor piece]
+					      Increases ranged damage by 20%
+						
+					'''
 			}
 
 			ReverberationLegs: {
-				DisplayName: Reverberation Legs
-				Tooltip: ""
-			}
-
-			Reverberation: {
-				DisplayName: Reverberation
-				Tooltip: ""
+				DisplayName: Reverberation Leggings (T-04-53)
+				Tooltip:
+					'''
+					The sleek surface is tough as if it had been cured several times.
+					[c/FF0000:EGO armor piece]
+					Increases movement speed by 25%
+					'''
 			}
 
 			Skyline222Body: {
-				DisplayName: Skyline222 Body
-				Tooltip: ""
+				DisplayName: Skyline222's (Noire) shirt
+				Tooltip: Skyline222's cute shirt
 			}
 
 			Skyline222Hair: {
-				DisplayName: Skyline222 Hair
-				Tooltip: ""
+				DisplayName: Skyline222's (Noire) hairstyle
+				Tooltip: Skyline222's fancy hairstyle
 			}
 
 			Skyline222Legs: {
-				DisplayName: Skyline222 Legs
-				Tooltip: ""
+				DisplayName: Skyline222's (Noire) skirt
+				Tooltip: Skyline222's short skirt with boots
 			}
 
 			somebody0214Hood: {
-				DisplayName: somebody0214 Hood
-				Tooltip: ""
+				DisplayName: somebody0214's Hood
+				Tooltip: Great for impersonating a Sun Praiser!
 			}
 
 			somebody0214Robe: {
-				DisplayName: somebody0214 Robe
-				Tooltip: ""
+				DisplayName: somebody0214's Robe
+				Tooltip: Great for impersonating a Sun Praiser!
 			}
 
 			StrangeTopHat: {
 				DisplayName: Strange Top Hat
-				Tooltip: ""
+				Tooltip:
+					'''
+					''We'll meet again, don't know where, don't know when!
+					Oh, I know we'll meet again some sunny day!''
+					'''
 			}
 
 			TheSecretVR: {
-				DisplayName: The Secret V R
-				Tooltip: ""
+				DisplayName: Secret VR Glasses
+				Tooltip: It's better for you not to know why you have it!
 			}
 
 			TwilightCrown: {
-				DisplayName: Twilight Crown
-				Tooltip: ""
+				DisplayName: Twilight Crown (O-02-63)
+				Tooltip:
+					'''
+					''Efforts of three birds to defeat the beast became one.
+					It could stop countless incidents but you’d have to be prepared to step into the Black Forest.''
+					[c/FF0000:EGO armor piece]
+					Increases melee speed by 30%
+					'''
 			}
 
 			TwilightLeggings: {
-				DisplayName: Twilight Leggings
-				Tooltip: ""
+				DisplayName: Twilight Leggings (O-02-63)
+				Tooltip:
+					'''
+					''Efforts of three birds to defeat the beast became one.
+					It could stop countless incidents but you’d have to be prepared to step into the Black Forest.''
+					[c/FF0000:EGO armor piece]
+					30% increased movement speed
+					'''
 			}
 
 			TwilightSuit: {
-				DisplayName: Twilight Suit
-				Tooltip: ""
+				DisplayName: Twilight Suit (O-02-63)
+				Tooltip:
+					'''
+					''Efforts of three birds to defeat the beast became one.
+					It could stop countless incidents but you’d have to be prepared to step into the Black Forest.''
+					[c/FF0000:EGO armor piece]
+					+200 maximum HP
+					+20% damage reduction
+					Immune to most vanilla debuffs
+					'''
 			}
 
-			BattleCombination: {
-				DisplayName: Battle Combination
-				Tooltip: ""
-			}
-
-			BeachTeleporterPotion: {
-				DisplayName: Beach Teleporter Potion
-				Tooltip: ""
-			}
-
-			BeaconTeleportator: {
-				DisplayName: Beacon Teleportator
-				Tooltip: ""
-			}
-
-			Beacon: {
-				DisplayName: Beacon
-				Tooltip: ""
-			}
-
-			BewitchingPotion: {
-				DisplayName: Bewitching Potion
-				Tooltip: ""
-			}
-
-			BlurringPotion: {
-				DisplayName: Blurring Potion
-				Tooltip: ""
-			}
-
+			# Armor End
+			
+			# Boosters Start
 			BetsyBooster: {
 				DisplayName: Betsy Booster
-				Tooltip: ""
+				Tooltip: Your attacks inflict Daybroken, flight abilities are increased
 			}
 
 			BrainOfCthulhuBooster: {
-				DisplayName: Brain Of Cthulhu Booster
-				Tooltip: ""
+				DisplayName: Brain of Cthulhu booster
+				Tooltip: Increases max amount of minions by 1, Heartreach effect
 			}
 
 			BrokenBooster1: {
-				DisplayName: Broken Booster1
-				Tooltip: ""
+				DisplayName: Broken Booster (1)
+				Tooltip: Can be fixed if use certain materials
 			}
 
 			BrokenBooster2: {
-				DisplayName: Broken Booster2
-				Tooltip: ""
+				DisplayName: Broken Booster (2)
+				Tooltip: Can be fixed if use certain materials
 			}
 
 			CultistBooster: {
-				DisplayName: Cultist Booster
-				Tooltip: ""
+				DisplayName: Cultist booster
+				Tooltip: Reduces damage taken from Pillars enemies, mobs may drop lunar fragments
 			}
 
 			CustomBooster1: {
-				DisplayName: Custom Booster1
-				Tooltip: ""
+				DisplayName: Vision Booster 1
+				Tooltip: Gives Shine and Nightvision effects
 			}
 
 			CustomBooster2: {
-				DisplayName: Custom Booster2
-				Tooltip: ""
+				DisplayName: Immunity Booster 2
+				Tooltip: Provides immunity to fire blocks, gives Obsidian Skin, Gills and Flipper effects
 			}
 
 			DarkMageBooster: {
 				DisplayName: Dark Mage Booster
-				Tooltip: ""
+				Tooltip: Increases magic damage by 25%, max mana by 50 and mana regeneration greatly
 			}
 
 			DestroyerBooster: {
-				DisplayName: Destroyer Booster
-				Tooltip: ""
+				DisplayName: Destroyer booster
+				Tooltip: Increases mining speed by 33% and increases max life by 25%
 			}
 
 			EaterOfWorldsBooster: {
-				DisplayName: Eater Of Worlds Booster
-				Tooltip: ""
+				DisplayName: Eater Of Worlds booster
+				Tooltip: Increases melee speed by 5%, movement and mining speed by 25%
 			}
 
 			EyeOfCthulhuBooster: {
-				DisplayName: Eye Of Cthulhu Booster
-				Tooltip: ""
+				DisplayName: Eye of Cthulhu booster
+				Tooltip: Provides creatures, treasures and traps detection
 			}
 
 			FishronBooster: {
-				DisplayName: Fishron Booster
-				Tooltip: ""
+				DisplayName: Duke Fishron booster
+				Tooltip: +4% all stats up while on surface, mount is always accelerated
 			}
 
 			GolemBooster: {
-				DisplayName: Golem Booster
-				Tooltip: ""
+				DisplayName: Golem booster
+				Tooltip: Increases attack speed by 10% and increases melee knockback
 			}
 
 			GSummonerBooster: {
-				DisplayName: G Summoner Booster
-				Tooltip: ""
+				DisplayName: Goblin Summoner booster
+				Tooltip: Makes your attacks inflict Shadowflame and makes you immune to it
 			}
 
 			IceGolemBooster: {
 				DisplayName: Ice Golem Booster
-				Tooltip: ""
+				Tooltip: Provides immunity to Chilled, Frozen and Frostburn debuffs
 			}
 
 			KingSlimeBooster: {
-				DisplayName: King Slime Booster
-				Tooltip: ""
+				DisplayName: King Slime booster
+				Tooltip: Increases jump height and safe fall distance greatly
 			}
 
 			MartianSaucerBooster: {
-				DisplayName: Martian Saucer Booster
-				Tooltip: ""
+				DisplayName: Martian Saucer booster
+				Tooltip: Provides immunity to Electrified and Distorted debuffs
 			}
 
 			MoonLordBooster: {
-				DisplayName: Moon Lord Booster
-				Tooltip: ""
+				DisplayName: Moon Lord booster
+				Tooltip: You emit aura which weakens enemies around
 			}
 
 			OgreBooster: {
-				DisplayName: Ogre Booster
-				Tooltip: ""
+				DisplayName: Ogre booster
+				Tooltip: Increases defense and damage reduction by 5/5% and provides knockback immunity
 			}
 
 			PigronBooster: {
 				DisplayName: Pigron Booster
-				Tooltip: ""
+				Tooltip: Provides Well Fed
 			}
 
 			PlanteraBooster: {
-				DisplayName: Plantera Booster
-				Tooltip: ""
+				DisplayName: Plantera booster
+				Tooltip: Damages and critical strike chances are boosted while you are moving, Philosopher's stone effect
 			}
 
 			PrimeBooster: {
-				DisplayName: Prime Booster
-				Tooltip: ""
+				DisplayName: Skeletron Prime booster
+				Tooltip: Increases armor penetration and melee speed by 15/15%, gives 200% thorns effect
 			}
 
 			QueenBeeBooster: {
-				DisplayName: Queen Bee Booster
-				Tooltip: ""
+				DisplayName: Queen Bee booster
+				Tooltip: Hostile bees do less damage and your regeneration is increased by 6, immunity to poisons
 			}
 
 			SkeletronBooster: {
-				DisplayName: Skeletron Booster
-				Tooltip: ""
+				DisplayName: Skeletron booster
+				Tooltip: Skeletons contact damage is reduced, all damages/critical strike chances are increased by 10%
 			}
 
 			TwinsBooster: {
-				DisplayName: Twins Booster
-				Tooltip: ""
+				DisplayName: Twins booster
+				Tooltip: Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor
 			}
 
 			WoFBooster: {
-				DisplayName: Wo F Booster
-				Tooltip: ""
+				DisplayName: Wall of Flesh booster
+				Tooltip: Increases max amount of minions/sentries by 1, defense and DR by 10/10%
 			}
 
-			BuilderCombination: {
-				DisplayName: Builder Combination
-				Tooltip: ""
-			}
-
-			CalamityCombination: {
-				DisplayName: Calamity Combination
-				Tooltip: ""
-			}
-
-			CloakOfFear: {
-				DisplayName: Cloak Of Fear
-				Tooltip: ""
-			}
-
-			CrimsonCherrySoda: {
-				DisplayName: Crimson Cherry Soda
-				Tooltip: ""
-			}
-
-			DiscordPotion: {
-				DisplayName: Discord Potion
-				Tooltip: ""
-			}
-
-			Dopamine: {
-				DisplayName: Dopamine
-				Tooltip: ""
-			}
-
-			DungeonTeleportationPotion: {
-				DisplayName: Dungeon Teleportation Potion
-				Tooltip: ""
-			}
-
+			# Boosters End
+			
+			# Equipables Start
 			AlchemistNecklace: {
 				DisplayName: Alchemist Necklace
-				Tooltip: ""
+				Tooltip: Provides life regeneration, lowers cooldown of healing potions, and increases length of invincibility after taking damage
 			}
 
 			Autoinjector: {
 				DisplayName: Autoinjector
-				Tooltip: ""
+				Tooltip:
+					'''
+					Provides life regeneration, lowers cooldown of healing potions and increases length of invincibility after taking hit
+					            Adds 10% to all damage and 8% to all critical chances
+					            Gives effect of Universal Combination
+					            Can be consumed to give permanent effects to player:
+					            Buffs will never wear off after death
+					            Buffs's duration will become 2x
+					            Will also give permanent effect of Philosopher's Stone
+					'''
 			}
 
 			AutoinjectorMK2: {
-				DisplayName: Autoinjector M K2
-				Tooltip: ""
+				DisplayName: Autoinjector MK2
+				Tooltip:
+					'''
+					Provides life regeneration, lowers cooldown of healing potions and increases length of invincibility after taking hit
+					            Adds 15% to all damage and 10% to all critical chances
+					            Gives all effects of Universal Combination
+					            Gives effects of modded Combinations as well
+					            Hiding visual disables Thorium and Spirit buffs
+					            Lowers critical strike chance reduction of Memer's Riposte
+					'''
 			}
 
 			Barrage: {
-				DisplayName: Barrage
-				Tooltip: ""
+				DisplayName: Armor's module ''Barrage''
+				Tooltip:
+					'''
+					Follows any attack with some energy shots
+					Deals 1/4 of current weapon's damage
+					Does not require any ammo
+					'''
 			}
 
 			BastScroll: {
-				DisplayName: Bast Scroll
-				Tooltip: ""
+				DisplayName: Bast's Scroll
+				Tooltip:
+					'''
+					'The strong shall hunt the weak — that is the law of nature! And my rule is law!'"
+					Gives effects of Master Ninja Gear
+					Allows to jump higher
+					Allows to jump 3 times
+					Bonus jumps could be disabled by changing visibility of accessory
+					+10% damage reduction
+					Increases melee/throwing damage and crits by 15%
+					Melee/throwing attacks destroy enemy defense (may not work with some weapons)
+					Defense destruction effect is global for all players
+					Throwing attacks go through tiles
+					'''
 			}
 
 			BigBirdLamp: {
-				DisplayName: Big Bird Lamp
-				Tooltip: ""
+				DisplayName: Big Bird's Lamp (O-02-40)
+				Tooltip:
+					'''
+					A month later we concluded, there was no such thing as the beast.
+					   [c/FF0000:EGO Gift]
+					   Provides light around the character
+					   Increases all damages and critical strike chances by 5%
+					   Attacks remove some of the enemy's defense depending on progression
+					'''
 			}
 
 			Blinker: {
 				DisplayName: Blinker
-				Tooltip: ""
+				Tooltip:
+					'''
+					Gives you dash in the form of instant teleport for short distance
+					Gives a chance to dodge attacks and allows the ability to climb walls
+					'''
 			}
 
 			CelestialHookItem: {
-				DisplayName: Celestial Hook Item
+				DisplayName: Celestial Hook
+				Tooltip: ""
+			}
+
+			CelestialHookProjectile: {
+				DisplayName: Celestial Hook
 				Tooltip: ""
 			}
 
 			CrackedCrown: {
 				DisplayName: Cracked Crown
-				Tooltip: ""
+				Tooltip: Summons the soul hunting entity
 			}
 
 			DeltaRune: {
 				DisplayName: Delta Rune
-				Tooltip: ""
+				Tooltip:
+					'''
+					Adds 10% melee and magic damage and critical strike chances
+					Increases defense by 10
+					Increases damage reduction by 10%
+					Your melee attacks have a chance to release red damaging wave
+					Your magic attacks have a chance to release swarm of homing magic missiles
+					Regenerates life rapidly while standing still
+					'''
 			}
 
 			Godhead: {
 				DisplayName: Godhead
-				Tooltip: ""
+				Tooltip:
+					'''
+					''I am fear!''
+					''I see everything''
+					''No one can stop me now!''
+					Gives effects of all 3 souls
+					In addition, increases damage by 5% more and adds 5 defense
+					'''
 			}
 
 			GrapplingHookGunItem: {
-				DisplayName: Grappling Hook Gun Item
+				DisplayName: Grappling Hook Gun
+				Tooltip: Shoots insanely fast hook very far away
+			}
+
+			GrapplingHookGunProjectile: {
+				DisplayName: Grappling Hook Gun Projectile
 				Tooltip: ""
 			}
 
 			HeartofYui: {
-				DisplayName: Heartof Yui
-				Tooltip: ""
+				DisplayName: Heart of Yui
+				Tooltip:
+					'''
+					Summons Pixie Helper
+					Highlights treasures, creatures and traps
+					'''
 			}
 
 			HeartofYuiS: {
-				DisplayName: Heartof Yui S
-				Tooltip: ""
+				DisplayName: Heart of Yui
+				Tooltip:
+					'''
+					Summons small Pixie Helper
+					Highlights treasures, creatures and traps
+					'''
 			}
 
 			IlluminatiGift: {
 				DisplayName: Illuminati Gift
-				Tooltip: ""
+				Tooltip:
+					'''
+					Increases all items reach and quantity of dropped coins
+					Stated above would work if accessory is visible
+					Most traders provide discounts
+					Paralyzes all enemies on screen after being hit
+					If you HP reaches 10% or less, activates special regeneration
+					This ability has 2 minute cooldown
+					If damage taken would have killed you, you will survive
+					Would only work if cooldown is not active
+					Allows to inflict Midas Touch debuff by any attack
+					'''
 			}
 
 			LaetitiaGift: {
-				DisplayName: Laetitia Gift
-				Tooltip: ""
-			}
-
-			Laetitia: {
-				DisplayName: Laetitia
-				Tooltip: ""
+				DisplayName: Laetitia Gift (O-01-67-1)
+				Tooltip:
+					'''
+					She says that she has many friends, but they can't come with you. So she came up with this brilliant idea!
+					[c/FF0000:EGO Gift/Weapon]
+					[c/FF0000:Warning!!! Will slowly consume your life if full set of armor is not equipped]
+					Allows to summon Little Witch Monster if full set of armor is on
+					Little Witch Monster will dissapear if EGO armor set is not on
+					Increases maximum amount of minions by 3
+					'''
 			}
 
 			LilithCharm: {
 				DisplayName: Lilith Charm
-				Tooltip: ""
+				Tooltip:
+					'''
+					Gives 15% magic bonus damage and 10% to critical strike chance
+					Decreases mana usage by 25%
+					Increases max mana by 100
+					Increases mana regeneration rate greatly
+					Increases mana stars pickup range
+					Automatically uses mana potions
+					You shoot cluster of deadly bees while using magic weapons
+					Bees has low chance to heal you after hitting the enemy
+					Hide visual to disable bees
+					Doesn't work with some very specific weapons
+					'''
 			}
 
 			LilithEmblem: {
 				DisplayName: Lilith Emblem
-				Tooltip: ""
+				Tooltip:
+					'''
+					Gives 10% magic bonus damage and 10% to critical strike chance
+					Decreases mana usage by 15%
+					Increases max mana by 50
+					Increases mana regeneration rate
+					Increases mana stars pickup range
+					Automatically uses mana potions
+					You shoot cluster of deadly bees while using magic weapons
+					Hide visual to disable bees
+					Doesn't work with some very specific weapons
+					'''
 			}
 
 			MasterYoyoBag: {
 				DisplayName: Master Yoyo Bag
-				Tooltip: ""
+				Tooltip:
+					'''
+					Increases melee damage and melee speed by 15%
+					Gives effects of Fire Gauntlet, Yoyo Glove and Counterweight
+					Greatly increases max range of any yoyo
+					'''
 			}
 
 			MechanicalWings: {
 				DisplayName: Mechanical Wings
-				Tooltip: ""
+				Tooltip:
+					'''
+					Allows you to fly
+					Shoots deadly lasers at nearby enemies
+					'''
 			}
 
 			MemerRiposte: {
-				DisplayName: Memer Riposte
-				Tooltip: ""
+				DisplayName: Memer's Riposte
+				Tooltip:
+					'''
+					Mirrors 500% of damage back to all enemies on screen
+					         Increase all damage by 15%
+					         Cuts your critical strike chance by 25%, but they can deal 4x damage
+					         Weakens any hostile memes
+					'''
 			}
 
 			MysticAmulet: {
 				DisplayName: Mystic Amulet
-				Tooltip: ""
+				Tooltip:
+					'''
+					Grants Telekinesis ability to its wielder
+					Can be used for flying
+					'''
 			}
 
 			OtherworldlyAmulet: {
 				DisplayName: Otherworldly Amulet
-				Tooltip: ""
+				Tooltip:
+					'''
+					Only obtainable from the strongest of enemies.
+					Legends say that it can do something amazing
+					'''
 			}
 
 			ParadiseLostWings: {
-				DisplayName: Paradise Lost Wings
-				Tooltip: ""
-			}
-
-			ParadiseLost: {
-				DisplayName: Paradise Lost
-				Tooltip: ""
+				DisplayName: Paradise Lost Wings (T-03-46)
+				Tooltip:
+					'''
+					''Thou shall not worry; I have heard your prayers.
+					Have thou not yet realized that pain is nothing?
+					Thou want me to prove the miracle.
+					Thou shall believe in me and granted with life. I shall show you the power.''
+					[c/FF0000:EGO Gift]
+					Counts as wings
+					Also allows to run
+					Has very huge wing time and excellent horizontal speed
+					'''
 			}
 
 			RampageComponents: {
 				DisplayName: Rampage Components
-				Tooltip: ""
+				Tooltip:
+					'''
+					Turns Musket Balls into deadly Chloroshard Bullets
+					They work like crazy combination of Chlorophyte and Crystal Dust Bullets
+					Gives effect of Sniper Scope (10% bonus ranged damage and crit, ability to zoom)
+					Ammo Reservation Effect
+					Hide visual to disable Sniper Scope effect
+					Speeds up all arrows
+					Empowers any Electrospheres greatly
+					''And the lord poked his head out from the patron clouds,
+					to look down on his followers in chaos and anarchy as the world is already aflame,
+					out he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''
+					'''
 			}
 
 			SephirothicFruit: {
-				DisplayName: Sephirothic Fruit
-				Tooltip: ""
+				DisplayName: Sephirotic Fruit
+				Tooltip:
+					'''
+					The last of Echidna's seeds... Holds incredible powers inside.
+					Increases minions damage by 15%
+					Increases max amount of minions by 2
+					Minions nearly ignore enemy invincibility frames
+					'''
 			}
 
 			ShieldBelt: {
 				DisplayName: Shield Belt
-				Tooltip: ""
+				Tooltip:
+					'''
+					Allows you to take less damage depending on belt's charge
+					Maximal damage reduction is 150
+					Consumes belt charge while getting hit
+					Damage reduction is weaker on Revengeance/Death Mode:
+					Damage cannot be lower than 30
+					'''
 			}
 
 			SoulOfFear: {
 				DisplayName: Soul Of Fear
-				Tooltip: ""
+				Tooltip:
+					'''
+					''I am fear!''
+					Weakening nearby enemies, inflicting several debuffs
+					'''
 			}
 
 			SoulOfPower: {
 				DisplayName: Soul Of Power
-				Tooltip: ""
+				Tooltip:
+					'''
+					''No one can stop me now!''
+					Increases all damages by 15%
+					Reduces damage reduction by 10%
+					'''
 			}
 
 			SoulOfVision: {
 				DisplayName: Soul Of Vision
-				Tooltip: ""
+				Tooltip:
+					'''
+					''I can see everything!''
+					Free ores, treasures, creatures and traps vision
+					'''
 			}
 
 			SupremeRampageComponents: {
 				DisplayName: Supreme Rampage Components
-				Tooltip: ""
+				Tooltip:
+					'''
+					Turns Musket Balls into deadly Chloroshard Bullets
+					They work like crazy combination of Chlorophyte and Crystal Dust Bullets
+					Gives effect of Sniper Scope (15% bonus ranged damage and crit, ability to zoom)
+					Hide visual to disable Sniper Scope effect
+					Increases armor penetration by 40
+					Ammo Reservation Effect
+					Speeds up all arrows
+					Empowers any Electrospheres greatly
+					''And the Heavens have opened, and God reached down upon my life, and said upon me:
+					Rek thigh scrbs, an fk ther sht ahp.''
+					'''
 			}
 
 			SuspiciousLookingScythe: {
 				DisplayName: Suspicious Looking Scythe
-				Tooltip: ""
+				Tooltip: Summons your own Grim Reaper. Increases your crits moderately.
 			}
 
 			Symbiote: {
 				DisplayName: Symbiote
-				Tooltip: ""
+				Tooltip:
+					'''
+					Lowers cooldown of healing potions
+					            Increases length of invincibility after taking hit
+					            Has two states (Offense(>50% HP) and Defense (<50% HP))
+					            Offensive state increases attack speed by 10-20%
+					            Defensive state greatly increases regeneration, defense and damage reduction
+					            Stats boosts are shown when accessory is equipped
+					'''
 			}
 
 			TerrarianA: {
-				DisplayName: Terrarian A
-				Tooltip: ""
+				DisplayName: Terrarian-A (V-05-516)
+				Tooltip:
+					'''
+					''Angela's actions have rewrote the understandings of souls themselves''
+					[c/FF0000:EGO Gift]
+					Increases invincility after taking damage
+					Blocks 33% of contact damage at daytime
+					Blocks 33% of projectile damage at night
+					'''
 			}
 
 			TimeTwistBraclet: {
-				DisplayName: Time Twist Braclet
-				Tooltip: ""
+				DisplayName: Braclet of Time Twist
+				Tooltip:
+					'''
+					Gives a chance to get double loot from defeated mobs
+					Lowers defense/damage reduction by 20/20%
+					'''
 			}
 
 			TwilightWings: {
-				DisplayName: Twilight Wings
-				Tooltip: ""
-			}
-
-			Twilight: {
-				DisplayName: Twilight
-				Tooltip: ""
+				DisplayName: Twilight Wings (O-02-63)
+				Tooltip:
+					'''
+					''They withstood the twilight and faced the dawn. In the forest, did the birds twitter stop?''
+					         [c/FF0000:EGO Gift]
+					         Counts as wings
+					         Has huge wing time and excellent horizontal speed
+					'''
 			}
 
 			UltimateSephirothicFruit: {
-				DisplayName: Ultimate Sephirothic Fruit
-				Tooltip: ""
+				DisplayName: Ultimate Sephirotic Fruit
+				Tooltip:
+					'''
+					The last of Echidna's seeds... Holds incredible powers inside.
+					Increases minion damage by 15%
+					Increases max amount of minions by 3
+					Minions can critically hit with 10% chance
+					Minions nearly ignore enemy invincibility frames
+					'''
 			}
 
-			ExecutionersEyes: {
-				DisplayName: Executioners Eyes
-				Tooltip: ""
-			}
-
-			ExplorerCombination: {
-				DisplayName: Explorer Combination
-				Tooltip: ""
-			}
-
-			ExplorersBrew: {
-				DisplayName: Explorers Brew
-				Tooltip: ""
-			}
-
-			FishingCombination: {
-				DisplayName: Fishing Combination
-				Tooltip: ""
-			}
-
-			FortitudePotion: {
-				DisplayName: Fortitude Potion
-				Tooltip: ""
-			}
-
-			GreaterDangersensePotion: {
-				DisplayName: Greater Dangersense Potion
-				Tooltip: ""
-			}
-
-			InvincibilityPotion: {
-				DisplayName: Invincibility Potion
-				Tooltip: ""
-			}
-
-			JungleTeleporterPotion: {
-				DisplayName: Jungle Teleporter Potion
-				Tooltip: ""
-			}
-
-			MageCombination: {
-				DisplayName: Mage Combination
-				Tooltip: ""
-			}
-
+			# Equipables End
+			
+			# Materials Start
 			AlchemicalBundle: {
 				DisplayName: Alchemical Bundle
-				Tooltip: ""
+				Tooltip:
+					'''
+					Contains some Lunar Materials
+					Required for making Elixir of Life
+					'''
 			}
 
 			BrokenDimensionalCasket: {
 				DisplayName: Broken Dimensional Casket
-				Tooltip: ""
+				Tooltip:
+					'''
+					Broken Dimensional Casket
+					Required for making working one
+					'''
 			}
 
 			ChromaticCrystal: {
 				DisplayName: Chromatic Crystal
-				Tooltip: ""
+				Tooltip: Hallowed Crystal, overflowed by power
 			}
 
 			CrystalDust: {
 				DisplayName: Crystal Dust
-				Tooltip: ""
+				Tooltip: Dust made from Crystal Shards.
 			}
 
 			CursedIce: {
 				DisplayName: Cursed Ice
-				Tooltip: ""
+				Tooltip: Cursed Flame, encapsulated in ice.
 			}
 
 			DivineLava: {
 				DisplayName: Divine Lava
-				Tooltip: ""
+				Tooltip: Ichor & Lava, combined together by magic
 			}
 
 			EmagledFragmentation: {
-				DisplayName: Emagled Fragmentation
-				Tooltip: ""
+				DisplayName: Celestial's Particle
+				Tooltip:
+					'''
+					Origin of any Lunar Fragment
+					10 of it could be transformed into 2 fragments of any type.
+					'''
 			}
 
 			HateVial: {
 				DisplayName: Hate Vial
-				Tooltip: ""
+				Tooltip:
+					'''
+					Contains concentrated Hate of a defeated foe
+					Can be consumed
+					Consuming grants Hate buff and Potion Sickness debuff for 2 minutes
+					Hate buff gives +15% to all damages and crits and +20 to life regeneration
+					Also decreases your defense by 30 and endurance by 15%
+					'''
 			}
 
 			MasksBundle: {
 				DisplayName: Masks Bundle
-				Tooltip: ""
+				Tooltip:
+					'''
+					Contains masks of all vanilla bosses
+					Required for making ultimate accessory
+					'''
 			}
 
 			NyctosythiaCrystal: {
 				DisplayName: Nyctosythia Crystal
-				Tooltip: ""
+				Tooltip:
+					'''
+					Diamond of Nihility
+					Consumes any form of light
+					'''
 			}
 
 			SoulEssence: {
 				DisplayName: Soul Essence
-				Tooltip: ""
+				Tooltip: Contains all traits of a defeated foe
 			}
 
 			SunkroveraCrystal: {
 				DisplayName: Sunkrovera Crystal
-				Tooltip: ""
+				Tooltip:
+					'''
+					Ruby, containing Blood of Demons
+					It burns you even through gloves
+					'''
 			}
 
 			SupremeEnergyCore: {
 				DisplayName: Supreme Energy Core
-				Tooltip: ""
+				Tooltip: Infinite source of Energy
 			}
 
+			# Materials End
+			
+			# Misc Start
 			AlchemistCharmTier1: {
-				DisplayName: Alchemist Charm Tier1
-				Tooltip: ""
+				DisplayName: Alchemist Charm Tier 1
+				Tooltip:
+					'''
+					While this is in your inventory, you have a low chance not to consume potion
+					         Alchemist, Brewer and Young Brewer are providing 10% discount
+					         Buffs duration is 10% longer
+					'''
 			}
 
 			AlchemistCharmTier2: {
-				DisplayName: Alchemist Charm Tier2
-				Tooltip: ""
+				DisplayName: Alchemist Charm Tier 2
+				Tooltip:
+					'''
+					While this is in your inventory, you have a moderate chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 25% discount
+					Buffs duration is 25% longer
+					'''
 			}
 
 			AlchemistCharmTier3: {
-				DisplayName: Alchemist Charm Tier3
-				Tooltip: ""
+				DisplayName: Alchemist Charm Tier 3
+				Tooltip:
+					'''
+					While this is in your inventory, you have a high chance not to consume potion
+					         Allows to use potions from Piggy Bank by Quick Buff
+					         Alchemist, Brewer and Young Brewer are providing 35% discount
+					         Buffs duration is 35% longer
+					'''
 			}
 
 			AlchemistCharmTier4: {
-				DisplayName: Alchemist Charm Tier4
-				Tooltip: ""
+				DisplayName: Alchemist Charm Tier 4
+				Tooltip:
+					'''
+					While this is in your inventory, you have a very high chance not to consume potion
+					         Allows to use potions from Piggy Bank by Quick Buff
+					         Alchemist, Brewer and Young Brewer are providing 50% discount
+					         Makes potions non-consumable if Supreme Calamitas is defeated
+					         Buffs duration is 50% longer
+					'''
 			}
 
 			AntiBuffItem: {
-				DisplayName: Anti Buff Item
-				Tooltip: ""
+				DisplayName: Anti Buff
+				Tooltip:
+					'''
+					Use to toggle Anti Buff mode
+					During Anti Buff mode, you are immune to all buffs (not debuffs)
+					Buffs without duration display are not disabled
+					Bosses and minibosses may drop permament boosting items
+					Their effects would work only if mode is on
+					'''
 			}
 
 			BillCipherBag: {
-				DisplayName: Bill Cipher Bag
-				Tooltip: ""
+				DisplayName: Treasure Bag
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 			}
 
 			BillSoul: {
-				DisplayName: Bill Soul
-				Tooltip: ""
+				DisplayName: Bill's Soul
+				Tooltip:
+					'''
+					Container with concentrated blue flame
+					Its fluctuations charm you
+					Consume to get permanent buff 'Demon Slayer'
+					'''
 			}
 
 			BoomBox: {
 				DisplayName: Boom Box
-				Tooltip: ""
+				Tooltip: While this is in your inventory, your last inventory slot plays music boxes passively
 			}
 
 			CursedMirror: {
 				DisplayName: Cursed Mirror
-				Tooltip: ""
+				Tooltip:
+					'''
+					Broken Mirror
+					All your attacks heals enemies
+					'''
 			}
 
 			DimensionalCasket: {
 				DisplayName: Dimensional Casket
-				Tooltip: ""
+				Tooltip:
+					'''
+					Modified Dimensional Casket
+					Allows to trade with any NPC from any distance
+					Click to open UI
+					Press ESC to stop dialing
+					'''
 			}
 
 			Drainer: {
 				DisplayName: Drainer
-				Tooltip: ""
+				Tooltip:
+					'''
+					BROKEN FOR NOW
+					Drains 1/4 of HP while used, fills 1/4 of Rage Meter
+					Perfect for filling Rage Meter
+					'''
 			}
 
 			EnchantedMirror: {
 				DisplayName: Enchanted Mirror
-				Tooltip: ""
+				Tooltip:
+					'''
+					Left click returns you home
+					Right click teleports you back to recall point
+					'''
 			}
 
 			Extractor: {
 				DisplayName: Extractor
-				Tooltip: ""
+				Tooltip:
+					'''
+					Allows to extract Soul Essences and Hate Vials from bosses
+					Would work if placed in inventory
+					Can extract essence with 1/3 chance if boss has more than 50K HP
+					Can extract Hate with 1/10 chance if boss has more than 55K HP
+					'''
 			}
 
 			Fuaran: {
 				DisplayName: Fuaran
-				Tooltip: ""
+				Tooltip: Permanently increases maximum mana by 100. Can only be used once.
 			}
 
 			GlobalTeleporter: {
-				DisplayName: Global Teleporter
-				Tooltip: ""
+				DisplayName: World Warper
+				Tooltip:
+					'''
+					Teleports you to any point of the map
+					Use right-click on full screen map to teleport
+					Will not work if any boss is alive
+					Breaks after use
+					''O, the azure justice, the crimson love,
+					In the name of the one buried in destiny,
+					I shall make an oath to the light,
+					that we will show those who
+					stand in front of us - the power of love!''
+					'''
 			}
 
 			GlobalTeleporterUp: {
-				DisplayName: Global Teleporter Up
-				Tooltip: ""
+				DisplayName: Modified World Warper
+				Tooltip:
+					'''
+					Teleports you to any point of the map
+					Use right-click on full screen map to teleport
+					Will not work if any boss is alive
+					Not breaks after use
+					''O, the azure justice, the crimson love,
+					In the name of the one buried in destiny,
+					I shall make an oath to the light,
+					that we will show those who
+					stand in front of us - the power of love!''
+					'''
 			}
 
 			KnucklesBag: {
-				DisplayName: Knuckles Bag
-				Tooltip: ""
+				DisplayName: Treasure Bag
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 			}
 
 			LifeElixir: {
 				DisplayName: Life Elixir
-				Tooltip: ""
+				Tooltip: Permanently increases maximum life by 50. Can be used twice.
 			}
 
 			LuckCharm: {
-				DisplayName: Luck Charm
-				Tooltip: ""
+				DisplayName: Charm of Luck
+				Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Does not affect accessories
+					'''
 			}
 
 			LuckCharmT2: {
-				DisplayName: Luck Charm T2
-				Tooltip: ""
+				DisplayName: Charm of Absolute Luck
+				Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Also affects accessories (Menacing->Lucky->Warding)
+					'''
 			}
 
 			LuckyToken: {
 				DisplayName: Lucky Token
-				Tooltip: ""
+				Tooltip:
+					'''
+					While this is in your inventory, your next accessory reforge would be ''Lucky''
+					Reforging priorities: Menacing->Lucky->Violent->Warding
+					Consumes in process
+					'''
 			}
 
 			MannafromHeaven: {
-				DisplayName: Mannafrom Heaven
-				Tooltip: ""
+				DisplayName: Manna from Heaven
+				Tooltip: Makes you permanently Well Fed
 			}
 
 			MenacingToken: {
 				DisplayName: Menacing Token
-				Tooltip: ""
+				Tooltip:
+					'''
+					While this is in your inventory, your next accessory reforge would be ''Menacing''
+					Reforging priorities: Menacing->Lucky->Violent->Warding
+					Consumes in process
+					'''
 			}
 
 			MoneyVacuum: {
-				DisplayName: Money Vacuum
-				Tooltip: ""
+				DisplayName: Heart of Greed
+				Tooltip: While in your inventory, all money dropped goes in your inventory
 			}
 
 			PaperTube: {
 				DisplayName: Paper Tube
-				Tooltip: ""
+				Tooltip:
+					'''
+					Contains blueprints of a random prehardmode accessory
+					Use to unlock
+					'''
 			}
 
 			PaperTube2: {
-				DisplayName: Paper Tube2
-				Tooltip: ""
+				DisplayName: Paper Tube (T2)
+				Tooltip:
+					'''
+					Contains blueprints of a random hardmode/post Skeletron accessory
+					Use to unlock
+					'''
 			}
 
 			PaperTube3: {
-				DisplayName: Paper Tube3
-				Tooltip: ""
+				DisplayName: Paper Tube (T3)
+				Tooltip:
+					'''
+					Contains blueprints of a random post Plantera accessory
+					Use to unlock
+					'''
 			}
 
 			PerfectionToken: {
 				DisplayName: Perfection Token
-				Tooltip: ""
+				Tooltip:
+					'''
+					While this is in your inventory, your next weapon/tool reforge would get best possible result
+					Consumes in process
+					Not compatible with Thorium Mod's Bard and Healer items
+					'''
 			}
 
 			PHD: {
-				DisplayName: P H D
-				Tooltip: ""
+				DisplayName: PhD Degree Diploma
+				Tooltip:
+					'''
+					Use to permanently upgrade your Nurse
+					Opens up healing interface after respawn
+					This effect is global for all players in this world
+					Would work only if Nurse is alive
+					'''
 			}
 
 			Pommel: {
 				DisplayName: Pommel
-				Tooltip: ""
+				Tooltip: Contains the Light of Purity
 			}
 
 			ReversivityCoinTier1: {
-				DisplayName: Reversivity Coin Tier1
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 1
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ReversivityCoinTier2: {
-				DisplayName: Reversivity Coin Tier2
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 2
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ReversivityCoinTier3: {
-				DisplayName: Reversivity Coin Tier3
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 3
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ReversivityCoinTier4: {
-				DisplayName: Reversivity Coin Tier4
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 4
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ReversivityCoinTier5: {
-				DisplayName: Reversivity Coin Tier5
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 5
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ReversivityCoinTier6: {
-				DisplayName: Reversivity Coin Tier6
-				Tooltip: ""
+				DisplayName: Reversivity Coin Tier 6
+				Tooltip: Can be used for buying Treasure Bags from Operator
 			}
 
 			ScreamingHead: {
 				DisplayName: Screaming Head
-				Tooltip: ""
+				Tooltip:
+					'''
+					Someone's screaming head
+					Breaks concentration
+					'''
 			}
 
 			StatsChecker: {
-				DisplayName: Stats Checker
-				Tooltip: ""
+				DisplayName: Pip-Boy 3000
+				Tooltip: Shows most of the player's stats while in your inventory
 			}
 
 			StatsChecker2: {
-				DisplayName: Stats Checker2
-				Tooltip: ""
+				DisplayName: Pip-Boy 4K (SpawnPoint)
+				Tooltip: Left click to teleport, right click to change teleportation location
 			}
 
 			SymbioteMeteorite: {
-				DisplayName: Symbiote Meteorite
-				Tooltip: ""
+				DisplayName: Mystery Meteorite
+				Tooltip:
+					'''
+					Its external shell is insanely durable
+					You probably need to find someone who may help you break it
+					'''
 			}
 
 			ViolentToken: {
 				DisplayName: Violent Token
-				Tooltip: ""
+				Tooltip:
+					'''
+					While this is in your inventory, your next accessory reforge would be ''Violent''
+					Reforging priorities: Menacing->Lucky->Violent->Warding
+					Consumes in process
+					'''
 			}
 
 			VoodooDoll: {
 				DisplayName: Voodoo Doll
-				Tooltip: ""
+				Tooltip:
+					'''
+					Your very own doll
+					Will make you take part of your dealt damage
+					'''
 			}
 
 			WardingToken: {
 				DisplayName: Warding Token
-				Tooltip: ""
+				Tooltip:
+					'''
+					While this is in your inventory, your next accessory reforge would be ''Warding''
+					Reforging priorities: Menacing->Lucky->Violent->Warding
+					Consumes in process
+					'''
 			}
 
 			WorldControlUnit: {
-				DisplayName: World Control Unit
-				Tooltip: ""
+				DisplayName: Simalation Control Unit
+				Tooltip:
+					'''
+					Exclusive product, designed by Angela
+					Left click to change between day and night time
+					Right click to enable or disable rain (sandstorm in desert)
+					'''
 			}
 
-			NatureBlessingPotion: {
-				DisplayName: Nature Blessing Potion
-				Tooltip: ""
-			}
-
-			NinjaPotion: {
-				DisplayName: Ninja Potion
-				Tooltip: ""
-			}
-
+			# Misc End
+			
+			# Notes Start
 			InformatingNote: {
 				DisplayName: Informating Note
-				Tooltip: ""
+				Tooltip:
+					'''
+					No Treasure Bags available yet.
+					Beat Skeletron to unlock the first wave.
+					'''
 			}
 
 			ResearchNote1: {
-				DisplayName: Research Note1
-				Tooltip: ""
+				DisplayName: Research Note #1
+				Tooltip:
+					'''
+					'I know that Sasscade Yo-Yo exists. But how do you make it?
+					I am pretty sure that the [c/00FF00:Terrarian Yo-Yo] is the first component.
+					An [c/00FF00:Alchemical Bundle] should be the second component...
+					But what could be the third one? I think that it is something, related to the Sass...
+					Maybe inner part of the [c/00FF00:Rod of Discord] can be it?
+					And the final component... Is the [c/00FF00:Yo-yo Bag]. I am 100% sure about this.'
+					'''
 			}
 
 			ResearchNote2: {
-				DisplayName: Research Note2
-				Tooltip: ""
+				DisplayName: Research Note #2
+				Tooltip:
+					'''
+					''I have found some information about the [c/00FF00:Royal Magic Wand] in one ancient manuscript.
+					What I found was that no matter how exactly Wand was destroyed, it can still be recreated.
+					Base for Magic Wand is [c/00FF00:the Rainbow Rod].
+					[c/00FF00:Last Prism] could work as Magical Focus...
+					[c/00FF00:Angel Wings] are required too.
+					[c/00FF00:Butterfly Dust] may be useful to bypass allowed user check.
+					And you will need to catch a [c/00FF00:Unicorn] as power source.''
+					'''
 			}
 
 			ResearchNote3: {
-				DisplayName: Research Note3
-				Tooltip: ""
+				DisplayName: Research Note #3
+				Tooltip:
+					'''
+					In my interdimensional travels I have met a scientist, name's [c/00FF00:Stanford].
+					He asked fme to aid him in making a weapon which could cause damage to a Godlike Creature.
+					It took us about half year to actually made working [c/00FF00:Prototype #618] aka [c/00FF00:'Quantum Destabilizer']...
+					[c/00FF00:Charged Blaster] from Martians would fit as base.
+					Lens from [c/00FF00:Heat Ray] would be just fine.
+					Some parts should be made from both Luminite and Celestial Fragments...
+					As usual, [c/00FF00:Alchemical Bundle] is needed here.
+					Since this is an extremely accurate weapon, it also requires [c/00FF00:Sniper Scope].
+					But the biggest problem here is the Power Source. We can't just get energy from nothing...
+					Well, for some money, I could sell you special Energy Cells for it.'
+					'''
 			}
 
 			ResearchNote4: {
-				DisplayName: Research Note4
-				Tooltip: ""
+				DisplayName: Research Note #4
+				Tooltip:
+					'''
+					'I used to think that only humans could use magic."
+					I saw it with my own eyes. Skeleton was using magic. Despite them being magical creatures, they normally can't use it...
+					He fought against Human Child. At first, I was going to help poor kid, but later on...
+					I was shocked seeing how kid brutally crushed that Skeleton to pile of bones.
+					When this... monster was gone, I took some dust from this pile.
+					Strangely, it was glowing from magic, contained inside.
+					Later on, I found the way to create artifact, containing that incredible power.
+					I mixed some stuff from [c/00FF00:Alchemical Bundle] with [c/00FF00:enormously big bone] from ''Skeletron'' .
+					Then I added contents of [c/00FF00:Hate Vial].
+					And then, just polished everything with [c/00FF00:Flask of Rainbows]'
+					'''
 			}
 
 			ResearchNote5: {
-				DisplayName: Research Note5
-				Tooltip: ""
+				DisplayName: Research Note #5
+				Tooltip:
+					'''
+					'Long ago, I have seen one half-demon, called [c/00FF00:Dante].
+					He is a powerful Demon Hunter. He uses some... interesting devices in his battles.
+					Especially, I was very intrigued by one of his ranged weapons, [c/00FF00:Pandora].
+					According to legends, it has 666 forms. And it looks like technical weapon.
+					After some researches, I was sure I could made a copy of it.
+					Sadly, the prototype I made was able to transform into only 1 form, PF422...
+					It is Grief, sharp Shuriken, which targets one enemy, slashing it to death.
+					I was using metal from [c/00FF00:Piranha Gun] as base...
+					Covered it with [c/00FF00:Flask of Rainbows] for extra durability...
+					As always, some parts can only be made from [c/00FF00:Alchemical Bundle].
+					And final ingredient is [c/00FF00:Moon Stone].'
+					'''
 			}
 
 			ResearchNote6: {
-				DisplayName: Research Note6
-				Tooltip: ""
+				DisplayName: Research Note #6
+				Tooltip:
+					'''
+					''Once, there was existing an actual incarnation of [c/00FF00:FEAR] itself...
+					After countless battles, this being was finally defeated.
+					Soul, which was persisting after host's death, was put into deep observations.
+					Essence of FEAR was extracted during these observations.
+					And I managed to get a few vials of it."
+					If you find other ingredients, then I could make [c/00FF00:''Akumu''], a very powerful scythe.
+					[c/00FF00:Death Sickle] is needed as base for it.
+					[c/00FF00:Hate Vial] is required for unleashing full potential of FEAR essence.
+					For stabilizing components, we need an [c/00FF00:Alchemical Bundle].
+					And for the last ingredient, we need [c/00FF00:Celestial Stone].''
+					'''
 			}
 
 			ResearchNote7: {
-				DisplayName: Research Note7
-				Tooltip: ""
+				DisplayName: Research Note #7
+				Tooltip:
+					'''
+					''Once, I was in quite insane world.
+					There was one old scientist, named [c/00FF00:Rick].
+					Luckly, I was able to saw all that without being caught...
+					He escaped from the maximum security prison without help from outside.
+					And then destroyed the entire Galactic Federation in the same day.
+					The thing what I was the most interested in is his Portal Gun.
+					He managed to use it as a weapon. And I really want to make one for myself..
+					Naturally we need [c/00FF00:Portal Gun] as the base...
+					For some parts, we need an [c/00FF00:Alchemical Bundle].
+					We also need the [c/00FF00:Lunar Portal Staff] for stabilizing the portals.
+					To variate dimensions, we can use [c/00FF00:R.E.K. 3000].
+					I am still not sure about source of energy...
+					Rick used some kind of [c/00FF00:Energy Capsules] as ammo.
+					I hope I'm able to synthesize it...''
+					'''
 			}
 
 			ResearchNote8: {
-				DisplayName: Research Note8
-				Tooltip: ""
+				DisplayName: Research Note #8
+				Tooltip:
+					'''
+					Once, I was in an interesting world. It was a giant laboratory. Heart of this laboratory was robot, her name was ''GlaDOS''.
+					She has told me that I must test her ''rooms''. There were halls with tons of puzzles. She also gave me a tool called ''Portal Gun''.
+					But the most interesting thing was these cute turrets. I must make one for my own!
+					First, we need tech which these turrets use. We can get it from the [c/00FF00:Portal Gun].
+					Also we need to give them love, so I think we need some sort of ''[c/00FF00:Companion Cube]''.
+					And as the last part, we need to give them a body. I think  that [c/00FF00:fire sentry] from the Elders army could work.
+					'''
 			}
 
 			SecretNote: {
-				DisplayName: Secret Note
-				Tooltip: ""
+				DisplayName: Secret Note #1
+				Tooltip:
+					'''
+					''If you are reading this, then know, that you could spawn your own Grim Reaper.
+					To do this, you simply need to find the ''Suspicious Looking Scythe'';
+					It drops with a very low chance from any Treasure Bag in Hardmode.
+					GLHF!''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+
+					'''
 			}
 
 			SecretNote2: {
-				DisplayName: Secret Note2
-				Tooltip: ""
+				DisplayName: Secret Note #2
+				Tooltip:
+					'''
+					''Few times, I saw one pretty strange creature.
+					She looked like Fairy, but at the same time...
+					There were something strange in her appearance.
+					She was... way too perfect for an ordinary Fairy.
+					Sadly, that was the last time I saw her...
+					She was beaten by unknown creature and transformed into a Crystal.
+					It was nearby Plantera's habitat.''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			SecretNote3: {
-				DisplayName: Secret Note3
-				Tooltip: ""
+				DisplayName: Secret Note #3
+				Tooltip:
+					'''
+					''In one ancient scroll I found quite... unpleasant information.
+					It said something about... Pink Guy? I have no idea who is this.
+					So, if you find his armor and equip it as actual armor in fight against Moon Lord...
+					You may get something very unique.
+					But you need to be very careful with that thing...
+					It can attract attention of a VERY dangerous creature.''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote1: {
-				DisplayName: Torn Note1
-				Tooltip: ""
+				DisplayName: Torn Note #1
+				Tooltip:
+					'''
+					''Legends say that an Otherworldly Amulet can be obtained by defeating a Dungeon Guardian.''
+					There is something else, but you couldn't read it. Not without parts #2 & #3.. Maybe the Jeweler could help you.
+					'''
 			}
 
 			TornNote2: {
-				DisplayName: Torn Note2
-				Tooltip: ""
+				DisplayName: Torn Note #2
+				Tooltip:
+					'''
+					''It is not well known, but the Wing of the World allows you to make EGO equipment, which is unique in its own ways.
+					If the Wing of the World is placed in empty housing, it can attract a special NPC, called Operator.
+					And if you are wondering what EGO stands for, then here it is: Extermination of Geometrical Organ.''
+					There is something else, but you couldn't read it. Not without parts #1 & #3. Maybe the Jeweler could help you.
+					'''
 			}
 
 			TornNote2Piece: {
-				DisplayName: Torn Note2 Piece
-				Tooltip: ""
+				DisplayName: Note Piece
+				Tooltip: Looks forgotten...
 			}
 
 			TornNote3: {
-				DisplayName: Torn Note3
-				Tooltip: ""
+				DisplayName: Torn Note #3
+				Tooltip:
+					'''
+					''Defeating all Mechanical Bosses allows you to make a special Vending Machine.
+					Its drinks can help you overcome great threats and dangers.
+					But be careful! If you use it more than 10 times, it will release a random Mechanical Boss!
+					This will reset the machine counter to 0, so you can use it again after destroying or evading the boss.''
+					There is something else, but you couldn't read it. Not without parts #1 & #2. Maybe the Jeweler could help you.
+					'''
 			}
 
 			TornNote4: {
-				DisplayName: Torn Note4
-				Tooltip: ""
+				DisplayName: Torn Note #4
+				Tooltip:
+					'''
+					''Defeating the Moon Lord allows the creation of Ultimate Accessories.
+					One of them is the Sephirothic Fruit.
+					Not only does it increase your minion damage by 15% and give +2 max minions...
+					But it also allows your minions to ignore invincibility frames''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote5: {
-				DisplayName: Torn Note5
-				Tooltip: ""
+				DisplayName: Torn Note #5
+				Tooltip:
+					'''
+					''Defeating the Moon Lord allows the creation of Ultimate Accessories.
+					One of them is the Lilith Emblem.
+					Not only does it combine all the effects of multiple mage essential accessories...
+					But it also allows you to shoot dozens of deadly bees while using magic attacks''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote6: {
-				DisplayName: Torn Note6
-				Tooltip: ""
+				DisplayName: Torn Note #6
+				Tooltip:
+					'''
+					''Defeating the Moon Lord allows the creation of Ultimate Accessories.
+					One of them are the Rampage Components.
+					They increase your ranged damage & crit by 10% and provide the effect of the Sniper Scope.
+					They also turn your Musket Balls into deadly Chloroshard Bullets...
+					Chloroshard bullets are basically homing Crystal Bullets with increased damage.
+					Any weapons, which shoot Electrospheres would get buffed too.
+					Also, it speed ups all arrows.''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote7: {
-				DisplayName: Torn Note7
-				Tooltip: ""
+				DisplayName: Torn Note #7
+				Tooltip:
+					'''
+					''Continuing on the Ultimate Accessories, there are 2 more.
+					One of them is the Autoinjector.
+					It increases all damage by 10% and crit by 8%.
+					It also permanently grants you the effect of the Universal Combination.
+					It can be consumed to give you permanent effects:
+					Buffs will never wear off after death and cooldown of healing potions will be reduced
+					However, the Autoinjector is pretty expensive as it requires a Masks Bundle...
+					Another one is Bast's Scroll.
+					It increases Melee/Throwing damage & crit by 15%, gives 10% damage reduction.
+					It also gives the abilities of a Master Ninja and allows a triple jump.
+					But its most powerful abilities are:
+					Throwing weapons go through tiles and melee/throwing weapon destroys enemy defense...''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote8: {
-				DisplayName: Torn Note8
-				Tooltip: ""
+				DisplayName: Torn Note #8
+				Tooltip:
+					'''
+					''I once found an ancient scroll which had pretty valuable information...
+					It was said that the Golem can contain the laboratory journal from the Witch, called Fuaran, inside its body.
+					It can massively increase the magical potential of any mage, weak or powerful - that doesn't matter...
+					That journal can be a great experience for everyone. I wonder if anyone will ever find it...''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
 			TornNote9: {
-				DisplayName: Torn Note9
-				Tooltip: ""
+				DisplayName: Torn Note #9
+				Tooltip:
+					'''
+					''If anyone finds this, then know that this could be the last note
+					I found out that the Alchemist could make a Life Elixir...
+					A legendary brew which increases the max life of the user...
+					But to make it, you need an Alchemical Bundle and a Philosopher's stone.
+					With all of that, he will brew you a portion of Life Elixir.
+					Oh no... This thing is still chasing me. And Dark Sun is right above my head now.
+					I will use that Portal Device. I just don't wanna die! My only hope is that I will not stuck inbetween worlds...''
+					There seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.
+					'''
 			}
 
-			OceanTeleporterPotion: {
-				DisplayName: Ocean Teleporter Potion
-				Tooltip: ""
-			}
-
-			OnyxGrapeSoda: {
-				DisplayName: Onyx Grape Soda
-				Tooltip: ""
-			}
-
-			PerfectDiscordPotion: {
-				DisplayName: Perfect Discord Potion
-				Tooltip: ""
-			}
-
-			PinkGoldStrawberrySoda: {
-				DisplayName: Pink Gold Strawberry Soda
-				Tooltip: ""
-			}
-
+			# Notes End
+			
+			# Placable Start
 			ArtificialAltar: {
 				DisplayName: Artificial Altar
-				Tooltip: ""
+				Tooltip: Artificial Altar, made by occult powers
+			}
+
+			Beacon: {
+				DisplayName: Beacon
+				Tooltip:
+					'''
+					Can be used as target for Beacon Teleporter potion while placed
+					Cannot be placed if another one is already placed in the world
+					'''
 			}
 
 			FearEmitter: {
-				DisplayName: Fear Emitter
-				Tooltip: ""
+				DisplayName: FEAR Emitter
+				Tooltip: Restricts non-boss enemies from going through certain region
 			}
 
 			HMCraftPound: {
-				DisplayName: H M Craft Pound
-				Tooltip: ""
+				DisplayName: Superb Crafting Pound
+				Tooltip:
+					'''
+					Now you can do the best stuff
+					Can be placed as crafting station
+					'''
 			}
 
 			HoloprojectorCorruption: {
-				DisplayName: Holoprojector Corruption
-				Tooltip: ""
+				DisplayName: Holoprojector 'Corruption'
+				Tooltip: Forces biome state to Corruption while placed
 			}
 
 			HoloprojectorCrimson: {
-				DisplayName: Holoprojector Crimson
-				Tooltip: ""
+				DisplayName: Holoprojector 'Crimson'
+				Tooltip: Forces biome state to Crimson while placed
 			}
 
 			HoloprojectorDesert: {
-				DisplayName: Holoprojector Desert
-				Tooltip: ""
+				DisplayName: Holoprojector 'Desert'
+				Tooltip: Forces biome state to Desert while placed
 			}
 
 			HoloprojectorDungeon: {
-				DisplayName: Holoprojector Dungeon
-				Tooltip: ""
+				DisplayName: Holoprojector 'Dungeon'
+				Tooltip: Forces biome state to Dungeon while placed
 			}
 
 			HoloprojectorHallowed: {
-				DisplayName: Holoprojector Hallowed
-				Tooltip: ""
+				DisplayName: Holoprojector 'Hallow'
+				Tooltip: Forces biome state to Hallow while placed
 			}
 
 			HoloprojectorJungle: {
-				DisplayName: Holoprojector Jungle
-				Tooltip: ""
+				DisplayName: Holoprojector 'Jungle'
+				Tooltip: Forces biome state to Jungle while placed
 			}
 
 			HoloprojectorOcean: {
-				DisplayName: Holoprojector Ocean
-				Tooltip: ""
+				DisplayName: Holoprojector 'Ocean'
+				Tooltip:
+					'''
+					Forces biome state to ocean while placed
+					No visual/music effect will appear
+					'''
 			}
 
 			HoloprojectorSnow: {
-				DisplayName: Holoprojector Snow
-				Tooltip: ""
+				DisplayName: Holoprojector 'Snow'
+				Tooltip: Forces biome state to Snow while placed
 			}
 
 			HoloprojectorSpace: {
-				DisplayName: Holoprojector Space
-				Tooltip: ""
+				DisplayName: Holoprojector 'Space'
+				Tooltip:
+					'''
+					Forces biome state to Space while placed
+					No visual/music effect will appear
+					'''
 			}
 
 			ImmortalityFieldProjector: {
 				DisplayName: Immortality Field Projector
-				Tooltip: ""
+				Tooltip:
+					'''
+					Makes town NPCs instantly respawn after being killed
+					Might need to take some time to enable the field
+					'''
 			}
 
 			MateriaTransmutator: {
 				DisplayName: Materia Transmutator
-				Tooltip: ""
+				Tooltip:
+					'''
+					Same functionality as most of crafting stations in one
+					All crafting stations included :)
+					Also works as Water/Honey/Lava source
+					'''
 			}
 
 			MateriaTransmutatorMK2: {
-				DisplayName: Materia Transmutator M K2
-				Tooltip: ""
+				DisplayName: Materia Transmutator MK2
+				Tooltip:
+					'''
+					Same functionality as most of crafting stations in one
+					Added functionality of Draedon's Forge
+					All crafting stations included :)
+					Also works as Water/Honey/Lava source
+					'''
 			}
 
 			MolecularReplicator: {
 				DisplayName: Molecular Replicator
-				Tooltip: ""
+				Tooltip: Restores life of nearby friendly NPCs while placed
 			}
 
 			PreHMPenny: {
-				DisplayName: Pre H M Penny
-				Tooltip: ""
+				DisplayName: Simple Crafting Penny
+				Tooltip:
+					'''
+					Makes you look like a master of carpentry
+					Can be placed as crafting station
+					'''
 			}
 
 			SpecCraftPoint: {
-				DisplayName: Spec Craft Point
-				Tooltip: ""
+				DisplayName: Special Crafting Point
+				Tooltip:
+					'''
+					You've proven that you can do anything with any material
+					Can be placed as crafting station
+					'''
 			}
 
 			Wellcheers: {
-				DisplayName: Wellcheers
-				Tooltip: ""
+				DisplayName: "'Wellcheers' Vending Machine"
+				Tooltip:
+					'''
+					'Opened can of Wellcheers' Vending Machine
+					[c/FF0000:Abnormality]
+					Risk level: [c/00FF00:ZAYIN]
+					Produces 4 different types of Soda
+					Works only on Night Time
+					Can be used 10 times without any consequences
+					'''
 			}
 
 			WingoftheWorld: {
-				DisplayName: Wingofthe World
-				Tooltip: ""
+				DisplayName: Wing of the World
+				Tooltip:
+					'''
+					Needed to craft EGO equipment
+					Counts as table, chair and light source
+					'''
 			}
 
+			# Placable End
+			
+			# Quest Fish Start
 			MiniShark: {
 				DisplayName: Mini Shark
 				Tooltip: ""
@@ -2745,6 +3373,1465 @@ Mods: {
 				Tooltip: ""
 			}
 
+			# Quest Fish End
+			
+			# Summoning Start
+			AlchemistHorcrux: {
+				DisplayName: Alchemist Horcrux
+				Tooltip: The piece of Alchemist's soul is inside it.
+			}
+
+			APMC: {
+				DisplayName: AI Programming and Memory Chip
+				Tooltip: It is Angela's backup.
+			}
+
+			ArchitectHorcrux: {
+				DisplayName: Architect Horcrux
+				Tooltip: The piece of Architect's soul is inside it.
+			}
+
+			BrewerHorcrux: {
+				DisplayName: Brewer Horcrux
+				Tooltip: The piece of Brewer's soul is inside it.
+			}
+
+			CaughtUnicorn: {
+				DisplayName: Caught Unicorn
+				Tooltip: It is still hostile, better do not release him
+			}
+
+			DimensionalRift: {
+				DisplayName: Dimensional Rift
+				Tooltip:
+					'''
+					Glass globe containing the rift between dimensions
+					Don't break it!!!
+					'''
+			}
+
+			HorrifyingSkull: {
+				DisplayName: Horrifying Skull
+				Tooltip:
+					'''
+					Summons the mightiest enemy
+					Use with the extreme care
+					'''
+			}
+
+			JewelerHorcrux: {
+				DisplayName: Jeweler Horcrux
+				Tooltip: The piece of Jeweler's soul is inside it.
+			}
+
+			KnucklesUgandaDoll: {
+				DisplayName: National Ugandan Treasure
+				Tooltip:
+					'''
+					''I'm 100% sure this will kill you'' - Gregg
+					Using this may cause disasterous consequences...
+					But the reward can retribute all your sufferings
+
+					'''
+			}
+
+			MusicianHorcrux: {
+				DisplayName: Musician Horcrux
+				Tooltip: The piece of Musician's soul is inside it.
+			}
+
+			NotesBook: {
+				DisplayName: Notes Book
+				Tooltip:
+					'''
+					Doesn't matter if the pages are torn, hidden information is now accessible.
+					This can open Otherwordly Portal
+					Can be used only on certain conditions
+					''If you managed to collect all Notes, then you will be able to read this information.
+					Moon Lord is not an ordinary creature. Defeating him may have some unexpected effects...
+					Like weakening barrier between worlds. Even a pathway between worlds may appear.
+					This barrier becomes especially weak during the event called ''The Dark Sun''.
+					If I will get stuck in Interdimension and you will know coordinates of the Porta......''
+					'''
+			}
+
+			RealityPiercer: {
+				DisplayName: Reality Piercer
+				Tooltip: Makes Explorer to come into unobserved world.
+			}
+
+			TinkererHorcrux: {
+				DisplayName: Tinkerer Horcrux
+				Tooltip: The piece of Tinkerer's soul is inside it.
+			}
+
+			# Summoning End
+			
+			# Weapons Start
+			Akumu: {
+				DisplayName: "'Akumu'"
+				Tooltip:
+					'''
+					It means '[c/FF00FF:nightmare]' in Japanese
+					Its slice pierces through any amount of enemies on its way
+					Left click launches a short travelling projectile
+					Right click slices the air in place
+					While at 25% of life or lower, Akumu generates projectile reflecting shield
+					This would lower weapon's power until life regens back to 25%
+					'''
+			}
+
+			BallisticNebularDestroyer: {
+				DisplayName: Ballistic Nebular Destroyer
+				Tooltip:
+					'''
+					Shoots spread of Vortex Rockets
+					25% chance to not consume ammo
+					'''
+			}
+
+			BanHammer: {
+				DisplayName: Ban Hammer
+				Tooltip:
+					'''
+					[c/FF0000:Instantly kills any non-boss enemies]
+					[c/FF0000:If a part of the boss doesn't count as boss, it would be killed too]
+					'''
+			}
+
+			BlackWidowGreatbow: {
+				DisplayName: Black Widow Greatbow
+				Tooltip:
+					'''
+					Shoots 3 highly damaging spider fangs
+					Normal enemies would be impaled and immobilized
+					'''
+			}
+
+			BloodthirstyBlade: {
+				DisplayName: Bloodthirsty Blade
+				Tooltip:
+					'''
+					Becomes stronger the more enemies are defeated by it
+					Killing boss gives bigger damage boost
+					Blue Slimes and Spiked Blue Slimes will not give the weapon boosts
+					Does not getting any benefits from bonus damage/critical strike chance
+					Damage is capped until entering Hardmode (36) and beating Moon Lord (99)
+					Reaching 36, 64 and 100 damage makes special things to happen
+					'''
+			}
+
+			BreathOfTheVoid: {
+				DisplayName: Expiration
+				Tooltip: Feel the Breath of the Void
+			}
+
+			ChaingunMeatGrinder: {
+				DisplayName: Chain Gun ''Meat Grinder''
+				Tooltip:
+					'''
+					Forged by technologies of ancient colonizers.
+					Has 6 rotating barrels with 17mm caliber
+					Gains shooting speed over time
+					Uses special ammo (17mm rounds)
+					66% chance not to consume ammo
+					'''
+			}
+
+			ChaosBomb: {
+				DisplayName: Chaos Bomb
+				Tooltip:
+					'''
+					CHAOS! CHAOS!
+					Explodes on contact, releasing random chaos
+					'''
+			}
+
+			ChristmasW: {
+				DisplayName: Christmas (F-02-49)
+				Tooltip:
+					'''
+					''It is patched with heavy leather. No one knows where the leather came from though.
+					Its true identity under the leather is classified, but its secrecy only makes the weapon all the more powerful.''
+					[c/FF0000:EGO weapon]
+					Causes some ornament balls to fall from the sky on swing
+					Gives 3% chance to get Present from any enemy as drop
+					'''
+			}
+
+			ChromovariaArrow: {
+				DisplayName: Chromovaria Arrow
+				Tooltip:
+					'''
+					The worthy usage of Hallowed material
+					Releases heavy damaging light beams and inflicts Daybroken debuff
+					'''
+			}
+
+			ChromovariaArrowInfinite: {
+				DisplayName: Chromovaria Arrow
+				Tooltip:
+					'''
+					The worthy usage of Hallowed material
+					Releases heavy damaging light beams and inflicts Daybroken debuff
+					Infinite
+					'''
+			}
+
+			ChromovariaBullet: {
+				DisplayName: Chromovaria Bullet
+				Tooltip: Creates heavy damaging light explosion and inflicts Daybroken debuff
+			}
+
+			ChromovariaBulletInfinite: {
+				DisplayName: Chromovaria Bullet
+				Tooltip:
+					'''
+					Creates heavy damaging light explosion and inflicts Daybroken debuff
+					Infinite
+					'''
+			}
+
+			ConeOfCold: {
+				DisplayName: Cone of Cold
+				Tooltip:
+					'''
+					Magic spell which releases cone of arctic cold
+					May slowdown or freeze normal enemies in place
+					'''
+			}
+
+			CorrosiveFlask: {
+				DisplayName: Corrosive Flask
+				Tooltip: Toxic Flask, improved by Celestial Powers.
+			}
+
+			CorrosiveFlaskThrown: {
+				DisplayName: Corrosive Flask
+				Tooltip: Toxic Flask, improved by Celestial Powers.
+			}
+
+			CounterMatter: {
+				DisplayName: Counter Matter
+				Tooltip:
+					'''
+					Globe 199
+					[c/00FF00:Legendary Weapon]
+					Destroys nearby enemy projectiles
+					After blocking the projectile, your next strike would be 100% critical
+					[c/00FF00:Stats are growing through progression]
+					'''
+			}
+
+			CrystalDustBullet: {
+				DisplayName: Crystal Dust Bullet
+				Tooltip: Explodes into even deadlier shards
+			}
+
+			CrystalDustBulletInfinite: {
+				DisplayName: Crystal Dust Bullet
+				Tooltip:
+					'''
+					Explodes into even deadlier shards
+					Infinite
+					'''
+			}
+
+			CrystalyzedArrow: {
+				DisplayName: Crystalyzed Arrow
+				Tooltip: Explodes to shards on hit.
+			}
+
+			CrystalyzedArrowInfinite: {
+				DisplayName: Crystalyzed Arrow
+				Tooltip:
+					'''
+					Explodes to shards on hit
+					Infinite
+					'''
+			}
+
+			CursedWaspnade: {
+				DisplayName: Cursed Ice Waspnade
+				Tooltip:
+					'''
+					Releases friendly Wasps after explosion
+					Wasps are inflicting Frostburn and Cursed Flame debuffs
+					Empowered with Hive Pack/Plague Hive equipped
+					'''
+			}
+
+			CurseofArachna: {
+				DisplayName: Arachna's Curse
+				Tooltip: Infects enemies on first hit, releases spiders on second
+			}
+
+			DarkMagicWand: {
+				DisplayName: Dark Magic Wand
+				Tooltip:
+					'''
+					Royal Dark Magic Wand
+					Shoots wide beam that can eliminate everything on its way.
+					The longer you are holding the beam, the more powerful it becomes
+					Mana cost grows respectively
+					'''
+			}
+
+			DeterminationBlade: {
+				DisplayName: Determination Blade
+				Tooltip:
+					'''
+					Contains Determination of 7 souls
+					Attacks build Hate
+					After a certain amount of hits, right-clicking will release the Hate
+					'''
+			}
+
+			Devilsknife: {
+				DisplayName: Devilsknife
+				Tooltip:
+					'''
+					Summons Devilsknife to destroy your foes
+					More than 1 cannot be summoned
+					METAMORPHOSIS!
+					'''
+			}
+
+			DivineWaspnade: {
+				DisplayName: Divine Lava Waspnade
+				Tooltip:
+					'''
+					Releases friendly Wasps after explosion
+					Wasps are inflicting On Fire! and Ichor debuffs
+					Empowered with Hive Pack/Plague Hive equipped
+					'''
+			}
+
+			DriedFish: {
+				DisplayName: Dried Fish
+				Tooltip: Releases damaging bubbles on enemy hits
+			}
+
+			EbonyIvory: {
+				DisplayName: Ebony & Ivory
+				Tooltip:
+					'''
+					''Twin handguns of a Demon Hunter''
+					Can very rarely crit for 66666 damage
+					Shoot custom demonic bullets, which are exploding on hit
+					66% chance not to consume ammo
+					'''
+			}
+
+			EdgeOfChaos: {
+				DisplayName: Edge of Chaos
+				Tooltip:
+					'''
+					Swing of this blade may tear reality in half
+					Inflicts Chaos State debuff on hit
+					'''
+			}
+
+			ElementalWaspnade: {
+				DisplayName: Elemental Waspnade
+				Tooltip:
+					'''
+					Releases friendly Wasps after explosion
+					Wasps inflicting Corrosion, Cursed Flames and Ichor debuffs
+					Empowered with Hive Pack/Plague Hive equipped
+					'''
+			}
+
+			EnergyCapsule: {
+				DisplayName: Energy Capsule
+				Tooltip: Requred to shoot from Portal Gun
+			}
+
+			EnergyCell: {
+				DisplayName: Energy Cell
+				Tooltip: Requred to shoot from Quantum Destabilizer
+			}
+
+			EyeOfJudgement: {
+				DisplayName: Eye of Judgement
+				Tooltip:
+					'''
+					'If you keep going the way you are now...
+					You're gonna have a bad time.'
+					Endlessly generates sharp bones, which will home onto enemies while you hold this
+					Creates 8 homing bones on cursor position on use
+					Doesn't take minion slots. Can be combined with other minions
+					33% chance to reduce damage taken by player to 2 hitpoints
+					Reduces player's endurance by 33%
+					'''
+			}
+
+			EyeOfJudgementP: {
+				DisplayName: Eye of Pure Judgement
+				Tooltip:
+					'''
+					'If you keep going the way you are now...
+					You're gonna have a bad time.'
+					Endlessly generates sharp bones, which are home to enemies while you hold this
+					Creates 8 homing bones on cursor position on use
+					Doesn't take minion slots. Can be combined with other minions
+					33% chance to reduce damage taken by player to 2 hitpoints
+					Reduces player's endurance by 17%
+					'''
+			}
+
+			FangBallista: {
+				DisplayName: Fang Ballista
+				Tooltip:
+					'''
+					Shoots highly damaging spider fang
+					Normal enemies would be impaled and immobilized
+					'''
+			}
+
+			FlaskoftheAlchemist: {
+				DisplayName: Flask of the Alchemist
+				Tooltip:
+					'''
+					Very own weapon of legendary Alchemist, Gregg
+					[c/00FF00:Legendary Weapon]
+					Throws Flask of random type
+					[c/00FF00:Stats are growing through progression]
+					'''
+			}
+
+			FuneralofDeadButterflies: {
+				DisplayName: Solemn Vow (T-01-68)
+				Tooltip:
+					'''
+					''The atmosphere is grave.
+					One represents the sadness of the dead, the other represents fear of the quick.''
+					[c/FF0000:EGO weapon]
+					Inflicts Shadowflame and Frostburn
+					35% chance not to consume ammo
+					'''
+			}
+
+			Fungalosphere: {
+				DisplayName: Fungalosphere
+				Tooltip:
+					'''
+					Consumes gel as ammo
+					Inflicts Electrocute and Frostburn debuffs
+					33% chance not to consume gel
+					'''
+			}
+
+			GoldenKnuckles: {
+				DisplayName: Golden Knuckles
+				Tooltip:
+					'''
+					The weapon of the legendary grifter
+					May not look so tough, but hits hard
+					'''
+			}
+
+			GrinderMK4: {
+				DisplayName: Grinder MK4 (T-05-41)
+				Tooltip:
+					'''
+					''The sharp teeth of the grinder makes a clean cut through the enemy.''
+					[c/FF0000:EGO weapon]
+					Its attack goes through enemy invincibility frames
+					After certain amount of hits releases broken blades into enemies
+					'''
+			}
+
+			Hive: {
+				DisplayName: Hive
+				Tooltip:
+					'''
+					''NOT THE BEES!''
+					Shoots beehive, which is spreading bees around it
+					Breaks on collide, releasing even more bees
+					Boosted stats will be shown after the first use
+					'''
+			}
+
+			HolyAvenger: {
+				DisplayName: "''Cera Sumat'', Holy Avenger"
+				Tooltip:
+					'''
+					[c/00FF00:Legendary Sword] of Old Duke Ehld.
+					True Melee sword
+					Inflicts Curse of Light debuff
+					Makes enemies take 20% more damage from player
+					25% to take only half of the damage from debuffed enemy
+					[c/00FF00:Stats are growing up through progression]
+					Boosted stats will be shown after the first swing
+					'''
+			}
+
+			IcedamnedArrow: {
+				DisplayName: Icedamned Arrow
+				Tooltip: The unusual usage of cursed materials.
+			}
+
+			IcedamnedArrowInfinite: {
+				DisplayName: Icedamned Arrow
+				Tooltip:
+					'''
+					The unusual usage of cursed materials
+					Infinite
+					'''
+			}
+
+			Justitia: {
+				DisplayName: Justitia (O-02-62)
+				Tooltip:
+					'''
+					''It remembers the balance of the Long Bird that never forgot others' sins.
+					This weapon may be able to not only cut flesh but trace of sins as well.''
+					[c/FF0000:EGO weapon]
+					'''
+			}
+
+			Laetitia: {
+				DisplayName: Laetitia (O-01-67)
+				Tooltip:
+					'''
+					''It takes a lot of time, but its power cannot be ignored''
+					[c/FF0000:EGO weapon]
+					Shoots heavy damaging bullets 2 times in 1 second
+					Can be powered up by equipping full set of 'Laetitia'
+					'''
+			}
+
+			Laoskadyn: {
+				DisplayName: Laoskadyn
+				Tooltip:
+					'''
+					Rains exploding homing needles from the sky on swing
+					Needles release damaging flames
+					'''
+			}
+
+			LaserCannon: {
+				DisplayName: Laser Cannon
+				Tooltip:
+					'''
+					Shoots homing exploding energy balls
+					Does not require ammo
+					'''
+			}
+
+			LastTantrum: {
+				DisplayName: Last Tantrum
+				Tooltip:
+					'''
+					Shoots homing bullets that eradicate everything
+					Bullets cannot do critical damage
+					'''
+			}
+
+			LightOfCeraSumat: {
+				DisplayName: "''The Light of Cera Sumat''"
+				Tooltip:
+					'''
+					[c/00FF00:Legendary Sword] of Old Duke Ehld.
+					True Melee sword
+					Inflicts Curse of Light debuff
+					Makes enemies take 20% more damage from player
+					25% to take only half of the damage from debuffed enemy
+					[c/00FF00:Stats are growing up through post Moon Lord progression]
+					Boosted stats will be shown after the first swing
+					'''
+			}
+
+			MagicBullet: {
+				DisplayName: Magic Bullet (F-01-69)
+				Tooltip:
+					'''
+					''Though, unable to fully extract its original power, the magical power it holds is still potent.''
+					[c/FF0000:EGO weapon]
+					Bullets shot by this weapon will go through tiles
+					Pierces through multiple enemies
+					'''
+			}
+
+			MagicWand: {
+				DisplayName: MagicWand
+				Tooltip:
+					'''
+					Royal Magic Wand
+					Shoots a laser beam that can eliminate everything on its way.
+					'''
+			}
+
+			MarcoMagicWand: {
+				DisplayName: Prince's Magic Wand
+				Tooltip:
+					'''
+					Magic Wand of Mewnian Prince
+					Shoots wide beam that can eliminate everything on its way.
+					The longer you are holding the beam, the more powerful it becomes
+					Mana cost grows respectively
+					Right click to launch kitten bombs
+					'''
+			}
+
+			MeteorSwarm: {
+				DisplayName: Scroll ''Meteor Swarm''
+				Tooltip:
+					'''
+					One-use item
+					Contains the spell ''Meteor Swarm''
+					While used, causes short meteorite rain around player's position
+					Exhausts player for 1 minute, making him unable to use magic
+					'''
+			}
+
+			MGB: {
+				DisplayName: 17mm Round
+				Tooltip: Requred to shoot from ''Meat Grinder''
+			}
+
+			MordenkainenSword: {
+				DisplayName: Mordenkainen's Sword
+				Tooltip:
+					'''
+					Immaterial sword created by Mordenkainen
+					Slashes enemies from the distance
+					'''
+			}
+
+			MP7: {
+				DisplayName: MP7
+				Tooltip:
+					'''
+					[c/00FF00:Ultimate Tinkerer's Reward]
+					Shoots up to 1K bullets per minute
+					88% chance not to consume ammo
+					'''
+			}
+
+			NULL: {
+				DisplayName: Katana
+				Tooltip: NULL
+			}
+
+			NyctosythiaArrow: {
+				DisplayName: Nyctosythia Arrow
+				Tooltip:
+					'''
+					These arrows consume any form of light.
+					Phases through walls, releases homing projectiles on enemy/wall impact
+					'''
+			}
+
+			NyctosythiaArrowInfinite: {
+				DisplayName: Nyctosythia Arrow
+				Tooltip:
+					'''
+					These arrows consume any form of light.
+					Phases through walls, releases homing projectiles on enemy/wall impact
+					Infinite
+					'''
+			}
+
+			NyctosythiaBullet: {
+				DisplayName: Nyctosythia Bullet
+				Tooltip:
+					'''
+					Don't keep them close.
+					Phases through walls, releases homing projectiles on enemy/wall impact
+					'''
+			}
+
+			NyctosythiaBulletInfinite: {
+				DisplayName: Nyctosythia Bullet
+				Tooltip:
+					'''
+					Don't keep them close.
+					Phases through walls, releases homing projectiles on enemy/wall impact
+					Infinite
+					'''
+			}
+
+			Nyx: {
+				DisplayName: Nyx
+				Tooltip:
+					'''
+					Basically, it is just a Gauss Gun
+					Pierces through multiple enemies
+					Has 2 modes:
+					Slowmode on left click (1 shot per second)
+					Fastmode on right click (2 shots per second, damage is reduced)
+					'''
+			}
+
+			OverloadedPortalGun: {
+				DisplayName: Rick's Portal Gun (Overloaded)
+				Tooltip:
+					'''
+					Copy of Rick Sanchez's Portal Gun
+					Uses unstable technologies, making it work more rapidly
+					Opens portals to the random dangerous dimensions
+					Requires Energy Capsules as ammo
+					Hope this thing wouldn't cause appearence of SEAL team Ricks
+					'''
+			}
+
+			Pandora: {
+				DisplayName: Pandora
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Base form 422: Launches sharp shuriken, which sticks to enemies.
+					Attacking fills Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change form
+					'''
+			}
+
+			PandoraPF013: {
+				DisplayName: Pandora (PF013)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Launches 2 heavy damaging homing rockets.
+					Attacking fills Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change form
+					'''
+			}
+
+			PandoraPF124: {
+				DisplayName: Pandora (PF013)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Launches 3 heavy damaging homing rockets.
+					Attacking fills Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change form
+					'''
+			}
+
+			PandoraPF262: {
+				DisplayName: Pandora (PF262)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Chaingun with very high shooting speed
+					Attacking fills Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change form
+					'''
+			}
+
+			PandoraPF398: {
+				DisplayName: Pandora (PF398)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Chargeable Laser Device
+					Attacking fills Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change form
+					'''
+			}
+
+			PandoraPF422: {
+				DisplayName: Pandora (PF422)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Sadly, this is a prototype, capable of using only one form
+					Launches sharp shuriken, which sticks to enemies.
+					'''
+			}
+
+			PandoraPF594: {
+				DisplayName: Pandora (PF594)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Special attack #1 (Homing Rockets to all directions)
+					Attack depletes Disaster Gauge
+					Right click to change special attack
+					'''
+			}
+
+			PandoraPF666: {
+				DisplayName: Pandora (PF666)
+				Tooltip:
+					'''
+					'A weapon of the underworld, capable of 666 different forms'
+					Fixed Pandora with unlocked damaging potential
+					Special attack #2 (Energy Release)
+					Attack depletes Disaster Gauge
+					Full gauge allows you to switch weapon's form
+					Right click to change special attack
+					'''
+			}
+
+			ParadiseLost: {
+				DisplayName: Paradise Lost (T-03-46)
+				Tooltip:
+					'''
+					''I knocked on the door, and it opened.
+					I am from the end, I am merely staying.
+					I am the one who kindled the lantern to face the world.
+					My loved ones, I shall show thou the best path from now on``
+					[c/FF0000:EGO weapon]
+					Left click launcher travelling through walls projectile
+					Right click slices the air in place
+					Full set of Paradise Lost is required to use this weapon
+					'''
+			}
+
+			Penetrator: {
+				DisplayName: Penetrator
+				Tooltip:
+					'''
+					Pretty slow, unpleasent looking rifle
+					[c/00FF00:Legendary Weapon]
+					Critical hits damage varies from 3x to 6x
+					Uses health instead of ammo
+					[c/00FF00:Stats are growing up through progression]
+					Boosted stats will be shown after the first use
+					'''
+			}
+
+			PlasmaRound: {
+				DisplayName: Plasma Round
+				Tooltip:
+					'''
+					Contains raw energy inside
+					Required for using Tritantrum
+					'''
+			}
+
+			PortalGun: {
+				DisplayName: Rick's Portal Gun
+				Tooltip:
+					'''
+					Copy of Rick Sanchez's Portal Gun
+					Opens portals to the random dangerous dimensions
+					Requires Energy Capsules as ammo
+					Hope this thing wouldn't cause appearence of SEAL team Ricks
+					'''
+			}
+
+			QoHWeapon: {
+				DisplayName: "''In the name of Love and Hate'' (O-01-04)"
+				Tooltip:
+					'''
+					''A magical rod radiating with magical girl's lovely energy.
+					Bad people will be purified by its holy light and be born again.
+					They will burn. They won't want to wake up.''
+					[c/FF0000:EGO weapon]
+					Shots 4 different types of projectile
+					They may restore HP, Mana, inflict debuff or deal double damage.
+					'''
+			}
+
+			QuantumDestabilizer: {
+				DisplayName: Quantum Destabilizer
+				Tooltip:
+					'''
+					Experiment #618
+					Releases entity destabilizing beam, which deals extremely high damage
+					Requires 1 seconds to charge the shot
+					Requires Energy Cells as ammo
+					'''
+			}
+
+			QuantumDestabilizerFixed: {
+				DisplayName: Fixed Quantum Destabilizer
+				Tooltip:
+					'''
+					Experiment #618
+					Releases entity destabilizing beam, which deals extremely high damage
+					Requires 1 seconds to charge the shot
+					Does not require any ammo
+					'''
+			}
+
+			RecluseFang: {
+				DisplayName: Recluse's Fang
+				Tooltip: Throws venomous boomerang
+			}
+
+			Reverberation: {
+				DisplayName: Reverberation (T-04-53)
+				Tooltip:
+					'''
+					This weapon will no longer be needed if the time comes when everyone's lust is substituted with flowers.
+					[c/FF0000:EGO weapon]
+					50% chance to shot additional tile piercing projectile
+					Projectile deals same damage is main, but consumes 15 mana each
+					Can be powered up by equipping full 'Reverberation' set
+					'''
+			}
+
+			Sasscade: {
+				DisplayName: Sasscade Yo-Yo
+				Tooltip:
+					'''
+					Legendary Yo-Yo
+					Shoots homing Nebula Blazes to nearby enemies
+					Blazes destroy enemies with less than 10K HP and inflict heavy damaging debuff
+					Gives effects of Yo-yo Bag while placed in inventory or being held
+					'''
+			}
+
+			SeepingArrow: {
+				DisplayName: Seeping Arrow
+				Tooltip: The unusual usage of cursed materials.
+			}
+
+			SeepingArrowInfinite: {
+				DisplayName: Seeping Arrow
+				Tooltip:
+					'''
+					The unusual usage of cursed materials
+					Infinite
+					'''
+			}
+
+			ShroomiteArrow: {
+				DisplayName: Enhanced Shroomite Arrow
+				Tooltip:
+					'''
+					Releases electric cloud, which shoots electric beams to enemies
+					Speeds up over time
+					'''
+			}
+
+			ShroomiteArrowInfinite: {
+				DisplayName: Enhanced Shroomite Arrow
+				Tooltip:
+					'''
+					Releases electric cloud, which shoots electric beams to enemies
+					Speeds up over time
+					Infinite
+					'''
+			}
+
+			ShroomiteBullet: {
+				DisplayName: Enhanced Shroomite Bullet
+				Tooltip:
+					'''
+					Releases electric cloud, which shoots electric beams to enemies
+					Speeds up over time
+					'''
+			}
+
+			ShroomiteBulletInfinite: {
+				DisplayName: Enhanced Shroomite Bullet
+				Tooltip:
+					'''
+					Releases electric cloud, which shoots electric beams to enemies
+					Speeds up over time
+					Infinite
+					'''
+			}
+
+			SpearofJustice: {
+				DisplayName: Spear of Justice
+				Tooltip:
+					'''
+					Its strike can destroy everything in its way
+					Very own spear of a [c/FF0000:True Hero]
+					Has alternative attack mode on right-click
+					200 or 400 mana is required for using alternative attack
+					'''
+			}
+
+			SpiderFangarang: {
+				DisplayName: Spider Fangarang
+				Tooltip:
+					'''
+					Throws poisoning boomerang
+					Can stack up to 3
+					'''
+			}
+
+			Spore: {
+				DisplayName: Spore (O-04-66)
+				Tooltip:
+					'''
+					''The spear, covered with spores and attention.
+					It expands mind, shines like a star and gradually becomes closer to weilder.''
+					[c/FF0000:EGO weapon]
+					Its attack hits enemy several times
+					After certain amount of hits releases damaging spores into enemy
+					'''
+			}
+
+			Stormbreaker: {
+				DisplayName: Stormbreaker
+				Tooltip:
+					'''
+					Forged to fight the most powerful beings in the universe. Wield it wisely.
+					Right click in inventory to change damage type
+					'''
+			}
+
+			StormbreakerThrown: {
+				DisplayName: Stormbreaker
+				Tooltip:
+					'''
+					Forged to fight the most powerful beings in the universe. Wield it wisely.
+					Right click in inventory to change damage type
+					'''
+			}
+
+			SunkroveraArrow: {
+				DisplayName: Sunkrovera Arrow
+				Tooltip:
+					'''
+					Even holding these make you feel... uneasy.
+					Releases life stealing projectiles on enemy/wall impact
+					'''
+			}
+
+			SunkroveraArrowInfinite: {
+				DisplayName: Sunkrovera Arrow
+				Tooltip:
+					'''
+					Even holding these make you feel... uneasy.
+					Releases life stealing projectiles on enemy/wall impact
+					Infinite
+					'''
+			}
+
+			SunkroveraBullet: {
+				DisplayName: Sunkrovera Bullet
+				Tooltip:
+					'''
+					Its glow makes you chill.
+					Releases life stealing projectiles on enemy/wall impact
+					'''
+			}
+
+			SunkroveraBulletInfinite: {
+				DisplayName: Sunkrovera Bullet
+				Tooltip:
+					'''
+					Its glow makes you chill.
+					Releases life stealing projectiles on enemy/wall impact
+					Infinite
+					'''
+			}
+
+			SwordofArachna: {
+				DisplayName: Sword of Arachna
+				Tooltip: Infects enemies on first hit, releases spiders on second
+			}
+
+			SymbolOfPain: {
+				DisplayName: Scroll ''Symbol of Pain''
+				Tooltip:
+					'''
+					One-use item
+					Contains the spell ''Symbol of Pain''
+					While used, all enemies on the screen would be heavily weakened for 1 minute
+					Makes you deal 25% more damage to affected enemies (not lowered by any caps)
+					Also makes them deal 1/4 less damage
+					Exhausts player for 1 minute, making him unable to use magic
+					'''
+			}
+
+			TerrarianW: {
+				DisplayName: Terrarian-W (V-05-516)
+				Tooltip:
+					'''
+					''Angela's actions have rewritten the very understandment of souls''
+					[c/FF0000:EGO weapon]
+					Left click to shoot burst of lasers
+					Right click to shoot burst of bullets
+					33% chance not to consume ammo
+					'''
+			}
+
+			TheBeak: {
+				DisplayName: The Beak (O-02-56)
+				Tooltip:
+					'''
+					''Size has no meaning while it overflows with power.''
+					[c/FF0000:EGO weapon]
+					Shoots 2 times in one use
+					Bullets set enemies ablaze
+					25% chance not to consume ammo
+					'''
+			}
+
+			TomeOfOrder: {
+				DisplayName: Tome of Order
+				Tooltip:
+					'''
+					[c/00FF00:Legendary Weapon]
+					[c/00FF00:Stats are growing up through progression]
+					''Only the ones who are equally good and evil may weild this''
+					Shoots energy bolts which stick to enemies and tiles
+					They explode after some time or can be blown up manually, dealing double damage
+					'''
+			}
+
+			Tritantrum: {
+				DisplayName: Tritantrum
+				Tooltip:
+					'''
+					Shoots exploding plasma balls
+					Requires special ammo (Plasma Round)
+					50% chance not to consume ammo
+					'''
+			}
+
+			TrueSasscade: {
+				DisplayName: True Sasscade Yo-Yo
+				Tooltip:
+					'''
+					Legendary Yo-Yo
+					Shoots homing Nebula Arcanums to nearby enemies
+					Gives effects of Yo-yo Bag while placed in inventory or being held
+					'''
+			}
+
+			TurretStaff: {
+				DisplayName: Turret Staff
+				Tooltip: Summons deadly GLaDOS turret to fight for you
+			}
+
+			Twilight: {
+				DisplayName: Twilight (O-02-63)
+				Tooltip:
+					'''
+					''Eyes that never close, a scale that could measure all sins, and a beak that could swallow everything
+					protected the Black Forest in peace, and those who could wield this could also bring peace.''
+					[c/FF0000:EGO weapon]
+					Inflicts several types of damage on hit
+					Hits every enemy on screen by 200 each second while held
+					Right click teleports you to cursor, boosting your damage by 3x and making you unvulnerable for 2 seconds
+					'''
+			}
+
+			UgandanTotem: {
+				DisplayName: Ugandan Totem
+				Tooltip:
+					'''
+					Summons Ugandan Warrior to protect you
+					Max minions slots multiply summon's damage
+					'''
+			}
+
+			UnchainedAkumu: {
+				DisplayName: Unchained ''Akumu''
+				Tooltip:
+					'''
+					It means ''[c/FF00FF:nightmare]'' in Japanese
+					Its slice pierces through any amount of enemies on its way
+					Left click launches a short travelling projectile
+					Right click slices the air in place
+					While at 35% HP or lower, Akumu generates projectile reflecting shield
+					While above 35% HP, Akumu releases flying minion
+					'''
+			}
+
+			WailOfBanshee: {
+				DisplayName: Scroll ''Wail Of Banshee''
+				Tooltip:
+					'''
+					One-use item
+					Contains the spell ''Wail of Banshee''
+					When used causes all normal enemies on the screen to instantly die
+					Exhausts player for 1 minute, making him unable to use magic
+					'''
+			}
+
+			Waspnade: {
+				DisplayName: Waspnade
+				Tooltip:
+					'''
+					Releases friendly Wasps after explosion
+					Empowered with Hive Pack/Plague Hive equipped
+					'''
+			}
+
+			WatcherAmulet: {
+				DisplayName: Watcher Amulet
+				Tooltip:
+					'''
+					No wonder it had an oddly shaped amulet in the middle.
+					By obtaining certain essentials you have awakened the true form of this amulet.
+					What unearthly powers does it have? Nobody knows.
+					'''
+			}
+
+			WrathOfTheCelestial: {
+				DisplayName: Wrath of the Celestial
+				Tooltip:
+					'''
+					Shoots cluster of exploding blue flames
+					Way more powerful than it seems
+					'''
+			}
+
+			XtraT: {
+				DisplayName: XtraT
+				Tooltip:
+					'''
+					Shoots 2 arrows and an energy bolt
+					Bolt deals triple weapon damage and pierces through enemies and tiles
+					50% chance not to consume ammo
+					'''
+			}
+
+			# Weapons End
+			
+			# Generics Start
+			CodexUmbra: {
+				DisplayName: Codex Umbra
+				Tooltip:
+					'''
+					I'm so sorry, Charlie...
+					[c/8b0088:*Reference Item*]
+					'''
+			}
+
+			BattleCombination: {
+				DisplayName: Battle Combination
+				Tooltip: Grants buffs, which are necessary for battle (Endurance, Lifeforce, Ironskin, Regeneration, Rage & Wrath)
+			}
+
+			BeachTeleporterPotion: {
+				DisplayName: Beach Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Beach
+					Side depends on used mouse button
+					'''
+			}
+
+			BeaconTeleportator: {
+				DisplayName: Beacon Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to placed Beacon
+					Will not teleport you anywhere if Beacon is not placed
+					'''
+			}
+
+			BewitchingPotion: {
+				DisplayName: Bewitching Potion
+				Tooltip:
+					'''
+					Grants Bewitched buff (increases max number of minions)
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			BlurringPotion: {
+				DisplayName: Blurring Potion
+				Tooltip:
+					'''
+					Grants Blurring buff (activates Shadow Dodge for 10 sec after 30 sec CD)
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			BuilderCombination: {
+				DisplayName: Builder Combination
+				Tooltip: Grants buffs, which are necessary for building (Calm, Builder, Mining)
+			}
+
+			CalamityCombination: {
+				DisplayName: Calamity Combination
+				Tooltip: Grants most buffs from Calamity Mod potions (Yharim's Stimulants, Cadance, Titan Scale, Soaring, Bounding and Fabsol's Vodka)
+			}
+
+			CloakOfFear: {
+				DisplayName: Scroll ''Cloak of Fear''
+				Tooltip:
+					'''
+					One-use Item
+					Contains the spell ''Cloak of Fear''
+					Makes nearby non-boss enemies change their movement direction
+					Exhausts player for 30 seconds after effect ends, making him unable to use magic
+					'''
+			}
+
+			CrimsonCherrySoda: {
+				DisplayName: Crimson Cherry Soda
+				Tooltip: Heals for 175 hp and increases life regeneration greatly for a short time.
+			}
+
+			DiscordPotion: {
+				DisplayName: Discord Potion
+				Tooltip:
+					'''
+					Allows to teleport on cursor position by hotkey
+					Distorts player for 1 second after teleport
+					Inflicts heavy damage while you have Chaos State
+					Chaos State time is increased to 10 seconds
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			Dopamine: {
+				DisplayName: Dopamine
+				Tooltip: Makes you Happy
+			}
+
+			DungeonTeleportationPotion: {
+				DisplayName: Dungeon Teleportation Potion
+				Tooltip: Teleports you to Dungeon entrance
+			}
+
+			ExecutionersEyes: {
+				DisplayName: Scroll ''Executioner's Eyes''
+				Tooltip:
+					'''
+					One-use Item
+					Contains the spell ''Executioner's Eyes''
+					While used, you are getting your damage multiplied by 15% for 1 minute
+					Also increases critical strike chance by 5%
+					Gives you 5% chance to crit your crit, dealing 4x damage
+					Exhausts player for 1 minute after ending of effect, making him unable to use magic
+					'''
+			}
+
+			ExplorerCombination: {
+				DisplayName: Explorer Combination
+				Tooltip: Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine, Mining, Gills, Flippers, Water Walking)
+			}
+
+			ExplorersBrew: {
+				DisplayName: Explorer's Brew
+				Tooltip:
+					'''
+					[c/00FF00:Unique Explorer's potion]
+					Grants all possible visions, greatly increases light radius around player and your attacks can Electrocute enemies
+					Also gives effects of Gills, Flippers and Water Walking potions
+					'''
+			}
+
+			FishingCombination: {
+				DisplayName: Fishing Combination
+				Tooltip: Grants Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+			}
+
+			FortitudePotion: {
+				DisplayName: Fortitude Potion
+				Tooltip:
+					'''
+					Grants immunity to knockback
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			GreaterDangersensePotion: {
+				DisplayName: Greater Dangersense Potion
+				Tooltip:
+					'''
+					Grants Greater Dangersense buff (light up enemy projectiles)
+					This effect is global for all players
+					'''
+			}
+
+			HeartAttackPotion: {
+				DisplayName: Potion of Darkness
+				Tooltip:
+					'''
+					Fills Rage meter and causes Heart Attack
+					Cannot be used if any boss is alive
+					NON-CALAMITY POTION
+					'''
+			}
+
+			InvincibilityPotion: {
+				DisplayName: Invincibility Potion
+				Tooltip:
+					'''
+					Increases length of invincibility after taking damage
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			JungleTeleporterPotion: {
+				DisplayName: Jungle Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Jungle
+					Left click teleports to jungle plant
+					Right click teleports to living mahogany leaves
+					'''
+			}
+
+			MageCombination: {
+				DisplayName: Mage Combination
+				Tooltip: Grants buffs, which are necesary for Mages (Magic Power, Mana Regeneration, Сlairvoyance Wrath, Rage)
+			}
+
+			NatureBlessingPotion: {
+				DisplayName: Nature Blessing Potion
+				Tooltip: Grants Dryad's Blessing buff
+			}
+
+			NinjaPotion: {
+				DisplayName: Ninja Potion
+				Tooltip:
+					'''
+					Increases damage and critical chance by 5%
+					Gives a chance to dodge attacks and allows the ability to climb walls
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			OceanTeleporterPotion: {
+				DisplayName: Ocean Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Ocean (near leftest or rightest сoral)
+					Side depends on used mouse button
+					Will not teleport you anywhere if no сorals exist
+					'''
+			}
+
+			OnyxGrapeSoda: {
+				DisplayName: Onyx Grape Soda
+				Tooltip:
+					'''
+					Returns you home and gives you 75% endurance for 5 seconds.
+					Has a 30 seconds cooldown, applies Chaos State debuff
+					'''
+			}
+
+			PerfectDiscordPotion: {
+				DisplayName: Perfect Discord Potion
+				Tooltip:
+					'''
+					[c/00FF00:Unique Explorer's potion]
+					Allows to teleport on cursor position by hotkey
+					Behaves exactly like Rod of Discord
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			InvalidItem: {
+				DisplayName: Invalid Item
+				Tooltip: ""
+			}
+
+			PinkGoldStrawberrySoda: {
+				DisplayName: Pink Gold Strawberry Soda
+				Tooltip: ""
+			}
+
 			RainbowFlask: {
 				DisplayName: Rainbow Flask
 				Tooltip: ""
@@ -2762,71 +4849,6 @@ Mods: {
 
 			SummonerCombination: {
 				DisplayName: Summoner Combination
-				Tooltip: ""
-			}
-
-			AlchemistHorcrux: {
-				DisplayName: Alchemist Horcrux
-				Tooltip: ""
-			}
-
-			APMC: {
-				DisplayName: A P M C
-				Tooltip: ""
-			}
-
-			ArchitectHorcrux: {
-				DisplayName: Architect Horcrux
-				Tooltip: ""
-			}
-
-			BrewerHorcrux: {
-				DisplayName: Brewer Horcrux
-				Tooltip: ""
-			}
-
-			CaughtUnicorn: {
-				DisplayName: Caught Unicorn
-				Tooltip: ""
-			}
-
-			DimensionalRift: {
-				DisplayName: Dimensional Rift
-				Tooltip: ""
-			}
-
-			HorrifyingSkull: {
-				DisplayName: Horrifying Skull
-				Tooltip: ""
-			}
-
-			JewelerHorcrux: {
-				DisplayName: Jeweler Horcrux
-				Tooltip: ""
-			}
-
-			KnucklesUgandaDoll: {
-				DisplayName: Knuckles Uganda Doll
-				Tooltip: ""
-			}
-
-			MusicianHorcrux: {
-				DisplayName: Musician Horcrux
-				Tooltip: ""
-			}
-
-			NotesBook: {
-				DisplayName: Notes Book
-				Tooltip: ""
-			}
-
-			RealityPiercer: {
-				DisplayName: Reality Piercer
-				Tooltip: ""
-			}
-
-			TinkererHorcrux: {
-				DisplayName: Tinkerer Horcrux
 				Tooltip: ""
 			}
 
@@ -2882,561 +4904,6 @@ Mods: {
 
 			VanTankCombination: {
 				DisplayName: Van Tank Combination
-				Tooltip: ""
-			}
-
-			Akumu: {
-				DisplayName: Akumu
-				Tooltip: ""
-			}
-
-			BallisticNebularDestroyer: {
-				DisplayName: Ballistic Nebular Destroyer
-				Tooltip: ""
-			}
-
-			BanHammer: {
-				DisplayName: Ban Hammer
-				Tooltip: ""
-			}
-
-			BlackWidowGreatbow: {
-				DisplayName: Black Widow Greatbow
-				Tooltip: ""
-			}
-
-			BloodthirstyBlade: {
-				DisplayName: Bloodthirsty Blade
-				Tooltip: ""
-			}
-
-			BreathOfTheVoid: {
-				DisplayName: Breath Of The Void
-				Tooltip: ""
-			}
-
-			ChaingunMeatGrinder: {
-				DisplayName: Chaingun Meat Grinder
-				Tooltip: ""
-			}
-
-			ChaosBomb: {
-				DisplayName: Chaos Bomb
-				Tooltip: ""
-			}
-
-			ChristmasW: {
-				DisplayName: Christmas W
-				Tooltip: ""
-			}
-
-			ChromovariaArrow: {
-				DisplayName: Chromovaria Arrow
-				Tooltip: ""
-			}
-
-			ChromovariaArrowInfinite: {
-				DisplayName: Chromovaria Arrow Infinite
-				Tooltip: ""
-			}
-
-			ChromovariaBullet: {
-				DisplayName: Chromovaria Bullet
-				Tooltip: ""
-			}
-
-			ChromovariaBulletInfinite: {
-				DisplayName: Chromovaria Bullet Infinite
-				Tooltip: ""
-			}
-
-			ConeOfCold: {
-				DisplayName: Cone Of Cold
-				Tooltip: ""
-			}
-
-			CorrosiveFlask: {
-				DisplayName: Corrosive Flask
-				Tooltip: ""
-			}
-
-			CorrosiveFlaskThrown: {
-				DisplayName: Corrosive Flask Thrown
-				Tooltip: ""
-			}
-
-			CounterMatter: {
-				DisplayName: Counter Matter
-				Tooltip: ""
-			}
-
-			CrystalDustBullet: {
-				DisplayName: Crystal Dust Bullet
-				Tooltip: ""
-			}
-
-			CrystalDustBulletInfinite: {
-				DisplayName: Crystal Dust Bullet Infinite
-				Tooltip: ""
-			}
-
-			CrystalyzedArrow: {
-				DisplayName: Crystalyzed Arrow
-				Tooltip: ""
-			}
-
-			CrystalyzedArrowInfinite: {
-				DisplayName: Crystalyzed Arrow Infinite
-				Tooltip: ""
-			}
-
-			CursedWaspnade: {
-				DisplayName: Cursed Waspnade
-				Tooltip: ""
-			}
-
-			CurseofArachna: {
-				DisplayName: Curseof Arachna
-				Tooltip: ""
-			}
-
-			DarkMagicWand: {
-				DisplayName: Dark Magic Wand
-				Tooltip: ""
-			}
-
-			DeterminationBlade: {
-				DisplayName: Determination Blade
-				Tooltip: ""
-			}
-
-			Devilsknife: {
-				DisplayName: Devilsknife
-				Tooltip: ""
-			}
-
-			DivineWaspnade: {
-				DisplayName: Divine Waspnade
-				Tooltip: ""
-			}
-
-			DriedFish: {
-				DisplayName: Dried Fish
-				Tooltip: ""
-			}
-
-			EbonyIvory: {
-				DisplayName: Ebony Ivory
-				Tooltip: ""
-			}
-
-			EdgeOfChaos: {
-				DisplayName: Edge Of Chaos
-				Tooltip: ""
-			}
-
-			ElementalWaspnade: {
-				DisplayName: Elemental Waspnade
-				Tooltip: ""
-			}
-
-			EnergyCapsule: {
-				DisplayName: Energy Capsule
-				Tooltip: ""
-			}
-
-			EnergyCell: {
-				DisplayName: Energy Cell
-				Tooltip: ""
-			}
-
-			EyeOfJudgement: {
-				DisplayName: Eye Of Judgement
-				Tooltip: ""
-			}
-
-			EyeOfJudgementP: {
-				DisplayName: Eye Of Judgement P
-				Tooltip: ""
-			}
-
-			FangBallista: {
-				DisplayName: Fang Ballista
-				Tooltip: ""
-			}
-
-			FlaskoftheAlchemist: {
-				DisplayName: Flaskofthe Alchemist
-				Tooltip: ""
-			}
-
-			FuneralofDeadButterflies: {
-				DisplayName: Funeralof Dead Butterflies
-				Tooltip: ""
-			}
-
-			Fungalosphere: {
-				DisplayName: Fungalosphere
-				Tooltip: ""
-			}
-
-			GoldenKnuckles: {
-				DisplayName: Golden Knuckles
-				Tooltip: ""
-			}
-
-			GrinderMK4: {
-				DisplayName: Grinder M K4
-				Tooltip: ""
-			}
-
-			Hive: {
-				DisplayName: Hive
-				Tooltip: ""
-			}
-
-			HolyAvenger: {
-				DisplayName: Holy Avenger
-				Tooltip: ""
-			}
-
-			IcedamnedArrow: {
-				DisplayName: Icedamned Arrow
-				Tooltip: ""
-			}
-
-			IcedamnedArrowInfinite: {
-				DisplayName: Icedamned Arrow Infinite
-				Tooltip: ""
-			}
-
-			Laoskadyn: {
-				DisplayName: Laoskadyn
-				Tooltip: ""
-			}
-
-			LaserCannon: {
-				DisplayName: Laser Cannon
-				Tooltip: ""
-			}
-
-			LastTantrum: {
-				DisplayName: Last Tantrum
-				Tooltip: ""
-			}
-
-			LightOfCeraSumat: {
-				DisplayName: Light Of Cera Sumat
-				Tooltip: ""
-			}
-
-			MagicBullet: {
-				DisplayName: Magic Bullet
-				Tooltip: ""
-			}
-
-			MagicWand: {
-				DisplayName: Magic Wand
-				Tooltip: ""
-			}
-
-			MarcoMagicWand: {
-				DisplayName: Marco Magic Wand
-				Tooltip: ""
-			}
-
-			MeteorSwarm: {
-				DisplayName: Meteor Swarm
-				Tooltip: ""
-			}
-
-			MGB: {
-				DisplayName: M G B
-				Tooltip: ""
-			}
-
-			MordenkainenSword: {
-				DisplayName: Mordenkainen Sword
-				Tooltip: ""
-			}
-
-			MP7: {
-				DisplayName: M P7
-				Tooltip: ""
-			}
-
-			NULL: {
-				DisplayName: N U L L
-				Tooltip: ""
-			}
-
-			NyctosythiaArrow: {
-				DisplayName: Nyctosythia Arrow
-				Tooltip: ""
-			}
-
-			NyctosythiaArrowInfinite: {
-				DisplayName: Nyctosythia Arrow Infinite
-				Tooltip: ""
-			}
-
-			NyctosythiaBullet: {
-				DisplayName: Nyctosythia Bullet
-				Tooltip: ""
-			}
-
-			NyctosythiaBulletInfinite: {
-				DisplayName: Nyctosythia Bullet Infinite
-				Tooltip: ""
-			}
-
-			Nyx: {
-				DisplayName: Nyx
-				Tooltip: ""
-			}
-
-			OverloadedPortalGun: {
-				DisplayName: Overloaded Portal Gun
-				Tooltip: ""
-			}
-
-			Pandora: {
-				DisplayName: Pandora
-				Tooltip: ""
-			}
-
-			PandoraPF013: {
-				DisplayName: Pandora P F013
-				Tooltip: ""
-			}
-
-			PandoraPF124: {
-				DisplayName: Pandora P F124
-				Tooltip: ""
-			}
-
-			PandoraPF262: {
-				DisplayName: Pandora P F262
-				Tooltip: ""
-			}
-
-			PandoraPF398: {
-				DisplayName: Pandora P F398
-				Tooltip: ""
-			}
-
-			PandoraPF422: {
-				DisplayName: Pandora P F422
-				Tooltip: ""
-			}
-
-			PandoraPF594: {
-				DisplayName: Pandora P F594
-				Tooltip: ""
-			}
-
-			PandoraPF666: {
-				DisplayName: Pandora P F666
-				Tooltip: ""
-			}
-
-			Penetrator: {
-				DisplayName: Penetrator
-				Tooltip: ""
-			}
-
-			PlasmaRound: {
-				DisplayName: Plasma Round
-				Tooltip: ""
-			}
-
-			PortalGun: {
-				DisplayName: Portal Gun
-				Tooltip: ""
-			}
-
-			QoHWeapon: {
-				DisplayName: Qo H Weapon
-				Tooltip: ""
-			}
-
-			QuantumDestabilizer: {
-				DisplayName: Quantum Destabilizer
-				Tooltip: ""
-			}
-
-			QuantumDestabilizerFixed: {
-				DisplayName: Quantum Destabilizer Fixed
-				Tooltip: ""
-			}
-
-			RecluseFang: {
-				DisplayName: Recluse Fang
-				Tooltip: ""
-			}
-
-			Sasscade: {
-				DisplayName: Sasscade
-				Tooltip: ""
-			}
-
-			SeepingArrow: {
-				DisplayName: Seeping Arrow
-				Tooltip: ""
-			}
-
-			SeepingArrowInfinite: {
-				DisplayName: Seeping Arrow Infinite
-				Tooltip: ""
-			}
-
-			ShroomiteArrow: {
-				DisplayName: Shroomite Arrow
-				Tooltip: ""
-			}
-
-			ShroomiteArrowInfinite: {
-				DisplayName: Shroomite Arrow Infinite
-				Tooltip: ""
-			}
-
-			ShroomiteBullet: {
-				DisplayName: Shroomite Bullet
-				Tooltip: ""
-			}
-
-			ShroomiteBulletInfinite: {
-				DisplayName: Shroomite Bullet Infinite
-				Tooltip: ""
-			}
-
-			SpearofJustice: {
-				DisplayName: Spearof Justice
-				Tooltip: ""
-			}
-
-			SpiderFangarang: {
-				DisplayName: Spider Fangarang
-				Tooltip: ""
-			}
-
-			Spore: {
-				DisplayName: Spore
-				Tooltip: ""
-			}
-
-			Stormbreaker: {
-				DisplayName: Stormbreaker
-				Tooltip: ""
-			}
-
-			StormbreakerThrown: {
-				DisplayName: Stormbreaker Thrown
-				Tooltip: ""
-			}
-
-			SunkroveraArrow: {
-				DisplayName: Sunkrovera Arrow
-				Tooltip: ""
-			}
-
-			SunkroveraArrowInfinite: {
-				DisplayName: Sunkrovera Arrow Infinite
-				Tooltip: ""
-			}
-
-			SunkroveraBullet: {
-				DisplayName: Sunkrovera Bullet
-				Tooltip: ""
-			}
-
-			SunkroveraBulletInfinite: {
-				DisplayName: Sunkrovera Bullet Infinite
-				Tooltip: ""
-			}
-
-			SwordofArachna: {
-				DisplayName: Swordof Arachna
-				Tooltip: ""
-			}
-
-			SymbolOfPain: {
-				DisplayName: Symbol Of Pain
-				Tooltip: ""
-			}
-
-			TerrarianW: {
-				DisplayName: Terrarian W
-				Tooltip: ""
-			}
-
-			TheBeak: {
-				DisplayName: The Beak
-				Tooltip: ""
-			}
-
-			TomeOfOrder: {
-				DisplayName: Tome Of Order
-				Tooltip: ""
-			}
-
-			Tritantrum: {
-				DisplayName: Tritantrum
-				Tooltip: ""
-			}
-
-			TrueSasscade: {
-				DisplayName: True Sasscade
-				Tooltip: ""
-			}
-
-			TurretStaff: {
-				DisplayName: Turret Staff
-				Tooltip: ""
-			}
-
-			UgandanTotem: {
-				DisplayName: Ugandan Totem
-				Tooltip: ""
-			}
-
-			UnchainedAkumu: {
-				DisplayName: Unchained Akumu
-				Tooltip: ""
-			}
-
-			WailOfBanshee: {
-				DisplayName: Wail Of Banshee
-				Tooltip: ""
-			}
-
-			Waspnade: {
-				DisplayName: Waspnade
-				Tooltip: ""
-			}
-
-			WatcherAmulet: {
-				DisplayName: Watcher Amulet
-				Tooltip: ""
-			}
-
-			WrathOfTheCelestial: {
-				DisplayName: Wrath Of The Celestial
-				Tooltip: ""
-			}
-
-			XtraT: {
-				DisplayName: Xtra T
-				Tooltip: ""
-			}
-
-			CodexUmbra: {
-				DisplayName: Codex Umbra
-				Tooltip: ""
-			}
-
-			InvalidItem: {
-				DisplayName: Invalid Item
 				Tooltip: ""
 			}
 		}
